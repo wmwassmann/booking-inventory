@@ -1,0 +1,10 @@
+
+body {
+    max-width: 414px;
+    max-height: 736px;   
+}
+
+#portal {
+    position: relative;
+    right: 300px;
+}
