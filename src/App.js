@@ -3,6 +3,8 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer'
 
 // Redux actions
 import { items } from './actions/auth';
@@ -33,13 +35,15 @@ const App = () => {
 
     <Router>
 
-      {/* <Navbar/> */}
+      <Navbar/>
       <Switch>
         
       <Route exact path='/' component={MainMenu}/>
       <Route exact path='/auth' component={Auth} />
       <Route exact path='/inventory' component={Inventory} />
       </Switch>
+      <Footer />
+      
     </Router>
   );
 }

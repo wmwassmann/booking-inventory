@@ -1,0 +1,13 @@
+
+.nav-wrapper {
+    max-width: 414px;
+    z-index: 10000;
+    position: fixed;
+}
+
+
+@media all and (max-width: 414px) {
+    .nav-wrapper {
+        max-width: 414px;
+    }
+}

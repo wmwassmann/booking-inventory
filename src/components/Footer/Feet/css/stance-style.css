@@ -1,0 +1,45 @@
+
+
+.charactersheet-btn-container {      
+   max-width: 414px;
+   min-height: 100vh;
+   z-index: 10000;
+   position:  absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+
+ 
+}
+
+
+.stance-container {
+   background-color: rgb(255, 255, 255);   
+}
+
+
+
+.stance-btn-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.stance-btn {  
+    display: flex;
+    justify-content: space-around;
+    align-items:  center;
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+    margin: 20px; 
+    font-size: 0.7em;
+    background-color: antiquewhite;   
+}
+.stance-btn:hover {  
+
+   border-style: solid;
+   border-width: 1px;
+   background-color: azure;  
+   
+}
