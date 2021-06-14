@@ -3,10 +3,11 @@ import mongoose from 'mongoose';
 
 
 const stockSchema = mongoose.Schema({
-    itemName: { type: String, required: true},
+    itemName: { type: String, required: true },
     itemInfo: {        
         inStock: { type: Boolean, required: false },
-        quantity: { type: Number, required: false }
+        quantity: { type: Number, required: false },
+        price: { type: Number, required: true}
     }
 
 

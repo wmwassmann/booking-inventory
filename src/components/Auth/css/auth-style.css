@@ -1,0 +1,12 @@
+.auth-background {   
+    height: 736px;
+    position: relative;
+    bottom: 57px; 
+    background: url(../img/maxresdefault.jpg) no-repeat top;
+    
+    background-size: fill;
+}
+
+.labels {
+    color:rgb(211, 0, 0)
+}

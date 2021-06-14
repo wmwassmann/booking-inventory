@@ -3,7 +3,7 @@ import Stock from "../models/stockModel.js";
 
 
 export const display = async (req, res) => {
-    const { itemName } = req.body;
+    const { itemName, itemInfo } = req.body;
 
     try {
         const existingStock = await Stock.findOne({ itemName });
@@ -11,7 +11,7 @@ export const display = async (req, res) => {
         if (!existingStock) return res.status(404).json( { message: 'Stock doesn\'t exist' })
 
 
-        const token = jwt.sign({ itemName: existingStock.itemName }, 'test', { expiresIn: '1h'});
+        const token = jwt.sign({ itemName: existingStock.itemName, itemInfo: itemInfo }, 'test', { expiresIn: '1h'});
 
         res.status(200).json( { result: existingStock, token }) 
 
