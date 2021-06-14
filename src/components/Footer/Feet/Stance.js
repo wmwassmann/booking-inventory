@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react'
+
 import './css/stance-style.css'
 
 
@@ -12,13 +13,13 @@ export default class Stance extends Component {
     constructor(props) {
         super(props);
 
-        // set state - toggling just in case we want to utilize state within the handle_stance function. We can check state and set new states as needed.
+        // set state - toggling just in case we want to Accountsize state within the handle_stance function. We can check state and set new states as needed.
         this.state = {
             anyStance: false,
-            isToggleOnOffense: false,
-            isToggleOnDefense: false,
-            isToggleOnUtility: false,
-            isToggleOnRolePlay: false,
+            isToggleOnInventory: false,
+            isToggleOnOrders: false,
+            isToggleOnAccount: false,
+            isToggleOnContacts: false,
         }
     }
 
@@ -33,22 +34,26 @@ export default class Stance extends Component {
         const currentStance = localStorage.getItem('Stance')
 
         // Displays a sample output in the DOM of the current selected stance. 
-        if (currentStance === 'Atk') {
-            console.log('Atk')
+        if (currentStance === 'Inventory') {
+            console.log('Inventory')
+            window.location.href ='http://localhost:3000/inventory'
+
         } 
 
-        if (currentStance === 'Def') {
-            console.log('Def')
+        if (currentStance === 'Orders') {
+            console.log('Orders')
+            window.location.href ='http://localhost:3000/orders'
         }
 
-        if (currentStance === 'Util') {
-            console.log('Util')
+        if (currentStance === 'Accounts') {
+            console.log('Accounts')
+            window.location.href ='http://localhost:3000/accounts'
         }
 
-        if (currentStance === 'RP') {
-            console.log('RP')
-            const roleplayAnswers = document.getElementById('roleplay-answers')
-            roleplayAnswers.classList.remove('hidden')
+        if (currentStance === 'Contacts') {
+            console.log('Contacts')
+            window.location.href ='http://localhost:3000/contacts'
+            
         }
     
 

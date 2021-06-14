@@ -3,8 +3,8 @@
 .charactersheet-btn-container {      
    max-width: 414px;
    min-height: 100vh;
-   z-index: 10000;
-   position:  absolute;
+   z-index: 10001;
+   position: static;
    left: 0;
    right: 0;
    bottom: 0;
@@ -15,14 +15,18 @@
 
 .stance-container {
    background-color: rgb(255, 255, 255);   
+   height: 5px;
 }
 
 
 
 .stance-btn-container {
     display: flex;
-    justify-content: center;
-    
+    justify-content: center;    
+    position: relative;
+    bottom: 110px;
+    background-color: white;
+    padding-bottom: 10px;
 }
 
 .stance-btn {  
@@ -35,6 +39,7 @@
     margin: 20px; 
     font-size: 0.7em;
     background-color: antiquewhite;   
+    
 }
 .stance-btn:hover {  
 

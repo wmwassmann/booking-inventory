@@ -1,5 +1,15 @@
 .inventory-page {
+    max-height: 736px;
     height: 100vh;
     width: 100vw;
     background-color: rgb(65, 65, 65);
+}
+
+.main-menu-background {
+    max-height: 736px;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(65, 65, 65);
+    display: flex;
+    align-items: center;
 }
