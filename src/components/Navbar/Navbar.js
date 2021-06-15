@@ -10,7 +10,7 @@ import './css/nav-style.css'
 
 const Navbar = () => {
 
-    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('currentEmployee')))
     const dispatch = useDispatch();
     const location = useLocation();
     const history = useHistory();
@@ -26,7 +26,7 @@ const Navbar = () => {
     }
     useEffect(() => {
      
-        setUser(JSON.parse(localStorage.getItem('profile')))
+        setUser(JSON.parse(localStorage.getItem('currentEmployee')))
     }, [location])
 
 
@@ -45,8 +45,8 @@ const Navbar = () => {
                 <Toolbar className={classes.toolbar}>
                     {user?.result ? (
                         <div className={classes.profile}>
-                            <Avatar className={classes.purple} alt={user?.result.name}>{user?.result.username.charAt(0)}</Avatar>
-                            <Typography className={classes.userName} variant="h6">{user?.result.character.characterName}</Typography>
+                            <Avatar className={classes.purple} alt={user?.result.employeeUsername}>{user?.result.employeeUsername.charAt(0)}</Avatar>
+                            <Typography className={classes.userName} variant="h6">{user?.result.employeeUsername}</Typography>
                             <Button variant="contained" className={classes.logout} color="secondary" onClick={logout} >Logout</Button>
                         </div>
                     ) : (

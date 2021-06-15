@@ -17,7 +17,7 @@ API.interceptors.request.use((req) => {
 export const getStock = () => API.get('/inventory/stock');
 
 
-export const signUp = (formData) => API.post('/users/signup', formData);
+export const signUp = (formData) => API.post('inventory/employee/signup', formData);
 
-export const signIn = (formData) => API.post('/users/signin', formData);
+export const signIn = (formData) => API.post('inventory/employee/signin', formData);
 

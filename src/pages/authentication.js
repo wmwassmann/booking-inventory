@@ -2,7 +2,7 @@ import React from 'react'
 
 const authentication = () => {
     return (
-        <div>
+        <div className='page-container'>
             Auth
         </div>
     )

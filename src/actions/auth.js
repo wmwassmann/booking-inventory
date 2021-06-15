@@ -25,7 +25,7 @@ export const signup = (formData, router) => async (dispatch) => {
 
         router.push('/inventory/employee/signup')
     } catch (error) {
-        console.log(error, 'this')
+        console.log(error, 'Authentication signup access failure - Debug by inspecting /api/Axios.js, or exported const signup /components/Auth/Auth.j')
     }
 }
 

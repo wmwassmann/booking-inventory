@@ -10,7 +10,7 @@ const inventory = () => {
   
 
     return (
-        <div className='inventory-page'>
+        <div className='page-container'>
             <InventoryIndex />
         </div>
     )
