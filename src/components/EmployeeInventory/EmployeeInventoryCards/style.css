@@ -1,0 +1,9 @@
+.card-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    height: 100%;
+    padding: 25px;
+    overflow: auto;
+}

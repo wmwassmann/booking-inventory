@@ -7,7 +7,8 @@ const stockSchema = mongoose.Schema({
     itemInfo: {        
         inStock: { type: Boolean, required: false },
         quantity: { type: Number, required: false },
-        price: { type: Number, required: true}
+        price: { type: Number, required: true },
+        employeeKit: { type: String, required: false }
     }
 
 

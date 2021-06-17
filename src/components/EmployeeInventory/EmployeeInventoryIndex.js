@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 // import { items } from '../../actions/auth'
-import InventoryComp from './InventoryComp'
-import InventoryCard from './InventoryCards/InventoryCard'
+import EmployeeInventoryComp from './EmployeeInventoryComp'
+import EmployeeInventoryCard from './EmployeeInventoryCards/EmployeeInventoryCard'
 import {  useSelector } from 'react-redux'
 
-const InventoryIndex = () => {
+const EmployeeInventoryIndex = () => {
     const inventory = useSelector((state) => state.items)
    
 
 
     return (
-        <InventoryCard>
+        <EmployeeInventoryCard>
             <div>
                 {inventory.map(item => (
 
@@ -40,7 +40,7 @@ const InventoryIndex = () => {
 
                     // Orders is just checking the stuff and things.
 
-                    <InventoryComp
+                    <EmployeeInventoryComp
                         name={item.itemName}
                         quantity={item.itemInfo.quantity}
                         price={item.itemInfo.price}
@@ -48,8 +48,8 @@ const InventoryIndex = () => {
 
                 ))}
             </div>
-        </InventoryCard>
+        </EmployeeInventoryCard>
     )
 }
 
-export default InventoryIndex
+export default EmployeeInventoryIndex

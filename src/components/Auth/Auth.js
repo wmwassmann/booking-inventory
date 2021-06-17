@@ -27,10 +27,17 @@ const Signup = () => {
 
     const [showPassword, setShowPassword] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
+    const [position, setPosition] = useState();
     const [form, setForm] = useState(initialState);
     const classes = useStyles();
     const dispatch = useDispatch()
     const history = useHistory()
+    const currentPosition = JSON.parse(localStorage.getItem('currentEmployee'))
+
+    // let selectPosition = JSON.parse(localStorage.getItem('currentEmployee'))
+
+    
+    // selectPosition = currentPosition?.employee.result[1].email
 
     const handleShowPassword = () => {
         setShowPassword((prevShowPassword) => !prevShowPassword)
@@ -43,11 +50,27 @@ const Signup = () => {
         e.preventDefault()
         console.log(form)
         if (isSignup) {
-            dispatch(signup(form))
-            history.push('/main')
+            dispatch(signup(form, history))
+           
+            console.log(initialState)
+            if (currentPosition === 'Employee') {
+                history.push('/employeeInventory')
+            } else {
+                history.push('/inventory')
+            }
+            
         } else {
+            console.log(initialState)
+           
             dispatch(signin(form))
-            history.push('/main')
+           
+            setPosition(currentPosition)
+            console.log(position, "Here")
+            if (currentPosition === 'employee') {
+                history.push('/employeeInventory')
+            } else {
+                history.push('/inventory')
+            }
         }
 
     }
@@ -59,6 +82,7 @@ const Signup = () => {
 
     const handleManager = () => {
         setForm({ ...form, employeePosition: 'Manager' })
+        
 
     }
     const handleEmployee = () => {

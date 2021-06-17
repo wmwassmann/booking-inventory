@@ -34,7 +34,7 @@ export const add = async (req, res) => {
         const result = await Stock.create({ itemName: itemName, itemInfo: itemInfo })
 
 
-        const token = jwt.sign({ itemName: result.itemName, inStock: result.inStock, quantity: result.quantity }, 'test', { expiresIn: '1h'});
+        const token = jwt.sign({ itemName: result.itemName, inStock: result.inStock, quantity: result.quantity, price: result.price, employeeKit: result.employeeKit }, 'test', { expiresIn: '1h'});
         
         res.status(200).json( { result, token }) 
 

@@ -1,0 +1,45 @@
+
+.stock-card-container {
+    /* General styling */
+    position: relative;
+    top: 50px;
+    max-width: 370px;
+    width: 370px;
+    max-height: 140px;
+    margin: 20px;
+    
+    padding: 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;   
+    -webkit-box-shadow: 0px 4px 20px 0px rgb(255, 255, 255);
+    -moz-box-shadow: 0px 4px 20px 0px rgba(255, 255, 255, 0.15);
+         box-shadow: 0px 4px 20px 0px rgba(182, 182, 182, 0.575);
+   
+    /* Element Arrangment */
+
+    /* display: flex;
+    flex-direction: row;    */
+}
+
+.stock-title {
+    background-color: rgb(194, 194, 194);
+    padding-left: 40px;
+    width: 366px;
+    position: relative;
+    right: 50px;
+    bottom: 30px;
+    font-size: 1.3em;
+}
+
+.stock-info-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 20px;
+}
+
+.stock-info-item {
+    padding: 2px;
+}

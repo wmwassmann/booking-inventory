@@ -21,7 +21,7 @@ const Navbar = () => {
     const logout = () => {
         dispatch({ type: 'LOGOUT' })
         history.push('/')
-
+        console.log(user)
         setUser(null)
     }
     useEffect(() => {
