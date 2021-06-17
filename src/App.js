@@ -15,7 +15,7 @@ import MainMenu from './pages/main';
 import Inventory from './pages/inventory';
 import EmployeeInventory from './pages/employeeInventory';
 import Accounts from './pages/accounts';
-import Orders from './pages/orders';
+import Orders from './pages/orderForm';
 import Contacts from './pages/contacts';
 
 // Styles
