@@ -36,7 +36,7 @@ const Signup = () => {
 
     // let selectPosition = JSON.parse(localStorage.getItem('currentEmployee'))
 
-    
+
     // selectPosition = currentPosition?.employee.result[1].email
 
     const handleShowPassword = () => {
@@ -48,29 +48,17 @@ const Signup = () => {
     const handleSubmit = (e) => {
         // Axios here
         e.preventDefault()
-        console.log(form)
+
         if (isSignup) {
             dispatch(signup(form, history))
-           
-            console.log(initialState)
-            if (currentPosition === 'Employee') {
-                history.push('/employeeInventory')
-            } else {
-                history.push('/inventory')
-            }
-            
-        } else {
-            console.log(initialState)
-           
-            dispatch(signin(form))
-           
             setPosition(currentPosition)
-            console.log(position, "Here")
-            if (currentPosition === 'employee') {
-                history.push('/employeeInventory')
-            } else {
-                history.push('/inventory')
-            }
+            history.push('/main')
+
+        } else {
+            dispatch(signin(form, history))
+            setPosition(currentPosition)
+            history.push('/main')
+
         }
 
     }
@@ -82,7 +70,7 @@ const Signup = () => {
 
     const handleManager = () => {
         setForm({ ...form, employeePosition: 'Manager' })
-        
+
 
     }
     const handleEmployee = () => {
@@ -125,15 +113,15 @@ const Signup = () => {
                     <Typography component="h1" variant="h5">{isSignup ? 'Sign up' : 'Sign in'}</Typography>
 
                     <form className={classes.form} onSubmit={handleSubmit}>
-                        <Grid container spacing={2}>
+                        <Grid container spacing={2} >
                             {isSignup && (
                                 <>
-                                    <Input name='employeeUsername' label='User Name' handleChange={handleChange}  autoFocus half />                                    
+                                    <Input name='employeeUsername' label='User Name' handleChange={handleChange} autoFocus half />
                                     <Input className={classes.text} name='email' label='Email Address' handleChange={handleChange} type='email' />
-                                    <DropdownButton id="dropdown-basic-button"  title="Dropdown button">
+                                    <DropdownButton id="dropdown-basic-button" title="Dropdown button">
                                         <Dropdown.Item name='employeePosition' onSelect={handleManager}>Manager</Dropdown.Item>
                                         <Dropdown.Item name='employeePosition' onSelect={handleEmployee}>Employee</Dropdown.Item>
-                                        <Dropdown.Item name='employeePosition' onSelect={handlePurchaser}>Purchaser</Dropdown.Item>                                       
+                                        <Dropdown.Item name='employeePosition' onSelect={handlePurchaser}>Purchaser</Dropdown.Item>
                                     </DropdownButton>
                                 </>
                             )}

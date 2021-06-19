@@ -12,7 +12,7 @@ import { items } from './actions/auth';
 // Routes
 import Auth from './components/Auth/Auth';
 import MainMenu from './pages/main';
-import Inventory from './pages/inventory';
+import MasterInventory from './pages/masterInventory';
 import EmployeeInventory from './pages/employeeInventory';
 import Accounts from './pages/accounts';
 import Orders from './pages/orderForm';
@@ -43,7 +43,7 @@ const App = () => {
       <Switch>
         <Route exact path='/main' component={MainMenu} />
         <Route exact path='/auth' component={Auth} />
-        <Route exact path='/inventory' component={Inventory} />
+        <Route exact path='/inventory' component={MasterInventory} />
         <Route exact path='/employeeInventory' component={EmployeeInventory} />
         <Route exact path='/accounts' component={Accounts} />
         <Route exact path='/orders' component={Orders} />

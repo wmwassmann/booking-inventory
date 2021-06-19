@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 // import { items } from '../../actions/auth'
-import InventoryComp from './InventoryComp'
-import InventoryCard from './InventoryCards/InventoryCard'
+import MasterInventoryComp from './MasterInventoryComp'
+import MasterInventoryCard from './MasterInventoryCards/MasterInventoryCard'
 import {  useSelector } from 'react-redux'
 
-const InventoryIndex = () => {
+const MasterInventoryIndex = () => {
     const inventory = useSelector((state) => state.items)
    
 
 
     return (
-        <InventoryCard>
+        <MasterInventoryCard>
             <div>
                 {inventory.map(item => (
 
@@ -40,7 +40,7 @@ const InventoryIndex = () => {
 
                     // Orders is just checking the stuff and things.
 
-                    <InventoryComp
+                    <MasterInventoryComp
                         name={item.itemName}
                         quantity={item.itemInfo.quantity}
                         price={item.itemInfo.price}
@@ -48,8 +48,8 @@ const InventoryIndex = () => {
 
                 ))}
             </div>
-        </InventoryCard>
+        </MasterInventoryCard>
     )
 }
 
-export default InventoryIndex
+export default MasterInventoryIndex

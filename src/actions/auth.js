@@ -8,8 +8,9 @@ export const signin = (formData, router) => async (dispatch) => {
         const { data } = await api.signIn(formData);
 
         dispatch({ type: AUTH, data })
-
-        router.push('/inventory/employee/signin')
+        // This redirects to the page you would like your employee to go to.
+        // You can change the router.push() to utilize any endpoint
+        router.push('/main')
     } catch (error) {
       // If this fails it means that 
         console.log(error, 'Authentication access failure - Debug by inspecting /api/Axios.js, or exported const signin /components/Auth/Auth.js')
@@ -23,7 +24,7 @@ export const signup = (formData, router) => async (dispatch) => {
 
         dispatch({ type: AUTH, data })
 
-        router.push('/inventory/employee/signup')
+        router.push('/main')
     } catch (error) {
         console.log(error, 'Authentication signup access failure - Debug by inspecting /api/Axios.js, or exported const signup /components/Auth/Auth.j')
     }
