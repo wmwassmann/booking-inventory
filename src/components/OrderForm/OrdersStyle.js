@@ -1,14 +1,24 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
+  ordersBackground: {
+  
+    height: '100vh',
+    width: '100vw',
+    backgroundColor: 'rgb(65, 65, 65)',
+    display: 'flex',
+    justifyContent: 'center'
+  },
+
   paper: {
     background: 'rgb(130 164 169 / 42%)',
     marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
     padding: theme.spacing(2),
-    // width: '1000px',
+    width: '1200px',
+    height: '650px',
+    position:' relative',
+    top: '70px',
+    right: '400px'
   },
   root: {
     '& .MuiTextField-root': {
@@ -25,11 +35,18 @@ export default makeStyles((theme) => ({
     // display: 'flex'
     
   },
+  formControl: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  },
+
   formBase: {
     
   },
   formInfo: {
-
+    marginLeft: '10px',
+    marginRight: '10px'
   },
   formMaintenance: {
 

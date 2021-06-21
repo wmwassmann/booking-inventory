@@ -89,58 +89,66 @@ const OrdersForm = () => {
     }
 
     return (
-        <div className='auth-background'>
+        <div className={classes.ordersBackground}>
             <Container component="main" maxWidth="xs">
                 <Paper className={classes.paper} elevation={3}>
                     <Typography component="h1" variant="h5">Inventory Management</Typography>
-
-                    <form className={classes.form} onSubmit={handleSubmit}>
-                        <Grid container spacing={1}>
-                            <div className={classes.formBase}>
-                                <Grid container spacing={2}>
-                                    <Input className={classes.text} name='itemSupplier' label='Supplier' handleChange={handleChange} />
-                                    <Input className={classes.text} name='itemLocationInStorage' label='Location in Storage Unit' handleChange={handleChange} />
-                                    <Input className={classes.text} name='itemNam' label='Product Name' handleChange={handleChange} />
-                                </Grid>
-                            </div>
-                            <div className={classes.formInfo}>
-                                <Grid container spacing={2}>
-                                    <Input className={classes.text} name='itemQuantity' label='Quantity' handleChange={handleChange} type='Quantity' />
-                                    <Input className={classes.text} name='itemPrice' label='Price' handleChange={handleChange} type='Price' />
-                                    <Input className={classes.text} name='itemReorderPackaging' label='Re-Order Packaging Type' handleChange={handleChange} />
-                                    <Input className={classes.text} name='itemCostPerUnit' label='Cost Per Unit' handleChange={handleChange} />
-                                    <Input className={classes.text} name='itemCostPerSpareKit' label='Cost Per Spare Kit' handleChange={handleChange} />
-                                    <Input className={classes.text} name='itemCostPerKit' label='Cost Per Kit' handleChange={handleChange} />
-                                    <Input className={classes.text} name='itemLocation' label='Location in Unit' handleChange={handleChange} />
-
-
-                                </Grid>
-                            </div>
-                            <div className={classes.formMaintenance}>
-                                <Grid container spacitng={2}>
-
-                                    <Input className={classes.text} name='maintSpareKit' label='Spare Kit' handleChange={handleChange} />
-                                    <Input className={classes.text} name='maintItemsReOrder' label='Re-order' handleChange={handleChange} />
-                                    <Input className={classes.text} name='maintQuantityReOrder' label='Quantity to Re-Order' handleChange={handleChange} />
-                                    <Input className={classes.text} name='maintPlaced' label='Re-order Placed' handleChange={handleChange} />
-                                    <Input className={classes.text} name='maintBrokenReturn' label='Broken Or Out for Return' handleChange={handleChange} />
-                                    <Input className={classes.text} name='maintReturnWindow' label='Return or Repair Policy' handleChange={handleChange} />
-                                    <Input className={classes.text} name='maintOnSitePOA' label='On-site Plan of Action' handleChange={handleChange} />
-                                    <Input className={classes.text} name='maintCategory' label='New Purchase Category' handleChange={handleChange} />
-
-                                </Grid>
-                            </div>
-                        </Grid>
-
-                        <Button type='submit' fullWidth varient='contained' color='primary' className={classes.submit}>
-                            Submit
-                        </Button>
+                 
+                    <Grid container spacing={1}>
+                        <div className={classes.formControl}>
+                            <form className={classes.form} onSubmit={handleSubmit}>
+                                <div className={classes.formBase}>
+                                    <Grid container spacing={2}>
+                                        <Input className={classes.text} name='itemSupplier' label='Supplier' handleChange={handleChange} />
+                                        <Input className={classes.text} name='itemLocationInStorage' label='Location in Storage Unit' handleChange={handleChange} />
+                                        <Input className={classes.text} name='itemNam' label='Product Name' handleChange={handleChange} />
+                                    </Grid>
+                                </div>
+                                <Button type='submit' fullWidth varient='contained' color='primary' className={classes.submit}>
+                                    Submit
+                                </Button>
+                            </form>
+                            <form className={classes.form} onSubmit={handleSubmit}>
+                                <div className={classes.formInfo}>
+                                    <Grid container spacing={2}>
+                                        <Input className={classes.text} name='itemQuantity' label='Quantity' handleChange={handleChange} type='Quantity' />
+                                        <Input className={classes.text} name='itemPrice' label='Price' handleChange={handleChange} type='Price' />
+                                        <Input className={classes.text} name='itemReorderPackaging' label='Re-Order Packaging Type' handleChange={handleChange} />
+                                        <Input className={classes.text} name='itemCostPerUnit' label='Cost Per Unit' handleChange={handleChange} />
+                                        <Input className={classes.text} name='itemCostPerSpareKit' label='Cost Per Spare Kit' handleChange={handleChange} />
+                                        <Input className={classes.text} name='itemCostPerKit' label='Cost Per Kit' handleChange={handleChange} />
+                                        <Input className={classes.text} name='itemLocation' label='Location in Unit' handleChange={handleChange} />
 
 
+                                    </Grid>
+                                </div>
+                            </form>
+                            <form className={classes.form} onSubmit={handleSubmit}>
+                                <div className={classes.formMaintenance}>
+                                    <Grid container spacing={2}>
+
+                                        <Input className={classes.text} name='maintSpareKit' label='Spare Kit' handleChange={handleChange} />
+                                        <Input className={classes.text} name='maintItemsReOrder' label='Re-order' handleChange={handleChange} />
+                                        <Input className={classes.text} name='maintQuantityReOrder' label='Quantity to Re-Order' handleChange={handleChange} />
+                                        <Input className={classes.text} name='maintPlaced' label='Re-order Placed' handleChange={handleChange} />
+                                        <Input className={classes.text} name='maintBrokenReturn' label='Broken Or Out for Return' handleChange={handleChange} />
+                                        <Input className={classes.text} name='maintReturnWindow' label='Return or Repair Policy' handleChange={handleChange} />
+                                        <Input className={classes.text} name='maintOnSitePOA' label='On-site Plan of Action' handleChange={handleChange} />
+                                        <Input className={classes.text} name='maintCategory' label='New Purchase Category' handleChange={handleChange} />
+
+                                    </Grid>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </Grid>
 
 
 
-                    </form>
+
+
+
                 </Paper>
             </Container>
         </div >
