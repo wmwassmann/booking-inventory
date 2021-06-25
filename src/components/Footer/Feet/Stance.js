@@ -27,7 +27,7 @@ export default class Stance extends Component {
     handle_stance = (e) => {
 
         const stance = (this.props.stance)
-     
+        
         e.preventDefault()
 
         localStorage.setItem('Stance', stance)
@@ -41,7 +41,7 @@ export default class Stance extends Component {
         } 
 
         if (currentStance === 'Orders') {
-            console.log('Orders')
+            console.log('Orders')        
             window.location.href ='http://localhost:3000/orders'
         }
 

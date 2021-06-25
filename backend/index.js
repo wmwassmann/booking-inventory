@@ -4,12 +4,12 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
-import dotenv from 'dotenv';
-import connectDB from './config/db.js';
-
 
 import employeeRouter from './routes/employeeRoute.js';
 import stockRouter from './routes/stockRoute.js';
+
+import dotenv from 'dotenv';
+import connectDB from './config/db.js';
 
 const app = express();
 const connection = mongoose.connection;
@@ -29,7 +29,7 @@ app.use(cors());
 
 
 // Routing to unique database endpoints
-app.use('/inventory', employeeRouter)
+app.use('/employee', employeeRouter)
 app.use('/inventory', stockRouter)
 // app.use('', )
 

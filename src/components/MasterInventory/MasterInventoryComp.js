@@ -5,7 +5,7 @@ import './css/stock-style.css'
 // import { stock } from '../../actions/auth';
 
 
-const InventoryComp = ({ name, quantity, price }) => {
+const MasterInventoryComp = ({ name, quantity, price }) => {
 
     return (
         <div className='stock-card-container'>
@@ -27,4 +27,4 @@ const InventoryComp = ({ name, quantity, price }) => {
     )
 }
 
-export default InventoryComp
+export default MasterInventoryComp

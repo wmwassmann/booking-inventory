@@ -1,1 +1,1 @@
-export * from './InventoryCard';
+export * from './MasterInventoryCard';

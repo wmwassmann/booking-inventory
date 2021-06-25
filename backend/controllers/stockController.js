@@ -22,7 +22,7 @@ export const display = async (req, res) => {
 }
 
 export const add = async (req, res) => {
-    const { itemName, itemInfo } = req.body
+    const { itemName } = req.body
 
     try {
         const existingItem = await Stock.findOne({ itemName });
@@ -31,10 +31,10 @@ export const add = async (req, res) => {
 
 
 
-        const result = await Stock.create({ itemName: itemName, itemInfo: itemInfo })
+        const result = await Stock.create({ itemName: itemName })
 
 
-        const token = jwt.sign({ itemName: result.itemName, inStock: result.inStock, quantity: result.quantity, price: result.price, employeeKit: result.employeeKit }, 'test', { expiresIn: '1h'});
+        const token = jwt.sign({ itemName: result.itemName }, 'test', { expiresIn: '1h'});
         
         res.status(200).json( { result, token }) 
 

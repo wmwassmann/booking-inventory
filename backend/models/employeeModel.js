@@ -27,7 +27,10 @@ const employeeSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    
-})
+
+}, {
+    timestamps: true,
+});
+
 
 export default mongoose.model('Employees', employeeSchema)

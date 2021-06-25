@@ -3,13 +3,29 @@ import mongoose from 'mongoose';
 
 
 const stockSchema = mongoose.Schema({
-    itemName: { type: String, required: true },
-    itemInfo: {        
-        inStock: { type: Boolean, required: false },
-        quantity: { type: Number, required: false },
-        price: { type: Number, required: true },
-        employeeKit: { type: String, required: false }
-    }
+    itemName: { type: String, required: false },
+
+    itemSupplier: { type: String, required: false },
+    itemLocationInStorage: { type: String, required: false },
+    itemQuantity: { type: Number, required: false },
+    itemPrice: { type: Number, required: false },
+    itemReorderPackaging: { type: String, required: false },
+    itemCostPerUnit: { type: Number, required: false },
+    itemCostPerSpareKit: { type: Number, required: false },
+    itemCostPerKit: { type: Number, required: false },
+    itemLocation: { type: String, required: false },
+
+    maintSpareKit: { type: String, required: false },
+    maintItemsReOrder: { type: String, required: false },
+    maintQuantityReOrder: { type: String, required: false },
+    maintPlace: { type: String, required: false },
+    maintBrokenReturn: { type: String, required: false },
+    maintReturnWindow: { type: String, required: false },
+    maintOnSitePOA: { type: String, required: false },
+    maintCategory: { type: String, required: false },
+
+    employeeKit: { type: String, required: false },
+
 
 
 })

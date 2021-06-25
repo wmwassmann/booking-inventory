@@ -6,14 +6,14 @@ import { signin, signup } from '../controllers/employeeController.js'
 // import authention from '../middleware/authentication.js' 
 
 
-router.route('/employee').get((req, res) => {
+router.route('/').get((req, res) => {
     Employee.find()
     .then(employees => res.json(employees))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.post('/employee/signin', signin)
-router.post('/employee/signup', signup)
+router.post('/signin', signin)
+router.post('/signup', signup)
 
 export default router;
 

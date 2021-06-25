@@ -5,13 +5,13 @@ import useStyles from './OrdersStyle';
 import Input from './OrdersInput';
 // import Icon from './Icon';
 import { useDispatch } from 'react-redux';
-import { AUTH } from '../../constants/actionTypes';
-import { signup, signin } from '../../actions/auth'
+// import { AUTH } from '../../constants/actionTypes';
+import { addItem } from '../../actions/auth'
 
 
-import { GoogleLogin } from 'react-google-login'
+// import { GoogleLogin } from 'react-google-login'
 import { useHistory } from 'react-router-dom'
-import { Dropdown, DropdownButton } from 'react-bootstrap';
+// import { Dropdown, DropdownButton } from 'react-bootstrap';
 
 const initialState = {
     employeeUsername: '',
@@ -27,12 +27,12 @@ const OrdersForm = () => {
 
     const [showPassword, setShowPassword] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
-    const [position, setPosition] = useState();
+    // const [position, setPosition] = useState();
     const [form, setForm] = useState(initialState);
     const classes = useStyles();
     const dispatch = useDispatch()
     const history = useHistory()
-    const currentPosition = JSON.parse(localStorage.getItem('currentEmployee'))
+    // const currentPosition = JSON.parse(localStorage.getItem('currentEmployee'))
 
     // let selectPosition = JSON.parse(localStorage.getItem('currentEmployee'))
 
@@ -48,30 +48,9 @@ const OrdersForm = () => {
     const handleSubmit = (e) => {
         // Axios here
         e.preventDefault()
+        dispatch(addItem(form, history))
         console.log(form)
-        if (isSignup) {
-            dispatch(signup(form, history))
-
-            console.log(initialState)
-            if (currentPosition === 'Employee') {
-                history.push('/employeeInventory')
-            } else {
-                history.push('/inventory')
-            }
-
-        } else {
-            console.log(initialState)
-
-            dispatch(signin(form))
-
-            setPosition(currentPosition)
-            console.log(position, "Here")
-            if (currentPosition === 'employee') {
-                history.push('/employeeInventory')
-            } else {
-                history.push('/inventory')
-            }
-        }
+      
 
     }
 
@@ -88,6 +67,7 @@ const OrdersForm = () => {
         setShowPassword(false)
     }
 
+
     return (
         <div className={classes.ordersBackground}>
             <Container component="main" maxWidth="xs">
@@ -101,7 +81,7 @@ const OrdersForm = () => {
                                     <Grid container spacing={2}>
                                         <Input className={classes.text} name='itemSupplier' label='Supplier' handleChange={handleChange} />
                                         <Input className={classes.text} name='itemLocationInStorage' label='Location in Storage Unit' handleChange={handleChange} />
-                                        <Input className={classes.text} name='itemNam' label='Product Name' handleChange={handleChange} />
+                                        <Input className={classes.text} name='itemName' label='Product Name' handleChange={handleChange} />
                                     </Grid>
                                 </div>
                                 <Button type='submit' fullWidth varient='contained' color='primary' className={classes.submit}>

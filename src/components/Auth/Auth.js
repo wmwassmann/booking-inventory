@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, Paper, Grid, Typography, Container } from '@material-ui/core'
 import useStyles from './Style';
 import './css/auth-style.css';
 import Input from './Input';
 import Icon from './Icon';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { AUTH } from '../../constants/actionTypes';
 import { signup, signin } from '../../actions/auth'
 
 
+
 import { GoogleLogin } from 'react-google-login'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 
 const initialState = {
@@ -25,19 +26,24 @@ const initialState = {
 
 const Signup = () => {
 
+
     const [showPassword, setShowPassword] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
-    const [position, setPosition] = useState();
     const [form, setForm] = useState(initialState);
     const classes = useStyles();
     const dispatch = useDispatch()
     const history = useHistory()
-    const currentPosition = JSON.parse(localStorage.getItem('currentEmployee'))
+    // const location = useLocation();
+    // const currentPosition = JSON.parse(localStorage.getItem('currentEmployee'))
+    // const [position, setPosition] = useState(JSON.parse(localStorage.getItem('currentEmployee')));
 
-    // let selectPosition = JSON.parse(localStorage.getItem('currentEmployee'))
 
 
-    // selectPosition = currentPosition?.employee.result[1].email
+
+    // useEffect(() => {
+    //     setPosition(JSON.parse(localStorage.getItem('currentEmployee')))
+    // })
+
 
     const handleShowPassword = () => {
         setShowPassword((prevShowPassword) => !prevShowPassword)
@@ -48,16 +54,14 @@ const Signup = () => {
     const handleSubmit = (e) => {
         // Axios here
         e.preventDefault()
-
         if (isSignup) {
             dispatch(signup(form, history))
-            setPosition(currentPosition)
-            history.push('/main')
-
+            console.log(localStorage.getItem('currentEmployee'))
+            history.push('/employeeInventory')
         } else {
             dispatch(signin(form, history))
-            setPosition(currentPosition)
-            history.push('/main')
+            console.log(localStorage.getItem('currentEmployee'))
+            history.push('/employeeInventory')
 
         }
 
@@ -94,7 +98,7 @@ const Signup = () => {
 
         try {
             dispatch({ type: AUTH, data: { result, token } });
-            history.push('/main')
+            history.push('/')
         } catch (error) {
             console.log(error)
         }
@@ -105,6 +109,7 @@ const Signup = () => {
         console.log(error);
         console.log('Google sign in was unsuccessful')
     }
+
 
     return (
         <div className='auth-background'>

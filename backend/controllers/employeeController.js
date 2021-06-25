@@ -30,7 +30,7 @@ export const signup = async (req, res) => {
     const { employeeUsername, email, password, passwordConfirm, employeeId, employeePosition } = req.body
 
     try {
-        const existingEmployee = await Employees.findOne({ email });
+        const existingEmployee = await Employees.findOne({ employeeId });
 
         if (existingEmployee) return res.status(404).json( { message: 'Employee already exists' })
 
@@ -39,13 +39,13 @@ export const signup = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 12)
         const hashedPasswordConfirm = await bcrypt.hash(passwordConfirm, 12)
 
-        const result = await Employees.create({ employeeUsername: `${employeeUsername}`, email, password: hashedPassword, passwordConfirm: hashedPasswordConfirm, employeeId, employeePosition })
+        const result = await Employees.create({ employeeUsername: `${employeeUsername}`, email: email, password: hashedPassword, passwordConfirm: hashedPasswordConfirm, employeeId: `${employeeId}`, employeePosition: employeePosition })
 
 
         const token = jwt.sign({ employeeUsername: result.employeeUsername, email: result.email, employeeId: result.employeeId, employeePosition: result.employeePosition, id: result._id }, 'test', { expiresIn: '1h'});
         
         res.status(200).json( { result, token }) 
-
+        
     } catch(error) {
         res.status(500).json({ message: 'Something went wrong' }) 
         console.log(error);

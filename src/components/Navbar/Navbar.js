@@ -16,7 +16,6 @@ const Navbar = () => {
     const history = useHistory();
     const classes = useStyles();
 
-    console.log(user)
 
     const logout = () => {
         dispatch({ type: 'LOGOUT' })

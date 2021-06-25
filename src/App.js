@@ -1,6 +1,6 @@
 
 // React Junk
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Navbar from './components/Navbar/Navbar';
@@ -27,26 +27,37 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const App = () => {
-  const dispatch = useDispatch();
+  const [position, setPosition] = useState('')
+  const dispatch = useDispatch();  
+  const currentEmployeePosition = JSON.parse(localStorage.getItem('currentEmployee'))
+  const myPos = currentEmployeePosition.result.employeePosition
 
   useEffect(() => {
-    dispatch(items())
+    dispatch(items())    
+    if (myPos === 'Manager') {
+      setPosition('Manager')
+    }
+    console.log(position)
   }, [dispatch])
 
-
+  useEffect(() => {
+    // if (position === 'Manager') {
+    //   window.location.href ='http://localhost:3000/accounts'      
+    // }
+  })
 
   return (
     <>
     <Router>
-
+    {/* <Spinner animation="border" /> */}
       <Navbar />
       <Switch>
         <Route exact path='/main' component={MainMenu} />
         <Route exact path='/auth' component={Auth} />
         <Route exact path='/inventory' component={MasterInventory} />
         <Route exact path='/employeeInventory' component={EmployeeInventory} />
-        <Route exact path='/accounts' component={Accounts} />
         <Route exact path='/orders' component={Orders} />
+        <Route exact path='/accounts' component={Accounts} />
         <Route exact path='/Contacts' component={Contacts} />
       </Switch>
       <div className='footer'>
