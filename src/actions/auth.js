@@ -44,10 +44,10 @@ export const items = () => async (dispatch) => {
     }
   };
 
-  export const addItem = () => async (dispatch) => {
+  export const addItem = (formData) => async (dispatch) => {
     try {
 
-      const { data } = await api.addItem();
+      const { data } = await api.addItem(formData);
 
       dispatch({ type: ADD_STOCK, payload: data });
 

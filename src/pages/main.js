@@ -12,7 +12,7 @@ const Main = () => {
     useEffect(() => {
         if (myPos === 'Manager') {
             setPosition('Manager')
-            window.location.href = 'http://localhost:3000/accounts'
+            window.location.href = 'http://localhost:3000/orders'
         } 
 
         if (myPos === 'Employee') {

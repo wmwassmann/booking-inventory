@@ -19,7 +19,7 @@ const Navbar = () => {
 
     const logout = () => {
         dispatch({ type: 'LOGOUT' })
-        history.push('/')        
+        history.push('/auth')        
         setUser(null)
     }
     useEffect(() => {
@@ -34,7 +34,7 @@ const Navbar = () => {
           
             
             <AppBar className={classes.appBar} position="static" color="inherit">
-            <NavLink to='/main' exact>Back</NavLink>     
+            <NavLink to='/' exact>Back</NavLink>     
                 <div className={classes.brandContainer}>
                     <Typography component={Link} to="/" className={classes.heading} variant="h2" align="center"></Typography>
                     

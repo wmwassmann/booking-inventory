@@ -22,7 +22,28 @@ export const display = async (req, res) => {
 }
 
 export const add = async (req, res) => {
-    const { itemName } = req.body
+    const { 
+        itemName, 
+        itemSupplier, 
+        itemLocationInStorage, 
+        itemQuantity, 
+        itemPrice,
+        itemReorderPackaging,
+        itemCostPerUnit,
+        itemCostPerSpareKit,
+        itemCostPerKit,
+        itemLocation,
+        maintSpareKit,
+        maintItemsReOrder,
+        maintQuantityReOrder,
+        maintPlace,
+        maintBrokenReturn,
+        maintReturnWindow,
+        maintOnSitePOA,
+        maintCategory,
+        employeeKit
+        
+    } = req.body
 
     try {
         const existingItem = await Stock.findOne({ itemName });
@@ -31,10 +52,54 @@ export const add = async (req, res) => {
 
 
 
-        const result = await Stock.create({ itemName: itemName })
+        const result = await Stock.create({  
+            itemName: itemName, 
+            itemSupplier: itemSupplier, 
+            itemLocationInStorage: itemLocationInStorage,
+            itemQuantity: itemQuantity,
+            itemPrice: itemPrice,
+            itemReorderPackaging: itemReorderPackaging,
+            itemCostPerUnit: itemCostPerUnit,
+            itemCostPerSpareKit: itemCostPerSpareKit,
+            itemCostPerKit: itemCostPerKit,
+            itemLocation: itemLocation,
+            maintSpareKit: maintSpareKit,
+            maintItemsReOrder: maintItemsReOrder,
+            maintQuantityReOrder: maintQuantityReOrder,
+            maintPlace: maintPlace,
+            maintBrokenReturn: maintBrokenReturn,
+            maintReturnWindow: maintReturnWindow,
+            maintOnSitePOA: maintOnSitePOA,
+            maintCategory: maintCategory,
+            employeeKit: employeeKit 
+        })
 
 
-        const token = jwt.sign({ itemName: result.itemName }, 'test', { expiresIn: '1h'});
+        const token = jwt.sign({ 
+            itemName: result.itemName, 
+            itemSupplier: result.itemSupplier, 
+            itemLocationInStorage: result.itemLocationInStorage,
+            itemQuantity: result.itemQuantity,
+            itemPrice: result.itemPrice,
+            itemReorderPackaging: result.itemReorderPackaging,
+            itemCostPerUnit: result.itemCostPerUnit,
+            itemCostPerSpareKit: result.itemCostPerSpareKit,
+            itemCostPerKit: result.itemCostPerKit,
+            itemLocation: result.itemLocation,
+            maintSpareKit: result.maintSpareKit,
+            maintItemsReOrder: result.maintItemsReOrder,
+            maintQuantityReOrder: result.maintQuantityReOrder,
+            maintPlace: result.maintPlace,
+            maintBrokenReturn: result.maintBrokenReturn,
+            maintReturnWindow: result.maintReturnWindow,
+            maintOnSitePOA: result.maintOnSitePOA,
+            maintCategory: result.maintCategory,
+            employeeKit: result.employeeKit
+        
+        
+        
+        
+        }, 'test', { expiresIn: '1h'});
         
         res.status(200).json( { result, token }) 
 

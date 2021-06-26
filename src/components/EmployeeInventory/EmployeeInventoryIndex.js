@@ -42,8 +42,8 @@ const EmployeeInventoryIndex = () => {
 
                     <EmployeeInventoryComp
                         name={item.itemName}
-                        quantity={item.itemInfo.quantity}
-                        price={item.itemInfo.price}
+                        quantity={item.itemQuantity}
+                        price={item.itemPrice}
                     />
 
                 ))}

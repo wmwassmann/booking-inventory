@@ -27,24 +27,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const App = () => {
-  const [position, setPosition] = useState('')
-  const dispatch = useDispatch();  
-  const currentEmployeePosition = JSON.parse(localStorage.getItem('currentEmployee'))
-  const myPos = currentEmployeePosition.result.employeePosition
 
+  const dispatch = useDispatch();  
+  
   useEffect(() => {
+
     dispatch(items())    
-    if (myPos === 'Manager') {
-      setPosition('Manager')
-    }
-    console.log(position)
+
   }, [dispatch])
 
-  useEffect(() => {
-    // if (position === 'Manager') {
-    //   window.location.href ='http://localhost:3000/accounts'      
-    // }
-  })
 
   return (
     <>
@@ -52,7 +43,7 @@ const App = () => {
     {/* <Spinner animation="border" /> */}
       <Navbar />
       <Switch>
-        <Route exact path='/main' component={MainMenu} />
+        <Route exact path='/' component={MainMenu} />
         <Route exact path='/auth' component={Auth} />
         <Route exact path='/inventory' component={MasterInventory} />
         <Route exact path='/employeeInventory' component={EmployeeInventory} />
