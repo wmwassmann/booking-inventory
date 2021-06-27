@@ -28,35 +28,39 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
 
-  const dispatch = useDispatch();  
-  
+  const dispatch = useDispatch();
+
   useEffect(() => {
 
-    dispatch(items())    
+    dispatch(items())
 
   }, [dispatch])
 
 
   return (
     <>
-    <Router>
-    {/* <Spinner animation="border" /> */}
-      <Navbar />
-      <Switch>
-        <Route exact path='/' component={MainMenu} />
-        <Route exact path='/auth' component={Auth} />
-        <Route exact path='/inventory' component={MasterInventory} />
-        <Route exact path='/employeeInventory' component={EmployeeInventory} />
-        <Route exact path='/orders' component={Orders} />
-        <Route exact path='/accounts' component={Accounts} />
-        <Route exact path='/Contacts' component={Contacts} />
-      </Switch>
-      <div className='footer'>
-        <Footer className='footer'/>
-      </div>
+      <Router>
+        {/* <Spinner animation="border" /> */}
+        <Navbar />
+        <Switch>
+          <Route exact path='/' component={MainMenu} />
+          <Route exact path='/auth' component={Auth} />
+          <Route exact path='/inventory' component={MasterInventory} />
+          {/* <Route exact path='/employeeInventory' component={EmployeeInventory} /> */}
+          <Route exact path='/orders' component={Orders} />
+          <Route exact path='/accounts' component={Accounts} />
+          <Route exact path='/Contacts' component={Contacts} />
+        </Switch>
+        <div className='footer'>
+          <Footer className='footer' />
+        </div>
 
-
-    </Router>
+      </Router>
+      <Router>
+        <Switch>
+          <Route exact path='/employeeInventory' component={EmployeeInventory} />
+        </Switch>
+      </Router>
     </>
   );
 }
