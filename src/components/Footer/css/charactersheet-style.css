@@ -1,5 +1,7 @@
 .charactersheet-btn-group {    
     display: flex;
     flex-direction: row;  
-    
+    position: fixed;
+    bottom: 0px;    
+    width: 100vw;
 }

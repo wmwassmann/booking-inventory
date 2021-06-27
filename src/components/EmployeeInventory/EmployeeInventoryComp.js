@@ -16,18 +16,18 @@ const InventoryComp = ({ name, quantity, price, reorder, reorderQuant }) => {
     return (
         <div>
 
-            <button className='stock-card-container' onClick={() => setIsOpen(true)}>
+            <button className='employee-stock-card-container' onClick={() => setIsOpen(true)}>
 
 
-                <div className='stock-title'>
+                <div className='employee-stock-title'>
                     {name}
                 </div>
 
-                <div className='stock-info-container'>
-                    <div className='stock-info-item'>
+                <div className='employee-stock-info-container'>
+                    <div className='employee-stock-info-item'>
                         Quantity: {quantity}
                     </div>
-                    <div className='stock-info-item'>
+                    <div className='employee-stock-info-item'>
                         Price: ${price}
                     </div>
                 </div>
@@ -35,29 +35,29 @@ const InventoryComp = ({ name, quantity, price, reorder, reorderQuant }) => {
 
             </button>
             <Modal open={isOpen}
-                    onClose={() => setIsOpen(false)}>
-                    
+                onClose={() => setIsOpen(false)}>
+
                 <div className='stock-modal-title'>
                     {name}
                 </div>
 
                 <div className='stock-modal-container'>
                     <div className='stock-left'>
-                    <div className='stock-modal-item'>
-                        Quantity: {quantity}
+                        <div className='stock-modal-item'>
+                            Quantity: {quantity}
+                        </div>
+                        <div className='stock-modal-item'>
+                            Price: ${price}
+                        </div>
                     </div>
-                    <div className='stock-modal-item'>
-                        Price: ${price}
+                    <div className='stock-right'>
+                        <div className='stock-modal-item'>
+                            Re-order: {reorder}
+                        </div>
+                        <div className='stock-modal-item'>
+                            Re-order Quantity: {reorderQuant}
+                        </div>
                     </div>
-                </div>
-                <div className='stock-right'>
-                    <div className='stock-modal-item'>
-                        Re-order: {reorder}
-                    </div>
-                    <div className='stock-modal-item'>
-                        Re-order Quantity: {reorderQuant}
-                    </div>
-                </div>
                 </div>
             </Modal>
         </div>

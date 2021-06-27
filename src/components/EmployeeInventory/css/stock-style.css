@@ -1,5 +1,5 @@
 
-.stock-card-container {
+.employee-stock-card-container {
     /* General styling */
     position: relative;
     top: 50px;
@@ -30,7 +30,7 @@
 }
 
 
-.stock-title {
+.employee-stock-title {
     background-color: rgb(194, 194, 194);
     padding-left: 40px;
     width: 366px;
@@ -42,7 +42,7 @@
     align-items: flex-start;
 }
 
-.stock-info-container {
+.employee-stock-info-container {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -51,7 +51,7 @@
     align-items: flex-start;
 }
 
-.stock-info-item {
+.employee-stock-info-item {
     padding: 2px;
 }
 

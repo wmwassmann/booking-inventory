@@ -41,26 +41,32 @@ const App = () => {
     <>
       <Router>
         {/* <Spinner animation="border" /> */}
-        <Navbar />
+        <Navbar className='navbar-page' />
         <Switch>
           <Route exact path='/' component={MainMenu} />
           <Route exact path='/auth' component={Auth} />
           <Route exact path='/inventory' component={MasterInventory} />
-          {/* <Route exact path='/employeeInventory' component={EmployeeInventory} /> */}
-          <Route exact path='/orders' component={Orders} />
+          <Route exact path='/employeeInventory' component={EmployeeInventory} />
+          <Route exact path='/orders' component={Orders}/>        
           <Route exact path='/accounts' component={Accounts} />
           <Route exact path='/Contacts' component={Contacts} />
         </Switch>
-        <div className='footer'>
-          <Footer className='footer' />
-        </div>
+
+        <div className='footer-page'>
+          <Footer />
+        </div> 
 
       </Router>
-      <Router>
+      {/* <Router>
+        
         <Switch>
-          <Route exact path='/employeeInventory' component={EmployeeInventory} />
         </Switch>
-      </Router>
+          <Route exact path='/employeeInventory' component={EmployeeInventory} /> */}
+      {/* <div className='footer'>
+          <Footer className='footer' />
+        </div> */}
+
+      {/* </Router> */}
     </>
   );
 }

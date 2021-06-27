@@ -8,8 +8,12 @@ const Main = () => {
 
     const currentEmployeePosition = JSON.parse(localStorage.getItem('currentEmployee'))
     const myPos = currentEmployeePosition.result.employeePosition
-
+    
     useEffect(() => {
+        if (myPos === null ) {
+            window.location.href = 'http://localhost:3000/auth'
+        }
+
         if (myPos === 'Manager') {
             setPosition('Manager')
             window.location.href = 'http://localhost:3000/orders'
