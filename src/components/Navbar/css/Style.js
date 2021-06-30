@@ -9,6 +9,8 @@ export default makeStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '10px 15px',
+    backgroundColor: 'transparent',
+    
   },
   heading: {
     color: 'rgba(0,183,255, 1)',

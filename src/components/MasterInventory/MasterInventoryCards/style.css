@@ -5,5 +5,5 @@
     align-content: flex-start;
     height: 100%;
     padding: 25px;
-    overflow: auto;
+    overflow-x: auto;
 }

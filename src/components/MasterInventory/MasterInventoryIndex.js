@@ -1,54 +1,122 @@
 import React, { useState } from 'react'
 // import { items } from '../../actions/auth'
+import { Button, Paper, Grid, Typography, Container } from '@material-ui/core'
 import MasterInventoryComp from './MasterInventoryComp'
 import MasterInventoryCard from './MasterInventoryCards/MasterInventoryCard'
-import {  useSelector } from 'react-redux'
+import Input from './MasterInventoryForm/MasterInventoryInput'
+import { useSelector } from 'react-redux'
+import './css/stock-style.css'
 
 const MasterInventoryIndex = () => {
     const inventory = useSelector((state) => state.items)
-   
+
+
+
+
+
+
 
 
     return (
         <MasterInventoryCard>
-            <div>
+            <div className='master-container'>
+                <div className='master-card-container'>
+
+
+                    <div className='master-info-container'>
+                        <div className='master-title'>
+                            Item Name
+                        </div>
+                        <div className='master-info-item'>
+                            Supplier
+                        </div>
+                        <div className='master-info-item'>
+                            Location
+                        </div>
+                        <div className='master-info-item'>
+                            Quantity
+                        </div>
+                        <div className='master-info-item'>
+                            Price
+                        </div>
+                        <div className='master-info-item'>
+                            Re-Order Packaging
+                        </div>
+                        <div className='master-info-item'>
+                            Price
+                        </div>
+                    </div>
+
+                </div>
                 {inventory.map(item => (
 
-                    // EMPLOYEE Portal
-                    // Add photo for if something is broken
-                    // Needs repair option
-                    // State counter (useState)
-                    // Last report
-                    // Submit new report - PDF file with a full report of things in the inventory, what is missing, what was sold, what was added.
-                    // Add in a notification
-                    // Threshold set on managers side check under quantity notifies them if they need to order more.
-                    // Remove the crazy authentication for the inventory.
-
-                    // MANAGER Portal
-                    // Needs to be able to see all employees. 
-                    // Warehouse inventory levels.
-                    // Adding new types of inventory - who it goes to/employees/warehouse. 
-                    // MANAGER Needs to be able to have desktop.
-                    // Pending inventory - What's on the way, what needs ordering.
-                    // Footer difference for Management and Employee 
-                    //  
-
-                    // On each kit, what are the missing, what's the total value. 
-                    // Manager (Isaiah) Email is set at the master email
-                    // ADMIN, MANAGER, EMPLOYEE
-                    // Toggling and the like 
-
-                    // Orders is just checking the stuff and things.
-
                     <MasterInventoryComp
-                        name={item.itemName}
-                        quantity={item.itemQuantity}
-                        price={item.itemPrice}
+
+
+                        itemName={item.itemName}
+                        itemSupplier={item.itemSupplier}
+                        itemLocationInStorage={item.itemLocationInStorage}
+                        itemQuantity={item.itemQuantity}
+                        itemPrice={item.itemPrice}
+                        itemReorderPackaging={item.itemReorderPackaging}
+                        itemCostPerUnit={item.itemCostPerUnit}
+                        itemCostPerSpareKit={item.itemCostPerSpareKit}
+                        itemCostPerKit={item.itemCostPerKit}
+                        itemLocation={item.itemLocation}
+                        maintSpareKit={item.maintSpareKit}
+                        maintItemsReOrder={item.maintItemsReOrder}
+                        maintQuantityReOrder={item.maintQuantityReOrder}
+                        maintPlace={item.maintPlace}
+                        maintBrokenReturn={item.maintBrokenReturn}
+                        maintReturnWindow={item.maintReturnWindow}
+                        maintOnSitePOA={item.maintOnSitePOA}
+                        maintCategory={item.maintCategory}
+                        employeeKit={item.employeeKit}
+
+
+
                     />
 
                 ))}
             </div>
-        </MasterInventoryCard>
+            <div className='master-add-container'>
+                <button type='submit' className='master-add-button'>
+                    Add
+                </button>
+                <form className='master-add-list'>
+                    <div className='master-title-input'>
+                        <Input className='' name='itemName' label='Item Name' />
+                    </div>
+                    <div className='master-form-input'>
+                        <Input className='' name='itemName' label='Item Name' />
+                    </div>
+                    <div className='master-form-input'>
+                        <Input className='' name='itemName' label='Item Name' />
+                    </div>
+                    <div className='master-form-input'>
+                        <Input className='' name='itemName' label='Item Name' />
+                    </div>
+                    <div className='master-form-input'>
+                        <Input className='' name='itemName' label='Item Name' />
+                    </div>
+                    <div className='master-form-input'>
+                        <Input className='' name='itemName' label='Item Name' />
+                    </div>
+                    <div className='master-form-input'>
+                        <Input className='' name='itemName' label='Item Name' />
+                    </div>
+                    <div className='master-form-input'>
+                        <Input className='' name='itemName' label='Item Name' />
+                    </div>
+                    <div className='master-form-input'>
+                        <Input className='' name='itemName' label='Item Name' />
+                    </div>          
+               
+
+                </form>
+
+            </div>
+        </MasterInventoryCard >
     )
 }
 

@@ -98,8 +98,6 @@ const OrdersForm = () => {
                                         <Input className={classes.text} name='itemCostPerSpareKit' label='Cost Per Spare Kit' handleChange={handleChange} />
                                         <Input className={classes.text} name='itemCostPerKit' label='Cost Per Kit' handleChange={handleChange} />
                                         <Input className={classes.text} name='itemLocation' label='Location in Unit' handleChange={handleChange} />
-
-
                                     </Grid>
                                 </div>
                             </form>

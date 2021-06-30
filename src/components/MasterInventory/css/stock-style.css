@@ -1,19 +1,157 @@
 
-.stock-card-container {
-    /* display: grid;
-    height: 100vh;
-     */
 
+.stock-card-header {
+    position: relative;
+    top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: white;
+  
+   
+}
+
+.stock-card-container {
+    position: relative;
+    top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: rgb(130 164 169 / 42%);   
+    max-width: 97.4vw;
+}
+
+.stock-card-container:hover {
+    background-color: rgb(250, 250, 250);  
 }
 
 .stock-title {
-    
-
+    margin: 20px;
+    font-size: 1.2em;
+    width: 300px;
 }
 
 .stock-info-container {
-
+    display: flex; 
+    flex-direction: row;
+    border-top: black solid 1px;
+    border-bottom: black solid 1px;
+    position: relative;
+    
+    
 }
 .stock-info-item {
-
+    padding: 20px;  
+    width: 190px;  
+    display: flex;
+    flex-direction: column;
+    
 } 
+
+
+
+
+.master-edit-button {
+    border-top: black solid 1px;
+    border-bottom: black solid 1px;
+    color: black;
+    background-color: rgb(211, 211, 211);
+    font-size: 1.2em;
+}
+
+.master-edit-button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.master-container {
+    max-width: 97.55vw;    
+}
+
+.master-card-container {
+    position: relative;
+    top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: rgb(130 164 169 / 42%);   
+}
+
+.master-title {
+    margin: 20px;
+    font-size: 1.2em;
+    width: 300px;
+    position: relative;
+    left: 47px;
+}
+
+.master-info-container {
+    display: flex; 
+    flex-direction: row;
+    border-top: black solid 1px;
+    border-bottom: black solid 1px;
+    position: relative;
+    
+    
+}
+.master-info-item {
+    position: relative;
+    left: 47px;
+    padding: 20px;  
+    width: 190px;  
+    display: flex;
+    flex-direction: column;
+} 
+
+.master-add-container {
+    position: relative;
+    top: 100px;    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: rgb(130 164 169 / 42%);   
+    max-width: 97.4vw;
+    
+}
+
+
+
+.master-add-button {
+    width: 50px;
+    border: solid black 1.9px;
+    padding-left: 9.5px;
+    
+}
+
+.master-add-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  
+    
+}
+
+.master-add-container {
+   display: flex;
+   justify-content: space-between;
+}
+
+.master-form-input {
+    margin-left: 2px;
+    margin-right: 2px;
+    width: 190px;
+    padding-top: 7.5px;
+    padding-bottom: 1px;
+    
+}
+
+.master-title-input {
+    margin-left: 15px;
+    margin-right: 140px;
+    width: 180px;
+    padding-top: 7.5px;
+    padding-bottom: 1px;
+    
+}
+
+.master-input {
+    height: 100px;
+}
+
+/* .text-field {
+    height:
+} */
