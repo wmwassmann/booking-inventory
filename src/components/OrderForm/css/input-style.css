@@ -1,0 +1,8 @@
+.form-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.text-box {
+    width: 10px;
+}

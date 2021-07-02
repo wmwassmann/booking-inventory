@@ -5,13 +5,15 @@ import MasterInventoryIndex from '../components/MasterInventory/MasterInventoryI
 
 const masterInventory = () => {
 
-  
 
-  
+
+
 
     return (
         <div className='page-container'>
-            <MasterInventoryIndex />
+           
+                <MasterInventoryIndex />
+            
         </div>
     )
 }

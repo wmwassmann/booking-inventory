@@ -1,15 +1,26 @@
 import React, { useState } from 'react'
-// import { items } from '../../actions/auth'
-import { Button, Paper, Grid, Typography, Container } from '@material-ui/core'
+import { addItem } from '../../actions/auth'
+
+
+
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom'
+
+
+
 import MasterInventoryComp from './MasterInventoryComp'
 import MasterInventoryCard from './MasterInventoryCards/MasterInventoryCard'
-import Input from './MasterInventoryForm/MasterInventoryInput'
-import { useSelector } from 'react-redux'
+
 import './css/stock-style.css'
 
-const MasterInventoryIndex = () => {
-    const inventory = useSelector((state) => state.items)
+import OrdersComponent from '../OrderForm/OrdersComponent';
 
+
+
+
+
+const MasterInventoryIndex = () => {
+    const inventory = useSelector((state) => state.items);
 
 
 
@@ -23,7 +34,6 @@ const MasterInventoryIndex = () => {
                 <div className='master-card-container'>
 
 
-                    <div className='master-info-container'>
                         <div className='master-title'>
                             Item Name
                         </div>
@@ -43,9 +53,33 @@ const MasterInventoryIndex = () => {
                             Re-Order Packaging
                         </div>
                         <div className='master-info-item'>
-                            Price
+                            Cost/Unit
                         </div>
-                    </div>
+                        <div className='master-info-item'>
+                            Cost/Kit
+                        </div>
+                        <div className='master-info-item'>
+                            Location
+                        </div>
+                        <div className='master-info-item'>
+                            Spare Kit
+                        </div>
+                        <div className='master-info-item'>
+                            Re-order
+                        </div>
+                        <div className='master-info-item'>
+                            Broken Return
+                        </div>
+                        <div className='master-info-item'>
+                            Return Window
+                        </div>
+                        <div className='master-info-item'>
+                            Plan of Action
+                        </div>
+                        <div className='master-info-item'>
+                            Category
+                        </div>
+               
 
                 </div>
                 {inventory.map(item => (
@@ -79,42 +113,9 @@ const MasterInventoryIndex = () => {
 
                 ))}
             </div>
-            <div className='master-add-container'>
-                <button type='submit' className='master-add-button'>
-                    Add
-                </button>
-                <form className='master-add-list'>
-                    <div className='master-title-input'>
-                        <Input className='' name='itemName' label='Item Name' />
-                    </div>
-                    <div className='master-form-input'>
-                        <Input className='' name='itemName' label='Item Name' />
-                    </div>
-                    <div className='master-form-input'>
-                        <Input className='' name='itemName' label='Item Name' />
-                    </div>
-                    <div className='master-form-input'>
-                        <Input className='' name='itemName' label='Item Name' />
-                    </div>
-                    <div className='master-form-input'>
-                        <Input className='' name='itemName' label='Item Name' />
-                    </div>
-                    <div className='master-form-input'>
-                        <Input className='' name='itemName' label='Item Name' />
-                    </div>
-                    <div className='master-form-input'>
-                        <Input className='' name='itemName' label='Item Name' />
-                    </div>
-                    <div className='master-form-input'>
-                        <Input className='' name='itemName' label='Item Name' />
-                    </div>
-                    <div className='master-form-input'>
-                        <Input className='' name='itemName' label='Item Name' />
-                    </div>          
-               
 
-                </form>
-
+            <div className='master-card-container'>
+                <OrdersComponent />
             </div>
         </MasterInventoryCard >
     )

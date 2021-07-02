@@ -1,14 +1,14 @@
 import React from 'react'
 import './../css/stock-style.css'
-import { TextField, Grid, InputAdornment, IconButton } from '@material-ui/core';
+import { TextField, Grid } from '@material-ui/core';
 
-const MasterInventoryInput = ({ name, label, type }) => {
-    return (
+const MasterInventoryInput = ({ name, label, type }) => (
+
         <Grid item xs={12}>
 
             <TextField
-                className='text-field'
                 name={name}
+                className='text-field'
                 lable={label}
                 variant="outlined"
                 required
@@ -17,7 +17,7 @@ const MasterInventoryInput = ({ name, label, type }) => {
                 type={type}
             />
         </Grid>
-    )
-}
+    
+);
 
 export default MasterInventoryInput
