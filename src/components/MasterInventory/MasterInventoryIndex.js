@@ -34,7 +34,6 @@ const MasterInventoryIndex = () => {
   
             <div className='master-container'>
                 <MasterBanner />
-
                 {inventory.map(item => (
                     <MasterInventoryComp
                         itemName={item.itemName}

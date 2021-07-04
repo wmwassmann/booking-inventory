@@ -1,14 +1,25 @@
 .paper-container {
     position: relative;
     top: 100px;
+    width: 3000px;
 }
 
 .form-container {
     display: flex;
     flex-direction: row;
+    
+    
 }
 
+.title-box {
+    width: 350%;
+    margin: 5px;
+    margin-right: 90px;
+    margin-top: 7.5px;
+}
 
 .text-box {
-    width: 10px;
+    width: 200%;
+    margin: 5px;
+    margin-top: 7.5px;
 }

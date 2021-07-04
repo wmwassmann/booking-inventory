@@ -66,38 +66,74 @@ const OrdersForm = () => {
 
 
     return (
-        <div className='paper-container'>         
-                <Paper className='' elevation={3}>                               
-                        <div className=''>
-                            <form className='form-container'onSubmit={handleSubmit}>
+        <div className='paper-container'>
+            <Paper className='' elevation={3}>
+                <div className=''>
+                    <form className='form-container' onSubmit={handleSubmit}>
 
-                                {/* <Grid container spacing={1}> */}
-                                    <button type='submit' fullWidth varient='contained' color='primary' className=''>
-                                        Add
-                                    </button>
-                                    <Input className='text-box' name='itemSupplier' label='Supplier' handleChange={handleChange} />
-                                    <Input className='' name='itemLocationInStorage' label='Location in Storage Unit' handleChange={handleChange} />
-                                    <Input className='' name='itemName' label='Product Name' handleChange={handleChange} />
-                                    <Input className='' name='itemQuantity' label='Quantity' handleChange={handleChange} type='Quantity' />
-                                    <Input className='' name='itemPrice' label='Price' handleChange={handleChange} type='Price' />
-                                    <Input className='' name='itemReorderPackaging' label='Re-Order Packaging Type' handleChange={handleChange} />
-                                    <Input className='' name='itemCostPerUnit' label='Cost Per Unit' handleChange={handleChange} />
-                                    <Input className='' name='itemCostPerSpareKit' label='Cost Per Spare Kit' handleChange={handleChange} />
-                                    <Input className='' name='itemCostPerKit' label='Cost Per Kit' handleChange={handleChange} />
-                                    <Input className='' name='itemLocation' label='Location in Unit' handleChange={handleChange} />
-                                    <Input className='' name='maintSpareKit' label='Spare Kit' handleChange={handleChange} />
-                                    <Input className='' name='maintItemsReOrder' label='Re-order' handleChange={handleChange} />
-                                    <Input className='' name='maintQuantityReOrder' label='Quantity to Re-Order' handleChange={handleChange} />
-                                    <Input className='' name='maintPlaced' label='Re-order Placed' handleChange={handleChange} />
-                                    <Input className='' name='maintBrokenReturn' label='Broken Or Out for Return' handleChange={handleChange} />
-                                    <Input className='' name='maintReturnWindow' label='Return or Repair Policy' handleChange={handleChange} />
-                                    <Input className='' name='maintOnSitePOA' label='On-site Plan of Action' handleChange={handleChange} />
-                                    <Input className='' name='maintCategory' label='New Purchase Category' handleChange={handleChange} />
-                                {/* </Grid> */}
+                        {/* <Grid container spacing={1}> */}
+                        <button type='submit' fullWidth varient='contained' color='primary' className=''>
+                            Add
+                        </button>
+                        <div className='title-box'>
+                            <Input className='' name='itemName' label='Product Name' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='itemSupplier' label='Supplier' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='itemLocationInStorage' label='Location in Storage Unit' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='itemQuantity' label='Quantity' handleChange={handleChange} type='Quantity' />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='itemPrice' label='Price' handleChange={handleChange} type='Price' />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='itemReorderPackaging' label='Re-Order Packaging Type' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='itemCostPerUnit' label='Cost Per Unit' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='itemCostPerSpareKit' label='Cost Per Spare Kit' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='itemCostPerKit' label='Cost Per Kit' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='itemLocation' label='Location in Unit' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='maintSpareKit' label='Spare Kit' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='maintItemsReOrder' label='Re-order' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='maintQuantityReOrder' label='Quantity to Re-Order' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='maintPlaced' label='Re-order Placed' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='maintBrokenReturn' label='Broken Or Out for Return' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='maintReturnWindow' label='Return or Repair Policy' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='maintOnSitePOA' label='On-site Plan of Action' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input className='' name='maintCategory' label='New Purchase Category' handleChange={handleChange} />
+                        </div>
+                        {/* </Grid> */}
 
-                            </form>
-                        </div>         
-                </Paper>           
+                    </form>
+                </div>
+            </Paper>
         </div >
     )
 }
