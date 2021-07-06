@@ -25,7 +25,7 @@
 
 .stock-title {
     margin: 20px;
-    font-size: 1.2em;
+    font-size: 0.9em;
     width: 300px;
 }
 
@@ -39,10 +39,11 @@
     
 }
 .stock-info-item {
-    padding: 20px;  
+    padding: 10px;  
     width: 190px;  
     display: flex;
     flex-direction: column;
+    font-size: 0.9em;
     
 } 
 
@@ -76,39 +77,38 @@
 }
 
 .master-card-container {
+    display: flex;
+    justify-content: space-around;  
     position: relative;
-    top: 100px;
-    width: 97vw;
-    max-width: 97vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: rgb(130 164 169 / 42%);   
-    display: flex; 
-    flex-direction: row;
+    top: 100px;       
+    background-color: rgb(130 164 169 / 42%);  
+    width: 3000px;
     border-top: black solid 1px;
     border-bottom: black solid 1px;
-    position: relative;
+
 }
 
 .master-title {
-    margin: 20px;
-    font-size: 1.2em;
+    margin: 10px;
+    font-size: 1.0em;
     width: 300px;
     position: relative;
-    margin-right: 290px;  
-    left: 47px;
+    right: 25px;    
+     
+   
 }
 
 
-.master-banner-item {
+.master-banner-item {    
     position: relative;
-    left: 47px;
-    padding-top: 20px;    
-    padding-right: 130px;
-    width: 290px;  
-    display: flex;
-    flex-direction: column;
+    right: 60px;
+    padding-left: 10px;
+    font-size: 1em;      
+    background-color: red; 
+  
 } 
+
+
 
 .order-form {
    position: relative;

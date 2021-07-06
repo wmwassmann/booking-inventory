@@ -9,10 +9,9 @@ const OrdersInput = ({ name, handleChange, label, autoFocus, type, handleShowPas
  
     <TextField
       name={name}
-      onChange={handleChange}
-      variant="outlined"
-      required
-      fullWidth
+      onChange={handleChange}    
+      className='text-box' 
+           
       label={label}
       autoFocus={autoFocus}
       type={type}
