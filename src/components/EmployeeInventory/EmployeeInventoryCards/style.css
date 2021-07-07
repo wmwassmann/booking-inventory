@@ -1,3 +1,7 @@
+.master-card-wrapper {
+    padding: 25px;
+}
+
 .card-wrapper {
     display: flex;
     flex-flow: row wrap;

@@ -3,25 +3,14 @@
 .stock-card-header {
     position: relative;
     top: 100px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;  
     background-color: white;
   
    
 }
 
-.stock-card-container {
-    position: relative;
-    top: 100px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: rgb(130 164 169 / 42%);   
 
-}
 
-.stock-card-container:hover {
-    background-color: rgb(250, 250, 250);  
-}
 
 .stock-title {
     margin: 20px;
@@ -29,15 +18,23 @@
     width: 300px;
 }
 
+
 .stock-info-container {
-    display: flex; 
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(15, 200px [row-start]);
+    margin-right: 100px;    
+    background-color: rgb(130 164 169 / 42%);  
+    width: 3000px;
     border-top: black solid 1px;
     border-bottom: black solid 1px;
-    position: relative;
     
     
 }
+
+.stock-info-container:hover {
+    background-color: rgb(250, 250, 250);  
+}
+
 .stock-info-item {
     padding: 10px;  
     width: 190px;  
@@ -51,11 +48,15 @@
 
 
 .master-edit-button {
+    position: relative;
+    left: 20px;
     border-top: black solid 1px;
     border-bottom: black solid 1px;
     color: black;
     background-color: rgb(211, 211, 211);
     font-size: 1.2em;
+    width: 100px;
+    margin-top: 10px;
 }
 
 .master-edit-button:hover {
@@ -69,18 +70,19 @@
 
 
 .master-container {   
-    position: relative;
-    height: 80vh; 
+
+    height: 75vh; 
     width: 97vw;     
     overflow-x: auto;
+    margin-bottom: 10px;
+   
     
 }
 
 .master-card-container {
-    display: flex;
-    justify-content: space-around;  
-    position: relative;
-    top: 100px;       
+    display: grid;
+    grid-template-columns: repeat(15, 200px [row-start]);       
+    padding-left: 205px;       
     background-color: rgb(130 164 169 / 42%);  
     width: 3000px;
     border-top: black solid 1px;
@@ -88,32 +90,11 @@
 
 }
 
-.master-title {
-    margin: 10px;
-    font-size: 1.0em;
-    width: 300px;
-    position: relative;
-    right: 25px;    
-     
-   
-}
-
-
-.master-banner-item {    
-    position: relative;
-    right: 60px;
-    padding-left: 10px;
-    font-size: 1em;      
-    background-color: red; 
-  
-} 
 
 
 
-.order-form {
-   position: relative;
-   top: 150px;
-}
+
+
 
 
 

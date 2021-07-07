@@ -67,15 +67,15 @@ const OrdersForm = () => {
 
     return (
         <div className='paper-container'>
-            <Paper className='' elevation={3}>
-                <div className=''>
+            
+         
                     <form className='form-container' onSubmit={handleSubmit}>
 
                         {/* <Grid container spacing={1}> */}
                         <button className='add-button' type='submit'>
                             Add
                         </button>
-                        <div className='title-box'>
+                        <div className='text-box'>
                             <Input name='itemName' label='Product Name' handleChange={handleChange} />
                         </div>
                         <div className='text-box'>
@@ -120,20 +120,13 @@ const OrdersForm = () => {
                         <div className='text-box'>
                             <Input  name='maintBrokenReturn' label='Broken Or Out for Return' handleChange={handleChange} />
                         </div>
-                        <div className='text-box'>
-                            <Input  name='maintReturnWindow' label='Return or Repair Policy' handleChange={handleChange} />
-                        </div>
-                        <div className='text-box'>
-                            <Input  name='maintOnSitePOA' label='On-site Plan of Action' handleChange={handleChange} />
-                        </div>
-                        <div className='text-box'>
-                            <Input  name='maintCategory' label='New Purchase Category' handleChange={handleChange} />
-                        </div>
+                    
+                     
                         {/* </Grid> */}
 
                     </form>
-                </div>
-            </Paper>
+               
+           
         </div >
     )
 }

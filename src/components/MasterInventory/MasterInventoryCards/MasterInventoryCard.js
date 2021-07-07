@@ -2,12 +2,12 @@ import React from 'react';
 import './style.css';
 
 
-function InventoryCard({ children }) {
+function MasterInventoryCard({ children }) {
     return (
-        <div className='card-wrapper'>
+        <div className='master-card-wrapper'>
             {children}               
         </div>
     )
 }
 
-export default InventoryCard;
+export default MasterInventoryCard;

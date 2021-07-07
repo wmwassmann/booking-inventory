@@ -6,7 +6,8 @@ import './css/stock-style.css'
 const MasterBanner = () => {
     return (
         <div className='master-card-container'>
-            <div className='master-title'>
+
+            <div className='master-banner-item'>
                 Item Name
             </div>
             <div className='master-banner-item'>
@@ -22,7 +23,7 @@ const MasterBanner = () => {
                 Price
             </div>
             <div className='master-banner-item'>
-                Re-Order Packaging
+                Quant/re-order
             </div>
             <div className='master-banner-item'>
                 Cost/Unit
@@ -53,6 +54,7 @@ const MasterBanner = () => {
             </div>
 
         </div>
+
     )
 }
 

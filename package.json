@@ -31,6 +31,7 @@
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
     "shell": "^0.8.4",
+    "simplebar": "^5.3.4",
     "web-vitals": "^1.1.2",
     "webkit": "0.0.0"
   },
