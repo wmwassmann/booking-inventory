@@ -24,7 +24,7 @@
     grid-template-columns: repeat(15, 200px [row-start]);
     margin-right: 100px;    
     background-color: rgb(130 164 169 / 42%);  
-    width: 3000px;
+    width: 183.6vw;
     border-top: black solid 1px;
     border-bottom: black solid 1px;
     
@@ -70,7 +70,6 @@
 
 
 .master-container {   
-
     height: 75vh; 
     width: 97vw;     
     overflow-x: auto;
@@ -79,12 +78,13 @@
     
 }
 
+
 .master-card-container {
     display: grid;
     grid-template-columns: repeat(15, 200px [row-start]);       
     padding-left: 205px;       
     background-color: rgb(130 164 169 / 42%);  
-    width: 3000px;
+    width: 183.6vw;
     border-top: black solid 1px;
     border-bottom: black solid 1px;
 

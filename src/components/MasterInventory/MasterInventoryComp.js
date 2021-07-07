@@ -88,6 +88,7 @@ const MasterInventoryComp = ({
                 <div className='stock-info-item'>
                     {maintCategory}
                 </div>
+                
             </div>
         
 
