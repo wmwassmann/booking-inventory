@@ -4,9 +4,11 @@
     position: relative;
     top: 50px;
     max-width: 370px;
-    width: 370px;
+    width: 350px;
     max-height: 140px;
-    margin: 20px;
+    margin: 15px 24px 15px;
+
+    
     
     padding: 50px;
     background-color: rgb(255, 255, 255);
@@ -24,6 +26,9 @@
     flex-direction: row;    */
 }
 
+.map-container {
+    padding-top: 120px;
+}
 
 .stock-card-container:focus {
     border-color: rgb(131, 131, 131);
@@ -33,7 +38,7 @@
 .employee-stock-title {
     background-color: rgb(194, 194, 194);
     padding-left: 40px;
-    width: 366px;
+    width: 346px;
     position: relative;
     right: 50px;
     bottom: 30px;

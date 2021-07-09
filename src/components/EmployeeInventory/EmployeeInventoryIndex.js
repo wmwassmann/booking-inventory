@@ -12,19 +12,20 @@ const EmployeeInventoryIndex = () => {
 
     return (
         <EmployeeInventoryCard>
-            <div>
+            <div className='map-container'>
                 {inventory.map(item => (                
-
+                    
                     <EmployeeInventoryComp
-                        name={item.itemName}
-                        quantity={item.itemQuantity}
-                        price={item.itemPrice}
+                    name={item.itemName}
+                    quantity={item.itemQuantity}
+                    price={item.itemPrice}
+               
 
                         reorder={item.maintItemsReOrder}
                         reorderQuant={item.maintQuantityReOrder}
                     />
 
-                ))}
+                    ))}
             </div>
         </EmployeeInventoryCard>
     )
