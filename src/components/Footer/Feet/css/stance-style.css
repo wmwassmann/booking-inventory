@@ -25,10 +25,9 @@
     display: flex;
     justify-content: center;    
     position: relative;
-    bottom: 110px;
+    bottom: 95px;
    
-    background-color: transparent;
-    
+    background-color: transparent;    
     padding-bottom: 10px;
 }
 
@@ -40,7 +39,8 @@
     border-radius: 50%;
     height: 64px;
     width: 64px;
-    margin: 20px; 
+    margin: 20px;
+   
     font-size: 0.7em;
     background-color: antiquewhite;   
     

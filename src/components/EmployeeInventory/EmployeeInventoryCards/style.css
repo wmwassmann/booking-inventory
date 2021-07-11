@@ -7,8 +7,10 @@
     flex-flow: row wrap;
     justify-content: space-around;
     align-content: flex-start;
-    height: 100%;     
+    position: relative;
+    top: 124px;
+    height: 77vh;     
     overflow: auto;
-    margin-bottom: 200px;
+    margin-bottom: 268px;
   
 }

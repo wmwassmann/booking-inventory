@@ -1,11 +1,10 @@
 
 .employee-stock-card-container {
     /* General styling */
-    position: relative;
-    top: 50px;
+    
     max-width: 370px;
     width: 350px;
-    max-height: 140px;
+    max-height: 160px;
     margin: 15px 24px 15px;
 
     
@@ -26,9 +25,6 @@
     flex-direction: row;    */
 }
 
-.map-container {
-    padding-top: 120px;
-}
 
 .stock-card-container:focus {
     border-color: rgb(131, 131, 131);
