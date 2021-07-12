@@ -91,7 +91,7 @@ const OrdersForm = () => {
                             <Input name='itemPrice' label='Price' handleChange={handleChange} type='Price' />
                         </div>
                         <div className='text-box'>
-                            <Input name='itemReorderPackaging' label='Re-Order Packaging Type' handleChange={handleChange} />
+                            <Input name='itemReorderPackaging' label='Re-Order Packaging' handleChange={handleChange} />
                         </div>
                         <div className='text-box'>
                             <Input name='itemCostPerUnit' label='Cost Per Unit' handleChange={handleChange} />
@@ -118,7 +118,7 @@ const OrdersForm = () => {
                             <Input  name='maintPlaced' label='Re-order Placed' handleChange={handleChange} />
                         </div>
                         <div className='text-box'>
-                            <Input  name='maintBrokenReturn' label='Broken Or Out for Return' handleChange={handleChange} />
+                            <Input  name='maintBrokenReturn' label='Durability Status' handleChange={handleChange} />
                         </div>
                     
                      

@@ -1,41 +1,42 @@
 
 
 .charactersheet-btn-container {      
-   max-width: 414px;
-   min-height: 100vh;
+
+   
    z-index: 10001;
    position: static;
    left: 0;
    right: 0;
    bottom: 0;
    
+   
+   
 }
 
 
 .stance-container {
    background-color: rgb(56, 56, 56);   
-   height: 5px;
-   width: 100vw;
-   
+       -webkit-box-shadow: 10px 0px 20px 2px rgb(196, 196, 196);
+    -moz-box-shadow: 10px 0px 20px 2px rgba(116, 116, 116, 0.15);
+         box-shadow: 13px 0px 20px 2px rgba(0, 0, 0, 0.575);
+   width: 100vw;   
 }
-
 
 
 .stance-btn-container {
     display: flex;
-    justify-content: center;    
-    position: relative;
-    bottom: 95px;
+    justify-content: center;  
+    /* position: relative;
+    top: 12px;   */
+      
+    
    
-    background-color: transparent;    
-    padding-bottom: 10px;
 }
 
 .stance-btn {  
     display: flex;
     justify-content: space-around;
     align-items:  center;
-   
     border-radius: 50%;
     height: 64px;
     width: 64px;

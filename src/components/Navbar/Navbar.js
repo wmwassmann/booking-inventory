@@ -33,7 +33,7 @@ const Navbar = () => {
         <div className='nav-wrapper'>
           
             
-            <AppBar className={classes.appBar} position="static" color="inherit">
+            <AppBar className={classes.appBar} position="static">
             <NavLink to='/' exact>Back</NavLink>     
                 <div className={classes.brandContainer}>
                     <Typography component={Link} to="/" className={classes.heading} variant="h2" align="center"></Typography>

@@ -12,7 +12,7 @@ const OrdersInput = ({ name, handleChange, label, autoFocus, type, handleShowPas
     onChange={handleChange}
     className='text-box'
     variant="outlined"
-    // label={label}
+    label={label}
     // autoFocus={autoFocus}
     type={type}
     
