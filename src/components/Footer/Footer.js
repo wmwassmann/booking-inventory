@@ -18,9 +18,9 @@ export class Footer extends React.Component {
         // Regardless of "how" we pull the information from the database, I think this is a decent start at cycling through the different Stances. 
 
         // I also envision a toggle button that reads "Start Turn" and later "End Turn" on Start Turn, "Offensive" is automatically pulled up
-        // End Turn pulls "Ordersensive Up"
-        // We may even take it a step further and have there be a "Start Combat" button, which enables Offensive, and Ordersensive stances. 
-        // When Start Combat being enabled, the Ordersault Stance is Role Play, with Accountsity as a secondary stance. It could help streamline things even more.
+        // End Turn pulls "Kitensive Up"
+        // We may even take it a step further and have there be a "Start Combat" button, which enables Offensive, and Kitensive stances. 
+        // When Start Combat being enabled, the Kitault Stance is Role Play, with Accountsity as a secondary stance. It could help streamline things even more.
 
         this.state= {
             stances: [
@@ -31,9 +31,9 @@ export class Footer extends React.Component {
                     playerKey: ''
                 },
                 {
-                    stance: 'Orders',
-                    tag: 'Ordersense',
-                    display: 'Orders',
+                    stance: 'Kit',
+                    tag: 'Kit',
+                    display: 'Kit',
                     playerKey: ''
                 },
                 {

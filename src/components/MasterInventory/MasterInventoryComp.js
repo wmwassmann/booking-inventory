@@ -9,6 +9,7 @@ const MasterInventoryComp = ({
     itemName,
     itemSupplier,
     itemLocationInStorage,
+    employeeId,
     itemQuantity,
     itemPrice,
     itemReorderPackaging,
@@ -45,6 +46,9 @@ const MasterInventoryComp = ({
                 </div>
                 <div className='stock-info-item'>
                     {itemLocationInStorage}
+                </div>
+                <div className='stock-info-item'>
+                    {employeeId}
                 </div>
                 <div className='stock-info-item'>
                     {itemQuantity}

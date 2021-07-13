@@ -17,6 +17,9 @@ const MasterBanner = () => {
                 Location
             </div>
             <div className='master-banner-item'>
+                Employee Id
+            </div>
+            <div className='master-banner-item'>
                 Quantity
             </div>
             <div className='master-banner-item'>

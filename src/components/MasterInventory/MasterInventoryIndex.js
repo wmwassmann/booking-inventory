@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import { addItem } from '../../actions/auth'
+import React from 'react'
 
 
 
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom'
+
+import {  useSelector } from 'react-redux';
+
 
 
 
@@ -40,6 +40,7 @@ const MasterInventoryIndex = () => {
                         itemSupplier={item.itemSupplier}
                         itemLocationInStorage={item.itemLocationInStorage}
                         itemQuantity={item.itemQuantity}
+                        employeeId={item.employeeId}
                         itemPrice={item.itemPrice}
                         itemReorderPackaging={item.itemReorderPackaging}
                         itemCostPerUnit={item.itemCostPerUnit}
@@ -54,7 +55,7 @@ const MasterInventoryIndex = () => {
                         maintReturnWindow={item.maintReturnWindow}
                         maintOnSitePOA={item.maintOnSitePOA}
                         maintCategory={item.maintCategory}
-                        employeeKit={item.employeeKit}
+                        employeeId={item.employeeId}
 
 
 

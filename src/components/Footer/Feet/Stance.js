@@ -17,7 +17,7 @@ export default class Stance extends Component {
         this.state = {
             anyStance: false,
             isToggleOnInventory: false,
-            isToggleOnOrders: false,
+            isToggleOnKit: false,
             isToggleOnAccount: false,
             isToggleOnContacts: false,
         }
@@ -40,9 +40,9 @@ export default class Stance extends Component {
 
         } 
 
-        if (currentStance === 'Orders') {
-            console.log('Orders')        
-            window.location.href ='http://localhost:3000/orders'
+        if (currentStance === 'Kit') {
+            console.log('Kit')        
+            window.location.href ='http://localhost:3000/kit'
         }
 
         if (currentStance === 'Accounts') {

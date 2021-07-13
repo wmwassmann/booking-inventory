@@ -8,6 +8,7 @@ const stockSchema = mongoose.Schema({
     itemSupplier: { type: String, required: false },
     itemLocationInStorage: { type: String, required: false },
     itemQuantity: { type: Number, required: false },
+    employeeId: { type: String, required: false },
     itemPrice: { type: Number, required: false },
     itemReorderPackaging: { type: String, required: false },
     itemCostPerUnit: { type: Number, required: false },
@@ -24,7 +25,6 @@ const stockSchema = mongoose.Schema({
     maintOnSitePOA: { type: String, required: false },
     maintCategory: { type: String, required: false },
 
-    employeeKit: { type: String, required: false },
 
 
 

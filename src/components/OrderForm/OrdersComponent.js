@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Paper, Grid, Typography, Container } from '@material-ui/core'
+
 
 import './css/input-style.css';
 import Input from './OrdersInput';
@@ -71,7 +71,7 @@ const OrdersForm = () => {
          
                     <form className='form-container' onSubmit={handleSubmit}>
 
-                        {/* <Grid container spacing={1}> */}
+                     
                         <button className='add-button' type='submit'>
                             Add
                         </button>
@@ -83,6 +83,9 @@ const OrdersForm = () => {
                         </div>
                         <div className='text-box'>
                             <Input name='itemLocationInStorage' label='Location in Storage Unit' handleChange={handleChange} />
+                        </div>
+                        <div className='text-box'>
+                            <Input name='employeeId' label='Employee Id' handleChange={handleChange} />
                         </div>
                         <div className='text-box'>
                             <Input name='itemQuantity' label='Quantity' handleChange={handleChange} type='Quantity' />
@@ -117,12 +120,11 @@ const OrdersForm = () => {
                         <div className='text-box'>
                             <Input  name='maintPlaced' label='Re-order Placed' handleChange={handleChange} />
                         </div>
-                        <div className='text-box'>
+                        {/* <div className='text-box'>
                             <Input  name='maintBrokenReturn' label='Durability Status' handleChange={handleChange} />
-                        </div>
+                        </div> */}
                     
                      
-                        {/* </Grid> */}
 
                     </form>
                

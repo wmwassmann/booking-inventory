@@ -2,25 +2,18 @@
 import React, { useState } from 'react'
 import './css/stock-style.css'
 import Modal from '../Modals/EmployeeStockModal'
-// import {  useSelector } from 'react-redux'
 
-// import { stock } from '../../actions/auth';
 
 
 const InventoryComp = ({ name, quantity, price, reorder, reorderQuant }) => {
     const [isOpen, setIsOpen] = useState(false)
 
 
-
-
     return (
         <div>
-
             <button className='employee-stock-card-container' onClick={() => setIsOpen(true)}>
-
-
                 <div className='employee-stock-title'>
-                    {name}
+                    {name}                  
                 </div>
 
                 <div className='employee-stock-info-container'>
