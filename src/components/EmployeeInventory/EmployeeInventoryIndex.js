@@ -7,20 +7,24 @@ import './css/stock-style.css'
 
 const EmployeeInventoryIndex = () => {
     const inventory = useSelector(state => state.items)
-    let currentId = '1234567'
+    const currentEmployee = JSON.parse(localStorage.getItem('currentEmployee'))
+    let currentId = JSON.stringify(currentEmployee.result.employeeId)
+
+    // let currentId = '1234567'
+  
     let checkId = inventory.filter(function(item) {
-        return currentId.indexOf(item.currentId) === '1234567';
+        return currentId.indexOf(item.employeeId) > -1 ;
     })
 
-    // forEach(inventory) {
-    //     if (items)
-    // }
-
-    console.log(checkId)
+    checkId = { inventory : checkId }
+  
+    console.log(checkId.inventory)
+ 
+  
     return (
         <EmployeeInventoryCard>
             <div className='map-container'>
-                {inventory.map((item) => (
+                {checkId.inventory.map((item) => (
 
 
                     <EmployeeInventoryComp
