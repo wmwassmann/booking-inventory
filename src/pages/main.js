@@ -20,11 +20,10 @@ const Main = () => {
         } 
 
         if (myPos === 'Employee') {
-            window.location.href = 'http://localhost:3000/employeeInventory'
+            window.location.href = 'http://localhost:3000/kit'
         }
         console.log(position)
-    })
-
+    },[myPos, position])
  
 
     return (

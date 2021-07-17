@@ -32,13 +32,13 @@ export class Footer extends React.Component {
                 },
                 {
                     stance: 'Kit',
-                    tag: 'Kit',
+                    tag: 'kit',
                     display: 'Kit',
                     playerKey: ''
                 },
                 {
                     stance: 'Accounts',
-                    tag: 'Accountsity',
+                    tag: 'accounts',
                     display: 'Accounts',
                     playerKey: ''
                 },

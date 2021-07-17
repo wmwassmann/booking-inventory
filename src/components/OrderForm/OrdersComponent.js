@@ -22,8 +22,7 @@ const initialState = {
 
 const OrdersForm = () => {
 
-    const [showPassword, setShowPassword] = useState(false);
-    const [isSignup, setIsSignup] = useState(false);
+
     // const [position, setPosition] = useState();
     const [form, setForm] = useState(initialState);
 
@@ -36,9 +35,6 @@ const OrdersForm = () => {
 
     // selectPosition = currentPosition?.employee.result[1].email
 
-    const handleShowPassword = () => {
-        setShowPassword((prevShowPassword) => !prevShowPassword)
-    }
 
 
     // Signup and signin toggle
@@ -58,11 +54,6 @@ const OrdersForm = () => {
 
 
 
-    const switchMode = () => {
-        setForm(initialState);
-        setIsSignup((prevIsSignup) => !prevIsSignup);
-        setShowPassword(false)
-    }
 
 
     return (

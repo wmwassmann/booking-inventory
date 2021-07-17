@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Button, Paper, Grid, Typography, Container } from '@material-ui/core'
 import useStyles from './Style';
 import './css/auth-style.css';
 import Input from './Input';
 import Icon from './Icon';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { AUTH } from '../../constants/actionTypes';
 import { signup, signin } from '../../actions/auth'
 
 
 
 import { GoogleLogin } from 'react-google-login'
-import { useHistory, useLocation } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 
 const initialState = {
@@ -57,11 +57,11 @@ const Signup = () => {
         if (isSignup) {
             dispatch(signup(form, history))
             console.log(localStorage.getItem('currentEmployee'))
-            history.push('/employeeInventory')
+            history.push('/kit')
         } else {
             dispatch(signin(form, history))
             console.log(localStorage.getItem('currentEmployee'))
-            history.push('/employeeInventory')
+            history.push('/kit')
 
         }
 

@@ -55,7 +55,7 @@ const MasterInventoryIndex = () => {
                         maintReturnWindow={item.maintReturnWindow}
                         maintOnSitePOA={item.maintOnSitePOA}
                         maintCategory={item.maintCategory}
-                        employeeId={item.employeeId}
+                        
 
 
 

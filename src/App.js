@@ -1,6 +1,6 @@
 
 // React Junk
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Navbar from './components/Navbar/Navbar';
@@ -15,7 +15,7 @@ import MainMenu from './pages/main';
 import MasterInventory from './pages/masterInventory';
 import EmployeeInventory from './pages/employeeInventory';
 import Accounts from './pages/accounts';
-import Kit from './pages/employeeInventory';
+
 import Contacts from './pages/contacts';
 
 // Styles
@@ -46,8 +46,8 @@ const App = () => {
           <Route exact path='/' component={MainMenu} />
           <Route exact path='/auth' component={Auth} />
           <Route exact path='/inventory' component={MasterInventory} />
-          <Route exact path='/employeeInventory' component={EmployeeInventory} />
-          <Route exact path='/kit' component={Kit}/>        
+          <Route exact path='/kit' component={EmployeeInventory} />
+         
           <Route exact path='/accounts' component={Accounts} />
           <Route exact path='/Contacts' component={Contacts} />
         </Switch>
