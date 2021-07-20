@@ -4,6 +4,26 @@ import jwt from "jsonwebtoken";
 
 import Employees from "../models/employeeModel.js";
 
+
+export const displayEmployee = async (req, res) => {
+    const { employeeUsername } = req.body;
+
+    try {
+        const existingEmployee = await Stock.findOne({ employeeUsername });
+
+        if (!existingEmployee) return res.status(404).json( { message: 'Stock doesn\'t exist' })
+
+
+        const token = jwt.sign({ employeeUsername: existingEmployee.employeeUsername }, 'test', { expiresIn: '1h'});
+
+        res.status(200).json( { result: existingEmployee, token }) 
+
+    } catch (error) {
+        res.status(500).json({ message: 'Something went wrong' }) 
+        console.log(error);
+    }
+}
+
 export const signin = async (req, res) => {
     const { employeeId, password } = req.body;
 

@@ -7,7 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer'
 
 // Redux actions
-import { items } from './actions/auth';
+import { items, employee } from './actions/auth';
 
 // Routes
 import Auth from './components/Auth/Auth';
@@ -33,6 +33,7 @@ const App = () => {
   useEffect(() => {
 
     dispatch(items())
+    dispatch(employee())
 
   }, [dispatch])
 

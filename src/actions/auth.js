@@ -1,4 +1,4 @@
-import { AUTH, FETCH_STOCK, ADD_STOCK }  from '../constants/actionTypes'
+import { AUTH, FETCH_STOCK, FETCH_EMPLOYEE, ADD_STOCK }  from '../constants/actionTypes'
 import * as api from '../api/Axios.js'
 
 export const signin = (formData, router) => async (dispatch) => {
@@ -29,6 +29,20 @@ export const signup = (formData, router) => async (dispatch) => {
         console.log(error, 'Authentication signup access failure - Debug by inspecting /api/Axios.js, or exported const signup /components/Auth/Auth.j')
     }
 }
+
+export const employee = () => async (dispatch) => {
+    try {
+    
+
+      const { data } = await api.getEmployee();
+  
+      dispatch({ type: FETCH_EMPLOYEE, payload: data });
+   
+      console.log('/actions/auth.js const employee success')
+    } catch (error) {
+      console.log(error, "/actions/auth.js const employee failure");
+    }
+  };
 
 export const items = () => async (dispatch) => {
     try {

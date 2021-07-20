@@ -8,10 +8,15 @@
     width: 400px;
     height: 535px;
     padding: 10px;    
-    z-index: 1000;    
-  
-    
+    z-index: 1000;       
     background-size: contain;
+    border-radius: 5px;
+    border-style: solid; 
+    border-color: black;
+    
+    -webkit-box-shadow: 0px 4px 20px 0px rgb(255, 255, 255);
+    -moz-box-shadow: 0px 4px 20px 0px rgba(255, 255, 255, 0.15);
+         box-shadow: 0px 4px 20px 0px rgba(182, 182, 182, 0.575);
 }
 
 .employee-modal-overlay {
@@ -28,4 +33,17 @@
 
 .display-text {
     padding: 10px;    
+}
+
+.employee-close-button {
+    margin: 5px;
+    margin-bottom: 11px;
+    background-color: rgb(192, 192, 192);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+}
+
+.employee-close-button:hover {
+    background-color: rgb(110, 110, 110);
 }
