@@ -11,7 +11,7 @@ router.route('/').get((req, res) => {
     .then(employees => res.json(employees))
     .catch(err => res.status(400).json('Error: ' + err));
 });
-router.get('/employee', displayEmployee)
+router.get('/employees', displayEmployee)
 router.post('/signin', signin)
 router.post('/signup', signup)
 

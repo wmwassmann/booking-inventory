@@ -1,0 +1,15 @@
+.master-card-wrapper {
+    padding: 25px;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    position: relative;
+    top: 120px;
+    height: 75.6vh;     
+    overflow: auto;
+    margin-bottom: 268px;  
+}

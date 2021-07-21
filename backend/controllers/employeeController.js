@@ -6,15 +6,15 @@ import Employees from "../models/employeeModel.js";
 
 
 export const displayEmployee = async (req, res) => {
-    const { employeeUsername } = req.body;
+    const { employeeId } = req.body;
 
     try {
-        const existingEmployee = await Stock.findOne({ employeeUsername });
+        const existingEmployee = await Employees.findOne({ employeeId });
 
         if (!existingEmployee) return res.status(404).json( { message: 'Stock doesn\'t exist' })
 
 
-        const token = jwt.sign({ employeeUsername: existingEmployee.employeeUsername }, 'test', { expiresIn: '1h'});
+        const token = jwt.sign({ employeeId: existingEmployee.employeeId }, 'test', { expiresIn: '1h'});
 
         res.status(200).json( { result: existingEmployee, token }) 
 

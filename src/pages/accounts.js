@@ -1,5 +1,5 @@
 import React from 'react'
-import AccountsComponent from '../components/Accounts/AccountsComponent'
+import AccountsComponent from '../components/Accounts/AccountsIndex'
 
 const accounts = () => {
     return (

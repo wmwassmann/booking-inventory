@@ -15,7 +15,7 @@ API.interceptors.request.use((req) => {
 
 
 export const getStock = () => API.get('/inventory/stock');
-export const getEmployee = () => API.get('/inventory/employee');
+export const getEmployee = () => API.get('/employee');
 
 export const addItem = (formData) => API.post('/inventory/stock/add', formData);
 
