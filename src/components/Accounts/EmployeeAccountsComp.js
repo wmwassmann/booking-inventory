@@ -11,13 +11,13 @@ const AccountsComp = ({ username, employeePosition, email, employeeId }) => {
 
     return (
         <div>
-            <button className='employee-employee-card-container' onClick={() => setIsOpen(true)}>
-                <div className='employee-employee-title'>
+            <button className='employee-stock-card-container' onClick={() => setIsOpen(true)}>
+                <div className='employee-stock-title'>
                     Username: {username}                  
                 </div>
 
-                <div className='employee-employee-info-container'>            
-                    <div className='employee-employee-info-item'>
+                <div className='employee-stock-info-container'>            
+                    <div className='employee-stock-info-item'>
                         Employee ID#: {employeeId}
                     </div>
                 </div>
@@ -27,21 +27,21 @@ const AccountsComp = ({ username, employeePosition, email, employeeId }) => {
             <Modal open={isOpen}
                 onClose={() => setIsOpen(false)}>
 
-                <div className='employee-modal-title'>
+                <div className='stock-modal-title'>
                 Username: {username}
                 </div>
 
-                <div className='employee-modal-container'>
-                    <div className='employee-left'>
-                        <div className='employee-modal-item'>
+                <div className='stock-modal-container'>
+                    <div className='stock-left'>
+                        <div className='stock-modal-item'>
                         Position: {employeePosition}
                         </div>
-                        <div className='employee-modal-item'>
+                        <div className='stock-modal-item'>
                         Email: {email}
                         </div>
                     </div>
-                    <div className='employee-right'>
-                        <div className='employee-modal-item'>
+                    <div className='stock-right'>
+                        <div className='stock-modal-item'>
                         Employee ID#: {employeeId}
                         </div>
                       

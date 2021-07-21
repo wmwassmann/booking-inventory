@@ -1,5 +1,5 @@
 
-.employee-employee-card-container {
+.employee-stock-card-container {
     /* General styling */
     
     max-width: 370px;
@@ -26,13 +26,13 @@
 }
 
 
-.employee-card-container:focus {
+.stock-card-container:focus {
     border-color: rgb(131, 131, 131);
 }
 
 
 
-.employee-employee-title {
+.employee-stock-title {
     background-color: rgb(194, 194, 194);
     padding-left: 40px;
     width: 346px;
@@ -44,7 +44,7 @@
     align-items: flex-start;
 }
 
-.employee-employee-info-container {
+.employee-stock-info-container {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -53,11 +53,11 @@
     align-items: flex-start;
 }
 
-.employee-employee-info-item {
+.employee-stock-info-item {
     padding: 2px;
 }
 
-.employee-modal-title {
+.stock-modal-title {
     display: flex;
     font-size: 1.8em;
     background-color: rgb(194, 194, 194);
@@ -69,22 +69,22 @@
     align-items: flex-start;
 }
 
-.employee-modal-container {
+.stock-modal-container {
     display: flex;
     justify-content: space-around;
 }
 
-.employee-left {
+.stock-left {
     margin-top: 10px;
     width: 150px;
 }
 
-.employee-right {
+.stock-right {
     margin-top: 10px;
     width: 150px;
 }
 
-.employee-modal-item {
+.stock-modal-item {
     margin-top: 10px;
     font-size: 1.0em;
 }
