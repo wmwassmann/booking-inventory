@@ -13,7 +13,7 @@ const EmployeeInventoryIndex = () => {
     // let currentId = '1234567'
   
     let checkId = inventory.filter(function(item) {
-        return currentId.indexOf(item.employeeId) > -1 ;
+        return currentId.indexOf(item.employeeId) > -1;
     })
 
     checkId = { inventory : checkId }

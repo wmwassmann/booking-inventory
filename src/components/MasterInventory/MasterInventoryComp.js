@@ -27,13 +27,14 @@ const MasterInventoryComp = ({
     maintCategory
 }) => {
 
-    
+
 
     const handle_edit = () => {
         console.log('edit')
-        const addInput = document.getElementsByClassName('stock-info-item')
+        const addInput = document.getElementById('stock-info-container')
 
-        addInput.attr('input')
+        addInput.classList.add('slide-input')
+
     }
 
     const handle_save = () => {
@@ -44,9 +45,8 @@ const MasterInventoryComp = ({
 
 
     return (
-
-        <div className='stock-info-container'>
-            <div>
+        <div className='master-cont'>
+            <div className='inventory-button-container'>
                 <button className='master-edit-button' onClick={handle_edit}>
                     Edit
                 </button>
@@ -54,61 +54,63 @@ const MasterInventoryComp = ({
                     Save
                 </button>
             </div>
-            <div className='stock-title'>
-                {itemName}
-            </div>
-            <div className='stock-info-item'>
-                {itemSupplier}
-            </div>
-            <div className='stock-info-item'>
-                {itemLocationInStorage}
-            </div>
-            <div className='stock-info-item'>
-                {employeeId}
-            </div>
-            <div className='stock-info-item'>
-                {itemQuantity}
-            </div>
-            <div className='stock-info-item'>
-                {itemPrice}
-            </div>
-            <div className='stock-info-item'>
-                {itemReorderPackaging}
-            </div>
-            <div className='stock-info-item'>
-                {itemCostPerUnit}
-            </div>
-            <div className='stock-info-item'>
-                {itemCostPerSpareKit}
-            </div>
-            <div className='stock-info-item'>
-                {itemCostPerKit}
-            </div>
-            <div className='stock-info-item'>
-                {itemLocation}
-            </div>
-            <div className='stock-info-item'>
-                {maintSpareKit}
-            </div>
-            <div className='stock-info-item'>
-                {maintItemsReOrder}
-            </div>
-            <div className='stock-info-item'>
-                {maintQuantityReOrder}
-            </div>
-            <div className='stock-info-item'>
-                {maintBrokenReturn}
-            </div>
-            <div className='stock-info-item'>
-                {maintReturnWindow}
-            </div>
-            <div className='stock-info-item'>
-                {maintOnSitePOA}
-            </div>
-            <div className='stock-info-item'>
-                {maintCategory}
-            </div>
+            <div className='stock-info-container' id='stock-info-container'>
+                <div className='stock-title'>
+                    {itemName}
+                </div>
+                <div className='stock-info-item'>
+                    {itemSupplier}
+                </div>
+                <div className='stock-info-item'>
+                    {itemLocationInStorage}
+                </div>
+                <div className='stock-info-item'>
+                    {employeeId}
+                </div>
+                <div className='stock-info-item'>
+                    {itemQuantity}
+                </div>
+                <div className='stock-info-item'>
+                    {itemPrice}
+                </div>
+                <div className='stock-info-item'>
+                    {itemReorderPackaging}
+                </div>
+                <div className='stock-info-item'>
+                    {itemCostPerUnit}
+                </div>
+                <div className='stock-info-item'>
+                    {itemCostPerSpareKit}
+                </div>
+                <div className='stock-info-item'>
+                    {itemCostPerKit}
+                </div>
+                <div className='stock-info-item'>
+                    {itemLocation}
+                </div>
+                <div className='stock-info-item'>
+                    {maintSpareKit}
+                </div>
+                <div className='stock-info-item'>
+                    {maintItemsReOrder}
+                </div>
+                <div className='stock-info-item'>
+                    {maintQuantityReOrder}
+                </div>
+                <div className='stock-info-item'>
+                    {maintBrokenReturn}
+                </div>
+                <div className='stock-info-item'>
+                    {maintReturnWindow}
+                </div>
+                <div className='stock-info-item'>
+                    {maintOnSitePOA}
+                </div>
+                <div className='stock-info-item'>
+                    {maintCategory}
+                </div>
 
+            </div>
         </div>
 
 

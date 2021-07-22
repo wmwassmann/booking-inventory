@@ -44,20 +44,6 @@
 
 
 
-.master-edit-button {  
-    width: 100px;
-    background-color: rgb(207, 207, 207);    
-    border: rgb(102, 102, 102) solid 2px;
-    border-radius: 5px;
-    margin: 20px;
-    margin-bottom: 0px;
-    font-weight: 500;
-}
-
-.master-edit-button:hover {
-    background-color: rgb(255, 255, 255);
-}
-
 .title-container {
     width: 97vw; 
 }
@@ -85,12 +71,53 @@
 
 }
 
+.master-cont {
+   z-index: 0;
+   display: flex;
+   margin: 0.1px;
+}
+
+.inventory-button-container {
+    display: flex;
+    flex-direction: column;
+    border-top: black solid 1px;
+    border-bottom: black solid 1px;
+    
+    background-color: rgb(130 164 169 / 42%); 
+    z-index: 1000;
+}
+
+.master-edit-button {  
+    width: 100px;
+    background-color: rgb(207, 207, 207);    
+    border: rgb(102, 102, 102) solid 2px;
+    border-radius: 5px;
+    margin: 10px;
+    margin-left: 20px;
+    margin-right: 85px;
+   
+    font-weight: 500;
+}
+
+.master-edit-button:hover {
+    background-color: rgb(255, 255, 255);
+}
 
 
 
+.slide-input {
+    background-color: red;
+    animation: slide-input 700ms ease-in-out;
+    transition: transform 700ms ease-in-out;
+}
 
+@keyframes slide-input {
+    0% {
+        transform: translateX(0)
+    }
 
-
-
-
+    100% {
+        transform: translateX(100%)
+    }
+}
 
