@@ -29,7 +29,8 @@ const MasterInventoryComp = ({
 
 
 
-    const handle_edit = () => {
+    const handle_edit = (e) => {
+        e.preventDefault()
         console.log('edit')
         const addInput = document.getElementById('stock-info-container')
 
@@ -37,9 +38,12 @@ const MasterInventoryComp = ({
 
     }
 
-    const handle_save = () => {
+    const handle_save = (e) => {
+        e.preventDefault()
         console.log('save')
+        const removeInput = document.getElementById('stock-info-container')
 
+        removeInput.classList.remove('slide-input')
 
     }
 
