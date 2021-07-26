@@ -52,9 +52,7 @@ const MasterBanner = () => {
             <div className='master-banner-item'>
                 Plan of Action
             </div>
-            <div className='master-banner-item'>
-                Category
-            </div>
+         
 
         </div>
 

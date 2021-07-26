@@ -1,6 +1,6 @@
 import React from 'react'
 import './css/stock-style.css'
-// import OrdersComponent from '../OrderForm/OrdersComponent';
+import OrdersComponent from '../OrderForm/OrdersComponent';
 // import {  useSelector } from 'react-redux'
 
 // import { stock } from '../../actions/auth';
@@ -57,8 +57,12 @@ const MasterInventoryComp = ({
                 <button className='master-edit-button' onClick={handle_save}>
                     Save
                 </button>
-            </div>
+            </div>        
             <div className='stock-info-container' id='stock-info-container'>
+                <div className='stock-edit-input'>
+                    <OrdersComponent />
+
+                </div>
                 <div className='stock-title'>
                     {itemName}
                 </div>
