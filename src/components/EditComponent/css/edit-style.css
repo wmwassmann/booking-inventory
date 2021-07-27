@@ -1,0 +1,10 @@
+.edit-container {
+    width: 10px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+ .edit-item { 
+    width: 10px;
+}  

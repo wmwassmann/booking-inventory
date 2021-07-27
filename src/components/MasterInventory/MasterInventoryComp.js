@@ -1,6 +1,7 @@
 import React from 'react'
 import './css/stock-style.css'
 import OrdersComponent from '../OrderForm/OrdersComponent';
+import EditComponent from '../EditComponent/EditComponent';
 // import {  useSelector } from 'react-redux'
 
 // import { stock } from '../../actions/auth';
@@ -32,16 +33,36 @@ const MasterInventoryComp = ({
     const handle_edit = (e) => {
         e.preventDefault()
         console.log('edit')
-        const addInput = document.getElementById('stock-info-container')
+
+        const currentItem = itemName
+
+        localStorage.setItem('currentItem', `${currentItem}`)
+
+
+
+        const addInput = document.getElementById(`${itemName}-info-container`)
+        const visibility = document.getElementById(`${itemName}-edit-input`)
 
         addInput.classList.add('slide-input')
+
+        setTimeout(() => {
+            addInput.classList.remove('stock-info-container')
+            addInput.classList.add('invisible')
+        }, 600);
+      
+        
+
+
+
+        visibility.classList.remove('stock-edit-input')
+        visibility.classList.add('visible')
 
     }
 
     const handle_save = (e) => {
         e.preventDefault()
         console.log('save')
-        const removeInput = document.getElementById('stock-info-container')
+        const removeInput = document.getElementById(`${itemName}-info-container`)
 
         removeInput.classList.remove('slide-input')
 
@@ -58,10 +79,9 @@ const MasterInventoryComp = ({
                     Save
                 </button>
             </div>        
-            <div className='stock-info-container' id='stock-info-container'>
-                <div className='stock-edit-input'>
+            <div className='stock-info-container' id={`${itemName}-info-container`}>                      
+                <div className='stock-edit-input' id={`${itemName}-edit-input`}>
                     <OrdersComponent />
-
                 </div>
                 <div className='stock-title'>
                     {itemName}

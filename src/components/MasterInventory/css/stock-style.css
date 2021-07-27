@@ -29,6 +29,20 @@
     border-bottom: black solid 1px;  
     z-index: 10;  
     transition: transform 700ms ease-in-out;
+    visibility: visible;
+}
+
+.invisible {
+    display: grid;
+    grid-template-columns: repeat(15, 200px [row-start]);
+    margin-right: 100px;    
+    background-color: rgb(130 164 169 / 100%);  
+    width: 183.6vw;
+    border-top: black solid 1px;
+    border-bottom: black solid 1px;  
+    z-index: 10;  
+    transition: transform 700ms ease-in-out;
+    visibility: hidden;
 }
 
 
@@ -47,8 +61,15 @@
     position: relative;
     top: 120px;
     z-index: 0; 
+    visibility: hidden;
 }
 
+.visible {
+    position: relative;
+    top: 120px;
+    z-index: 111110; 
+    visibility: visible;
+}
 
 
 .title-container {
@@ -102,7 +123,7 @@
     border-top: black solid 1px;
     border-bottom: black solid 1px;
     
-    background-color: rgb(130 164 169 / 42%); 
+    background-color: rgb(130 164 169 / 100%); 
     z-index: 1000;
 }
 
@@ -124,13 +145,13 @@
 
 
 
-.slide-input {
- 
+.slide-input { 
     animation: slide-input 700ms ease-in-out;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
          animation-fill-mode: forwards;
     z-index: 0;
+    
 }
 
 @keyframes slide-input {
