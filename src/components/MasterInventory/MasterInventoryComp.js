@@ -33,30 +33,22 @@ const MasterInventoryComp = ({
     const handle_edit = (e) => {
         e.preventDefault()
         console.log('edit')
-
         const currentItem = itemName
-
-        localStorage.setItem('currentItem', `${currentItem}`)
-
-
-
+        localStorage.setItem('currentItem', `${currentItem}`) 
+        
         const addInput = document.getElementById(`${itemName}-info-container`)
         const visibility = document.getElementById(`${itemName}-edit-input`)
+        var lockButton = document.querySelectorAll('button.master-edit-button')
+  
+        
+        for (var i = 0; i < lockButton.length; i++) {
+            lockButton[i].classList.add('lock-button')
+        }
 
         addInput.classList.add('slide-input')
 
-        setTimeout(() => {
-            addInput.classList.remove('stock-info-container')
-            addInput.classList.add('invisible')
-        }, 600);
-      
-        
-
-
-
         visibility.classList.remove('stock-edit-input')
         visibility.classList.add('visible')
-
     }
 
     const handle_save = (e) => {
@@ -66,16 +58,28 @@ const MasterInventoryComp = ({
 
         removeInput.classList.remove('slide-input')
 
+        var unlockButton = document.querySelectorAll('button.master-edit-button')
+  
+        
+        for (var i = 0; i < unlockButton.length; i++) {
+            unlockButton[i].classList.remove('lock-button')
+        }
+
+        
+
+
+
+
     }
 
 
     return (
         <div className='master-cont'>
             <div className='inventory-button-container'>
-                <button className='master-edit-button' onClick={handle_edit}>
+                <button className='master-edit-button' id={`${itemName}-edit-button`} onClick={handle_edit}>
                     Edit
                 </button>
-                <button className='master-edit-button' onClick={handle_save}>
+                <button className='master-save-button' id={`${itemName}-save-button`} onClick={handle_save}>
                     Save
                 </button>
             </div>        
