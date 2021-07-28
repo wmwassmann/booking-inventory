@@ -1,0 +1,15 @@
+
+.edit-form-container {
+
+    width: 183.6vw;
+    display: grid;
+    grid-template-columns: repeat(16, 200px [row-start]);
+    
+}
+
+
+
+
+.edit-text-box {
+    background-color: rgb(130 164 169 / 100%);  
+}
