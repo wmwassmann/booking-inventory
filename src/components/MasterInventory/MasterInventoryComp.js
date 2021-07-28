@@ -102,11 +102,12 @@ const MasterInventoryComp = ({
                 <button className='master-save-button lock-button' id={`${itemName}-save-button`} onClick={handle_save}>
                     Save
                 </button>
-            </div>        
+            </div>       
+            
             <div className='stock-info-container' id={`${itemName}-info-container`}>                      
-                {/* <div className='stock-edit-input' id={`${itemName}-edit-input`}>
+                <div className='stock-edit-input' id={`${itemName}-edit-input`}>
                     <EditComponent />
-                </div> */}
+                </div>
                 <div className='stock-title'>
                     {itemName}
                 </div>
@@ -161,10 +162,10 @@ const MasterInventoryComp = ({
                 <div className='stock-info-item'>
                     {maintCategory}
                 </div>
-                <div className='stock-edit-input' id={`${itemName}-edit-input`}>
-                    <EditComponent />
-                </div>
+                
+                
             </div>
+             
         </div>
 
 

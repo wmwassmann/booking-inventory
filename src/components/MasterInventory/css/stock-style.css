@@ -13,6 +13,8 @@
 
 
 .stock-title {
+    position: relative;
+    right: 190px;
     margin-top: 30px;
     font-weight: 500;
     font-size: 1.2em;
@@ -40,6 +42,8 @@
 }
 
 .stock-info-item {
+    position: relative;
+    right: 190px;
     margin-top: 30px;
     font-weight: 500;
     font-size: 1.2em;
@@ -47,12 +51,15 @@
 } 
 
 .stock-edit-input {
-
+    position: relative;
+    top: 90px;
     z-index: 0; 
     visibility: hidden;
 }
 
 .visible {
+    position: relative;
+    top: 90px;
    
     z-index: 0; 
     visibility: visible;

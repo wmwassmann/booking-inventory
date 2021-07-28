@@ -1,6 +1,7 @@
 
 .edit-form-container {
-
+    padding-top: 12px;   
+    height: 60px;
     width: 183.6vw;
     display: grid;
     grid-template-columns: repeat(16, 200px [row-start]);
@@ -11,5 +12,7 @@
 
 
 .edit-text-box {
-    background-color: rgb(130 164 169 / 100%);  
+    background-color: rgb(130 164 169 / 100%); 
+    padding-top: 20px; 
+    height: 100px;
 }
