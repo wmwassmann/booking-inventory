@@ -22,11 +22,11 @@ const initialState = {
 }
 
 
-const OrdersForm = () => {
+const OrdersForm = ({ item }) => {
 
 
     // const [position, setPosition] = useState();
-    const [form, setForm] = useState(initialState);
+    const [myItem, setMyItem] = useState(initialState);
 
 
 
@@ -46,15 +46,17 @@ const OrdersForm = () => {
     const handleSubmit = (e) => {
         // Axios here
         e.preventDefault()
-        // dispatch(editItem(form, history))
+        dispatch(editItem(myItem, history))
         // dispatch(addItem(form, history))
-        console.log(form)
+        // console.log(form)
+        console.log(item)
+        console.log('sccess')
 
 
     }
 
-    const handleChange = (e) => { 
-        setForm({ ...form, [e.target.name]: e.target.value })
+    const handleChange = () => { 
+        setMyItem({ ...myItem, item })
 
     }
 

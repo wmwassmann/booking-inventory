@@ -79,7 +79,7 @@ const MasterInventoryComp = ({
         })
         
 
-        console.log(item)
+        // console.log(item)
 
 
         const currentItem = itemName
@@ -156,26 +156,28 @@ const MasterInventoryComp = ({
             <div className='stock-info-container' id={`${itemName}-info-container`}>                      
                 <div className='stock-edit-input' id={`${itemName}-edit-input`}>
                     <EditComponent 
-                                 key={itemName}
-                                 itemName={itemName}
-                                 itemSupplier={itemSupplier}
-                                 itemLocationInStorage={itemLocationInStorage}
-                                 itemQuantity={itemQuantity}
-                                 employeeId={employeeId}
-                                 itemPrice={itemPrice}
-                                 itemReorderPackaging={itemReorderPackaging}
-                                 itemCostPerUnit={itemCostPerUnit}
-                                 itemCostPerSpareKit={itemCostPerSpareKit}
-                                 itemCostPerKit={itemCostPerKit}
-                                 itemLocation={itemLocation}
-                                 maintSpareKit={maintSpareKit}
-                                 maintItemsReOrder={maintItemsReOrder}
-                                 maintQuantityReOrder={maintQuantityReOrder}
-                                 maintPlace={maintPlace}
-                                 maintBrokenReturn={maintBrokenReturn}
-                                 maintReturnWindow={maintReturnWindow}
-                                 maintOnSitePOA={maintOnSitePOA}
-                                 maintCategory={maintCategory}
+                                key={itemName}
+                                item={item}
+                                //  key={itemName}
+                                //  itemName={itemName}
+                                //  itemSupplier={itemSupplier}
+                                //  itemLocationInStorage={itemLocationInStorage}
+                                //  itemQuantity={itemQuantity}
+                                //  employeeId={employeeId}
+                                //  itemPrice={itemPrice}
+                                //  itemReorderPackaging={itemReorderPackaging}
+                                //  itemCostPerUnit={itemCostPerUnit}
+                                //  itemCostPerSpareKit={itemCostPerSpareKit}
+                                //  itemCostPerKit={itemCostPerKit}
+                                //  itemLocation={itemLocation}
+                                //  maintSpareKit={maintSpareKit}
+                                //  maintItemsReOrder={maintItemsReOrder}
+                                //  maintQuantityReOrder={maintQuantityReOrder}
+                                //  maintPlace={maintPlace}
+                                //  maintBrokenReturn={maintBrokenReturn}
+                                //  maintReturnWindow={maintReturnWindow}
+                                //  maintOnSitePOA={maintOnSitePOA}
+                                //  maintCategory={maintCategory}
                         />
                 </div>
                 <div className='stock-title'>
