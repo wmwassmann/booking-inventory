@@ -6,6 +6,7 @@ import Input from './EditInput';
 
 import { useDispatch } from 'react-redux';
 
+import { editItem } from '../../actions/auth'
 import { addItem } from '../../actions/auth'
 import { useHistory } from 'react-router-dom'
 
@@ -20,11 +21,15 @@ const initialState = {
 
 }
 
+
 const OrdersForm = () => {
 
 
     // const [position, setPosition] = useState();
     const [form, setForm] = useState(initialState);
+
+
+
 
     const dispatch = useDispatch()
     const history = useHistory()
@@ -41,13 +46,14 @@ const OrdersForm = () => {
     const handleSubmit = (e) => {
         // Axios here
         e.preventDefault()
-        dispatch(addItem(form, history))
+        // dispatch(editItem(form, history))
+        // dispatch(addItem(form, history))
         console.log(form)
 
 
     }
 
-    const handleChange = (e) => {
+    const handleChange = (e) => { 
         setForm({ ...form, [e.target.name]: e.target.value })
 
     }
@@ -58,64 +64,66 @@ const OrdersForm = () => {
 
     return (
         <div className='edit-container'>
-            
-         
-                    <form className='edit-form-container' onSubmit={handleSubmit}>       
-      
-                        <div className='edit-text-box'>
-                            <Input name='itemName' label='Product Name' handleChange={handleChange} />
-                        </div>
-                        <div className='edit-text-box'>
-                            <Input name='itemSupplier' label='Supplier' handleChange={handleChange} />
-                        </div>
-                        <div className='edit-text-box'>
-                            <Input name='itemLocationInStorage' label='Location in Storage Unit' handleChange={handleChange} />
-                        </div>
-                        <div className='edit-text-box'>
-                            <Input name='employeeId' label='Employee Id' handleChange={handleChange} />
-                        </div>
-                        <div className='edit-text-box'>
-                            <Input name='itemQuantity' label='Quantity' handleChange={handleChange} type='Quantity' />
-                        </div>
-                        <div className='edit-text-box'>
-                            <Input name='itemPrice' label='Price' handleChange={handleChange} type='Price' />
-                        </div>
-                        <div className='edit-text-box'>
-                            <Input name='itemReorderPackaging' label='Re-Order Packaging' handleChange={handleChange} />
-                        </div>
-                        <div className='edit-text-box'>
-                            <Input name='itemCostPerUnit' label='Cost Per Unit' handleChange={handleChange} />
-                        </div>
-                        <div className='edit-text-box'>
-                            <Input name='itemCostPerSpareKit' label='Cost Per Spare Kit' handleChange={handleChange} />
-                        </div>
-                        <div className='edit-text-box'>
-                            <Input name='itemCostPerKit' label='Cost Per Kit' handleChange={handleChange} />
-                        </div>
-                        <div className='edit-text-box'>
-                            <Input name='itemLocation' label='Location in Unit' handleChange={handleChange} />
-                        </div>
-                        <div className='edit-text-box'>
-                            <Input name='maintSpareKit' label='Spare Kit' handleChange={handleChange} />
-                        </div>
-                        <div className='edit-text-box'>
-                            <Input name='maintItemsReOrder' label='Re-order' handleChange={handleChange} />
-                        </div>
-                        <div className='edit-text-box'>
-                            <Input  name='maintQuantityReOrder' label='Quantity to Re-Order' handleChange={handleChange} />
-                        </div>
-                        <div className='edit-text-box'>
-                            <Input  name='maintPlaced' label='Re-order Placed' handleChange={handleChange} />
-                        </div>
-                        {/* <div className='edit-text-box'>
+
+
+            <form className='edit-form-container' onSubmit={handleSubmit}>
+                <button className='add-button' type='submit'>
+                    Add
+                </button>
+                <div className='edit-text-box'>
+                    <Input name='itemName' label='Product Name' handleChange={handleChange} />
+                </div>
+                <div className='edit-text-box'>
+                    <Input name='itemSupplier' label='Supplier' handleChange={handleChange} />
+                </div>
+                <div className='edit-text-box'>
+                    <Input name='itemLocationInStorage' label='Location in Storage Unit' handleChange={handleChange} />
+                </div>
+                <div className='edit-text-box'>
+                    <Input name='employeeId' label='Employee Id' handleChange={handleChange} />
+                </div>
+                <div className='edit-text-box'>
+                    <Input name='itemQuantity' label='Quantity' handleChange={handleChange} type='Quantity' />
+                </div>
+                <div className='edit-text-box'>
+                    <Input name='itemPrice' label='Price' handleChange={handleChange} type='Price' />
+                </div>
+                <div className='edit-text-box'>
+                    <Input name='itemReorderPackaging' label='Re-Order Packaging' handleChange={handleChange} />
+                </div>
+                <div className='edit-text-box'>
+                    <Input name='itemCostPerUnit' label='Cost Per Unit' handleChange={handleChange} />
+                </div>
+                <div className='edit-text-box'>
+                    <Input name='itemCostPerSpareKit' label='Cost Per Spare Kit' handleChange={handleChange} />
+                </div>
+                <div className='edit-text-box'>
+                    <Input name='itemCostPerKit' label='Cost Per Kit' handleChange={handleChange} />
+                </div>
+                <div className='edit-text-box'>
+                    <Input name='itemLocation' label='Location in Unit' handleChange={handleChange} />
+                </div>
+                <div className='edit-text-box'>
+                    <Input name='maintSpareKit' label='Spare Kit' handleChange={handleChange} />
+                </div>
+                <div className='edit-text-box'>
+                    <Input name='maintItemsReOrder' label='Re-order' handleChange={handleChange} />
+                </div>
+                <div className='edit-text-box'>
+                    <Input name='maintQuantityReOrder' label='Quantity to Re-Order' handleChange={handleChange} />
+                </div>
+                <div className='edit-text-box'>
+                    <Input name='maintPlaced' label='Re-order Placed' handleChange={handleChange} />
+                </div>
+                {/* <div className='edit-text-box'>
                             <Input  name='maintBrokenReturn' label='Durability Status' handleChange={handleChange} />
                         </div> */}
-                    
-                     
 
-                    </form>
-               
-           
+
+
+            </form>
+
+
         </div >
     )
 }

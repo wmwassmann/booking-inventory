@@ -78,6 +78,7 @@ export class Footer extends React.Component {
                 {this.state.stances.map((selection) => (
                 // Make sure to pass through any data pulled from new Stance key/value pairs down here.    
                 <Stance 
+                    key={selection.stance}
                     stance={selection.stance}
                     tag={selection.tag}
                     display={selection.display}

@@ -43,7 +43,7 @@ const OrdersForm = () => {
         e.preventDefault()
         dispatch(addItem(form, history))
         console.log(form)
-
+        window.location.reload(true)
 
     }
 
@@ -60,9 +60,7 @@ const OrdersForm = () => {
         <div className='paper-container'>
             
          
-                    <form className='form-container' onSubmit={handleSubmit}>
-
-                     
+                    <form className='form-container' onSubmit={handleSubmit}>                     
                         <button className='add-button' type='submit'>
                             Add
                         </button>

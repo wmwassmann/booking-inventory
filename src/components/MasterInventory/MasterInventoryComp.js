@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './css/stock-style.css'
 
 import EditComponent from '../EditComponent/EditComponent';
@@ -6,6 +6,28 @@ import EditComponent from '../EditComponent/EditComponent';
 
 // import { stock } from '../../actions/auth';
 
+
+const initialItem = {
+    itemName: '',
+    itemSupplier: '',
+    itemLocationInStorage: '',
+    itemQuantity: '',
+    itemPrice: '',
+    itemReorderPackaging: '',
+    itemCostPerUnit: '',
+    itemCostPerSpareKit: '',
+    itemCostPerKit: '',
+    itemLocation: '',
+    maintSpareKit: '',
+    maintItemsReOrder: '',
+    maintQuantityReOrder: '',
+    maintPlace: '',
+    maintBrokenReturn: '',
+    maintReturnWindow: '',
+    maintOnSitePOA: '',
+    maintCategory: '',
+    employeeId: ''
+}
 
 const MasterInventoryComp = ({
     itemName,
@@ -21,6 +43,7 @@ const MasterInventoryComp = ({
     itemLocation,
     maintSpareKit,
     maintItemsReOrder,
+    maintPlace,
     maintQuantityReOrder,
     maintBrokenReturn,
     maintReturnWindow,
@@ -28,11 +51,37 @@ const MasterInventoryComp = ({
     maintCategory
 }) => {
 
-
+    const [item, setItem] = useState(initialItem);
     
     const handle_edit = (e) => {
-        e.preventDefault()
-        console.log('edit')
+        // e.preventDefault()
+       
+        setItem({
+            itemName: itemName, 
+            itemSupplier: itemSupplier, 
+            itemLocationInStorage: itemLocationInStorage, 
+            employeeId: employeeId,
+            itemQuantity: itemQuantity,
+            itemPrice: itemPrice,
+            itemReorderPackaging: itemReorderPackaging,
+            itemCostPerUnit: itemCostPerUnit,
+            itemCostPerSpareKit: itemCostPerSpareKit,
+            itemCostPerKit: itemCostPerKit,
+            itemLocation: itemLocation,
+            maintSpareKit: maintSpareKit,
+            maintItemsReOrder: maintItemsReOrder,
+            maintPlace: maintPlace,
+            maintQuantityReOrder: maintQuantityReOrder,
+            maintBrokenReturn: maintBrokenReturn,
+            maintReturnWindow: maintReturnWindow,
+            maintOnSitePOA: maintOnSitePOA,
+            maintCategory: maintCategory
+        })
+        
+
+        console.log(item)
+
+
         const currentItem = itemName
         localStorage.setItem('currentItem', `${currentItem}`) 
         const visibility = document.getElementById(`${itemName}-edit-input`)
@@ -106,7 +155,28 @@ const MasterInventoryComp = ({
             
             <div className='stock-info-container' id={`${itemName}-info-container`}>                      
                 <div className='stock-edit-input' id={`${itemName}-edit-input`}>
-                    <EditComponent />
+                    <EditComponent 
+                                 key={itemName}
+                                 itemName={itemName}
+                                 itemSupplier={itemSupplier}
+                                 itemLocationInStorage={itemLocationInStorage}
+                                 itemQuantity={itemQuantity}
+                                 employeeId={employeeId}
+                                 itemPrice={itemPrice}
+                                 itemReorderPackaging={itemReorderPackaging}
+                                 itemCostPerUnit={itemCostPerUnit}
+                                 itemCostPerSpareKit={itemCostPerSpareKit}
+                                 itemCostPerKit={itemCostPerKit}
+                                 itemLocation={itemLocation}
+                                 maintSpareKit={maintSpareKit}
+                                 maintItemsReOrder={maintItemsReOrder}
+                                 maintQuantityReOrder={maintQuantityReOrder}
+                                 maintPlace={maintPlace}
+                                 maintBrokenReturn={maintBrokenReturn}
+                                 maintReturnWindow={maintReturnWindow}
+                                 maintOnSitePOA={maintOnSitePOA}
+                                 maintCategory={maintCategory}
+                        />
                 </div>
                 <div className='stock-title'>
                     {itemName}

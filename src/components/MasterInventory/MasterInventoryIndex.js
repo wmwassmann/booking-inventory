@@ -36,6 +36,7 @@ const MasterInventoryIndex = () => {
                 <MasterBanner />
                 {inventory.map(item => (
                     <MasterInventoryComp
+                        key={item.itemName}
                         itemName={item.itemName}
                         itemSupplier={item.itemSupplier}
                         itemLocationInStorage={item.itemLocationInStorage}
