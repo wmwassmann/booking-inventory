@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 
@@ -21,12 +21,12 @@ import OrdersComponent from '../OrderForm/OrdersComponent';
 
 
 const MasterInventoryIndex = () => {
+    const [currentId, setCurrentId] = useState(0);
     const inventory = useSelector((state) => state.items);
 
 
 
-
-
+    console.log('CurrentId: ', currentId)
 
 
     return (
@@ -34,9 +34,9 @@ const MasterInventoryIndex = () => {
   
             <div className='master-container'>
                 <MasterBanner />
-                {inventory.map(item => (
+                {inventory.map((item) => (
                     <MasterInventoryComp
-                        key={item.itemName}
+                        key={item._id}
                         itemName={item.itemName}
                         itemSupplier={item.itemSupplier}
                         itemLocationInStorage={item.itemLocationInStorage}
@@ -56,6 +56,7 @@ const MasterInventoryIndex = () => {
                         maintReturnWindow={item.maintReturnWindow}
                         maintOnSitePOA={item.maintOnSitePOA}
                         maintCategory={item.maintCategory}
+                        setCurrentId={setCurrentId}
                         
 
 

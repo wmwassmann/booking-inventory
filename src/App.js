@@ -7,7 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer'
 
 // Redux actions
-import { items, employee } from './actions/auth';
+import { items, employee, addItem, editItem } from './actions/auth';
 
 // Routes
 import Auth from './components/Auth/Auth';
@@ -30,9 +30,14 @@ const App = () => {
 
   const dispatch = useDispatch();
 
+  
   useEffect(() => {
+    // setCurrentId(localStorage.getItem('currentItem'))
+
 
     dispatch(items())
+    // dispatch(addItem())
+    // dispatch(editItem())
     dispatch(employee())
 
   }, [dispatch])
@@ -47,7 +52,7 @@ const App = () => {
           <Route exact path='/' component={MainMenu} />
           <Route exact path='/auth' component={Auth} />
           <Route exact path='/inventory' component={MasterInventory} />
-          <Route exact path='/kit' component={EmployeeInventory} />
+          <Route exact path='/kit' component={EmployeeInventory}/>
          
           <Route exact path='/accounts' component={Accounts} />
           <Route exact path='/Contacts' component={Contacts} />

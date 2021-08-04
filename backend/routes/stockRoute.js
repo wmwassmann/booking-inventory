@@ -14,7 +14,7 @@ router.route('/stock').get((req, res) => {
 
 router.get('/stock', display)
 router.post('/stock/add', add)
-router.put('/stock/edit', edit)
+router.patch('/stock/:id', edit)
 router.delete('/stock/remove', remove)
 
 export default router;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 
 import './css/input-style.css';
@@ -22,23 +22,16 @@ const initialState = {
 }
 
 
-const OrdersForm = ({ item }) => {
+const OrdersForm = ({ item, currentId, setCurrentId }) => {
 
 
     // const [position, setPosition] = useState();
     const [myItem, setMyItem] = useState(initialState);
-
-
-
-
     const dispatch = useDispatch()
     const history = useHistory()
-    // const currentPosition = JSON.parse(localStorage.getItem('currentEmployee'))
+  
 
-    // let selectPosition = JSON.parse(localStorage.getItem('currentEmployee'))
-
-
-    // selectPosition = currentPosition?.employee.result[1].email
+    
 
 
 
@@ -50,7 +43,7 @@ const OrdersForm = ({ item }) => {
         // dispatch(addItem(form, history))
         // console.log(form)
         console.log(item)
-        console.log('sccess')
+     
 
 
     }
@@ -69,7 +62,7 @@ const OrdersForm = ({ item }) => {
 
 
             <form className='edit-form-container' onSubmit={handleSubmit}>
-                <button className='add-button' type='submit'>
+                <button className='add-button' type='submit' >
                     Add
                 </button>
                 <div className='edit-text-box'>

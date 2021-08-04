@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './css/stock-style.css'
 
 import EditComponent from '../EditComponent/EditComponent';
@@ -29,7 +29,9 @@ const initialItem = {
     employeeId: ''
 }
 
-const MasterInventoryComp = ({
+const MasterInventoryComp = ({ 
+    
+    setCurrentId,
     itemName,
     itemSupplier,
     itemLocationInStorage,
@@ -48,15 +50,17 @@ const MasterInventoryComp = ({
     maintBrokenReturn,
     maintReturnWindow,
     maintOnSitePOA,
-    maintCategory
+    maintCategory,
+ 
 }) => {
-
+    
     const [item, setItem] = useState(initialItem);
     
+    
     const handle_edit = (e) => {
-        // e.preventDefault()
-       
-        setItem({
+        // e.preventDefault()     
+        
+        setItem({            
             itemName: itemName, 
             itemSupplier: itemSupplier, 
             itemLocationInStorage: itemLocationInStorage, 
@@ -78,17 +82,17 @@ const MasterInventoryComp = ({
             maintCategory: maintCategory
         })
         
-
-        // console.log(item)
-
+        setCurrentId({itemName})
 
         const currentItem = itemName
+
         localStorage.setItem('currentItem', `${currentItem}`) 
-        const visibility = document.getElementById(`${itemName}-edit-input`)
-        
+        const visibility = document.getElementById(`${itemName}-edit-input`)        
         const addInput = document.getElementById(`${itemName}-info-container`)
+
         var lockButton = document.querySelectorAll('button.master-edit-button')
         var unlockButton = document.querySelectorAll('button.master-save-button')
+        
         
         
         for (var i = 0; i < lockButton.length; i++) {
@@ -98,8 +102,8 @@ const MasterInventoryComp = ({
             unlockButton[i].classList.remove('lock-button')
         }
         
+      
         
-
 
 
         addInput.classList.remove('slide-input-out')
@@ -107,16 +111,18 @@ const MasterInventoryComp = ({
         
         visibility.classList.remove('stock-edit-input')
         visibility.classList.add('visible')
+
+        
     }
     
+   
     const handle_save = (e) => {
         e.preventDefault()
         console.log('save')
         const visibility = document.getElementById(`${itemName}-edit-input`)
         const removeInput = document.getElementById(`${itemName}-info-container`)
         
-        
-
+ 
         removeInput.classList.remove('slide-input-in')
         removeInput.classList.add('slide-input-out')
         var lockButton = document.querySelectorAll('button.master-save-button')
@@ -157,27 +163,8 @@ const MasterInventoryComp = ({
                 <div className='stock-edit-input' id={`${itemName}-edit-input`}>
                     <EditComponent 
                                 key={itemName}
-                                item={item}
-                                //  key={itemName}
-                                //  itemName={itemName}
-                                //  itemSupplier={itemSupplier}
-                                //  itemLocationInStorage={itemLocationInStorage}
-                                //  itemQuantity={itemQuantity}
-                                //  employeeId={employeeId}
-                                //  itemPrice={itemPrice}
-                                //  itemReorderPackaging={itemReorderPackaging}
-                                //  itemCostPerUnit={itemCostPerUnit}
-                                //  itemCostPerSpareKit={itemCostPerSpareKit}
-                                //  itemCostPerKit={itemCostPerKit}
-                                //  itemLocation={itemLocation}
-                                //  maintSpareKit={maintSpareKit}
-                                //  maintItemsReOrder={maintItemsReOrder}
-                                //  maintQuantityReOrder={maintQuantityReOrder}
-                                //  maintPlace={maintPlace}
-                                //  maintBrokenReturn={maintBrokenReturn}
-                                //  maintReturnWindow={maintReturnWindow}
-                                //  maintOnSitePOA={maintOnSitePOA}
-                                //  maintCategory={maintCategory}
+                                item={item}                          
+                                setCurrentId={setCurrentId}                            
                         />
                 </div>
                 <div className='stock-title'>

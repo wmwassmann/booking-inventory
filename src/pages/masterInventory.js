@@ -3,16 +3,17 @@ import './css/pages-style.css'
 import MasterInventoryIndex from '../components/MasterInventory/MasterInventoryIndex'
 
 
-const masterInventory = () => {
+const masterInventory = ({ currentId, setCurrentId }) => {
 
 
 
-
+    console.log(currentId)
+    console.log(setCurrentId)
 
     return (
         <div className='page-container'>
            
-                <MasterInventoryIndex />
+                <MasterInventoryIndex setCurrentId={setCurrentId} />
             
         </div>
     )
