@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './css/stock-style.css'
 
 import EditComponent from '../EditComponent/EditComponent';
-// import {  useSelector } from 'react-redux'
 
-// import { stock } from '../../actions/auth';
 
 
 const initialItem = {
@@ -30,7 +28,7 @@ const initialItem = {
 }
 
 const MasterInventoryComp = ({ 
-    
+    currentId,
     setCurrentId,
     itemName,
     itemSupplier,
@@ -93,12 +91,12 @@ const MasterInventoryComp = ({
         var lockButton = document.querySelectorAll('button.master-edit-button')
         var unlockButton = document.querySelectorAll('button.master-save-button')
         
-        
+          
         
         for (var i = 0; i < lockButton.length; i++) {
             lockButton[i].classList.add('lock-button')
         }
-        for (var i = 0; i < unlockButton.length; i++) {
+        for (i = 0; i < unlockButton.length; i++) {
             unlockButton[i].classList.remove('lock-button')
         }
         
@@ -132,7 +130,7 @@ const MasterInventoryComp = ({
         for (var i = 0; i < unlockButton.length; i++) {
             unlockButton[i].classList.remove('lock-button')
         }
-        for (var i = 0; i < unlockButton.length; i++) {
+        for (i = 0; i < unlockButton.length; i++) {
             lockButton[i].classList.add('lock-button')
         }
         visibility.classList.add('stock-edit-input')
@@ -142,7 +140,7 @@ const MasterInventoryComp = ({
         }, 600);
         
 
-
+       
 
 
     }
@@ -163,7 +161,9 @@ const MasterInventoryComp = ({
                 <div className='stock-edit-input' id={`${itemName}-edit-input`}>
                     <EditComponent 
                                 key={itemName}
-                                item={item}                          
+                                item={item}   
+                                itemName={itemName}                       
+                                currentId={currentId}                            
                                 setCurrentId={setCurrentId}                            
                         />
                 </div>

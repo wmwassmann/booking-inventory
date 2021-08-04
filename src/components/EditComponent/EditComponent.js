@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 
 import './css/input-style.css';
@@ -7,7 +7,7 @@ import Input from './EditInput';
 import { useDispatch } from 'react-redux';
 
 import { editItem } from '../../actions/auth'
-import { addItem } from '../../actions/auth'
+// import { addItem } from '../../actions/auth'
 import { useHistory } from 'react-router-dom'
 
 
@@ -22,7 +22,7 @@ const initialState = {
 }
 
 
-const OrdersForm = ({ item, currentId, setCurrentId }) => {
+const OrdersForm = ({ itemName, item, currentId, setCurrentId }) => {
 
 
     // const [position, setPosition] = useState();
@@ -31,7 +31,7 @@ const OrdersForm = ({ item, currentId, setCurrentId }) => {
     const history = useHistory()
   
 
-    
+
 
 
 
@@ -39,10 +39,26 @@ const OrdersForm = ({ item, currentId, setCurrentId }) => {
     const handleSubmit = (e) => {
         // Axios here
         e.preventDefault()
-        dispatch(editItem(myItem, history))
+        setCurrentId({itemName})
+        const params = currentId.itemName
+        const paramsValue = JSON.stringify(params)
+
+        const itemId = JSON.parse(paramsValue)
+
+      
+        console.log(itemId)
+
+
+
+
+        dispatch(editItem(itemId))
+
+        // console.log(itemId)
+
         // dispatch(addItem(form, history))
         // console.log(form)
-        console.log(item)
+        // console.log(item)
+        // console.log("currentId: ", currentId)
      
 
 

@@ -26,7 +26,7 @@ const MasterInventoryIndex = () => {
 
 
 
-    console.log('CurrentId: ', currentId)
+    // console.log('CurrentId: ', currentId)
 
 
     return (
@@ -56,6 +56,7 @@ const MasterInventoryIndex = () => {
                         maintReturnWindow={item.maintReturnWindow}
                         maintOnSitePOA={item.maintOnSitePOA}
                         maintCategory={item.maintCategory}
+                        currentId={currentId}
                         setCurrentId={setCurrentId}
                         
 

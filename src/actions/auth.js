@@ -71,10 +71,10 @@ export const items = () => async (dispatch) => {
     }
   }
 
-  export const editItem = (id, formData) => async (dispatch) => {
+  export const editItem = (id, item) => async (dispatch) => {
     try {
 
-      const { data } = await api.editItem(id, formData);
+      const { data } = await api.editItem(id, item);
 
       dispatch({ type: EDIT_STOCK, payload: data });
 
