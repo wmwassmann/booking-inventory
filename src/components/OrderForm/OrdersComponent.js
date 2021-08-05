@@ -20,7 +20,7 @@ const initialState = {
 
 }
 
-const OrdersForm = () => {
+const OrdersForm = ({ currentId, setCurrentId }) => {
 
 
     // const [position, setPosition] = useState();
@@ -41,8 +41,11 @@ const OrdersForm = () => {
     const handleSubmit = (e) => {
         // Axios here
         e.preventDefault()
+        setCurrentId(currentId + 1)
+
         dispatch(addItem(form, history))
         console.log(form)
+        console.log("should be 1: ", currentId)
         window.location.reload(true)
 
     }
@@ -108,7 +111,9 @@ const OrdersForm = () => {
                         </div>
                         <div className='text-box'>
                             <Input  name='maintPlaced' label='Re-order Placed' handleChange={handleChange} />
-                        </div>
+                        </div>      
+                        {/* <div className='text-box' name={currentId} handleChange={handleChange}/> */}
+                                         
                         {/* <div className='text-box'>
                             <Input  name='maintBrokenReturn' label='Durability Status' handleChange={handleChange} />
                         </div> */}

@@ -24,6 +24,7 @@ const stockSchema = mongoose.Schema({
     maintReturnWindow: { type: String, required: false },
     maintOnSitePOA: { type: String, required: false },
     maintCategory: { type: String, required: false },
+    id: { type: Number, required: false }
 
 
 

@@ -48,7 +48,7 @@ const MasterInventoryComp = ({
     maintBrokenReturn,
     maintReturnWindow,
     maintOnSitePOA,
-    maintCategory,
+    maintCategory
  
 }) => {
     
@@ -80,7 +80,7 @@ const MasterInventoryComp = ({
             maintCategory: maintCategory
         })
         
-        setCurrentId({itemName})
+
 
         const currentItem = itemName
 
@@ -161,8 +161,7 @@ const MasterInventoryComp = ({
                 <div className='stock-edit-input' id={`${itemName}-edit-input`}>
                     <EditComponent 
                                 key={itemName}
-                                item={item}   
-                                itemName={itemName}                       
+                                item={item}                                                      
                                 currentId={currentId}                            
                                 setCurrentId={setCurrentId}                            
                         />

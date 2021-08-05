@@ -22,7 +22,7 @@ const initialState = {
 }
 
 
-const OrdersForm = ({ itemName, item, currentId, setCurrentId }) => {
+const OrdersForm = ({ itemId, item, currentId, setCurrentId }) => {
 
 
     // const [position, setPosition] = useState();
@@ -39,21 +39,22 @@ const OrdersForm = ({ itemName, item, currentId, setCurrentId }) => {
     const handleSubmit = (e) => {
         // Axios here
         e.preventDefault()
-        setCurrentId({itemName})
-        const params = currentId.itemName
-        const paramsValue = JSON.stringify(params)
+        // setCurrentId({itemId})
+        // const params = currentId.itemId
+        // const paramsValue = JSON.stringify(params)
 
-        const itemId = JSON.parse(paramsValue)
+        // const id = JSON.parse(paramsValue)
 
-      
-        console.log(itemId)
+        // item._id.toString()
+        // console.log(id)
+        console.log(item)
 
 
 
 
-        dispatch(editItem(itemId))
+        // dispatch(editItem(id))
 
-        // console.log(itemId)
+        // console.log(id)
 
         // dispatch(addItem(form, history))
         // console.log(form)

@@ -41,7 +41,8 @@ export const add = async (req, res) => {
         maintReturnWindow,
         maintOnSitePOA,
         maintCategory,
-        employeeId
+        employeeId,
+        id
         
     } = req.body
 
@@ -71,7 +72,8 @@ export const add = async (req, res) => {
             maintBrokenReturn: maintBrokenReturn,
             maintReturnWindow: maintReturnWindow,
             maintOnSitePOA: maintOnSitePOA,
-            maintCategory: maintCategory
+            maintCategory: maintCategory,
+            id: id
         })
 
 
@@ -94,7 +96,8 @@ export const add = async (req, res) => {
             maintBrokenReturn: result.maintBrokenReturn,
             maintReturnWindow: result.maintReturnWindow,
             maintOnSitePOA: result.maintOnSitePOA,
-            maintCategory: result.maintCategory
+            maintCategory: result.maintCategory,
+            id: result.id
         
         
         
