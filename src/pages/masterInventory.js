@@ -16,7 +16,7 @@ const MasterInventory = () => {
         // dispatch(employee())
     }, [currentId, dispatch])
 
-
+    console.log(currentId)
     return (
         <div className='page-container'>
 

@@ -1,98 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './css/stock-style.css'
 
 import EditComponent from '../EditComponent/EditComponent';
 
 
 
-const initialItem = {
-    itemName: '',
-    itemSupplier: '',
-    itemLocationInStorage: '',
-    itemQuantity: '',
-    itemPrice: '',
-    itemReorderPackaging: '',
-    itemCostPerUnit: '',
-    itemCostPerSpareKit: '',
-    itemCostPerKit: '',
-    itemLocation: '',
-    maintSpareKit: '',
-    maintItemsReOrder: '',
-    maintQuantityReOrder: '',
-    maintPlace: '',
-    maintBrokenReturn: '',
-    maintReturnWindow: '',
-    maintOnSitePOA: '',
-    maintCategory: '',
-    employeeId: ''
-}
-
-const MasterInventoryComp = ({ 
-    selectedItem,
-    currentId,
-    setCurrentId,
-    itemName,
-    itemSupplier,
-    itemLocationInStorage,
-    employeeId,
-    itemQuantity,
-    itemPrice,
-    itemReorderPackaging,
-    itemCostPerUnit,
-    itemCostPerSpareKit,
-    itemCostPerKit,
-    itemLocation,
-    maintSpareKit,
-    maintItemsReOrder,
-    maintPlace,
-    maintQuantityReOrder,
-    maintBrokenReturn,
-    maintReturnWindow,
-    maintOnSitePOA,
-    maintCategory
- 
-}) => {
-    
-    const [item, setItem] = useState(initialItem);
+const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
     
     
-    const handle_edit = (e) => {
-        // e.preventDefault()     
-        
-        setItem({            
-            itemName: itemName, 
-            itemSupplier: itemSupplier, 
-            itemLocationInStorage: itemLocationInStorage, 
-            employeeId: employeeId,
-            itemQuantity: itemQuantity,
-            itemPrice: itemPrice,
-            itemReorderPackaging: itemReorderPackaging,
-            itemCostPerUnit: itemCostPerUnit,
-            itemCostPerSpareKit: itemCostPerSpareKit,
-            itemCostPerKit: itemCostPerKit,
-            itemLocation: itemLocation,
-            maintSpareKit: maintSpareKit,
-            maintItemsReOrder: maintItemsReOrder,
-            maintPlace: maintPlace,
-            maintQuantityReOrder: maintQuantityReOrder,
-            maintBrokenReturn: maintBrokenReturn,
-            maintReturnWindow: maintReturnWindow,
-            maintOnSitePOA: maintOnSitePOA,
-            maintCategory: maintCategory
-        })
-        
-
-
-        const currentItem = itemName
-
-        localStorage.setItem('currentItem', `${currentItem}`) 
-        const visibility = document.getElementById(`${itemName}-edit-input`)        
-        const addInput = document.getElementById(`${itemName}-info-container`)
+    const handle_edit = () => {
+        setCurrentId(selectedItem._id)  
+        const visibility = document.getElementById(`${selectedItem.itemName}-edit-input`)        
+        const addInput = document.getElementById(`${selectedItem.itemName}-info-container`)
 
         var lockButton = document.querySelectorAll('button.master-edit-button')
         var unlockButton = document.querySelectorAll('button.master-save-button')
+   
+
         
-          
         
         for (var i = 0; i < lockButton.length; i++) {
             lockButton[i].classList.add('lock-button')
@@ -111,15 +36,15 @@ const MasterInventoryComp = ({
         visibility.classList.remove('stock-edit-input')
         visibility.classList.add('visible')
 
-        
+       
     }
     
    
     const handle_save = (e) => {
         e.preventDefault()
         console.log('save')
-        const visibility = document.getElementById(`${itemName}-edit-input`)
-        const removeInput = document.getElementById(`${itemName}-info-container`)
+        const visibility = document.getElementById(`${selectedItem.itemName}-edit-input`)
+        const removeInput = document.getElementById(`${selectedItem.itemName}-info-container`)
         
  
         removeInput.classList.remove('slide-input-in')
@@ -150,19 +75,18 @@ const MasterInventoryComp = ({
     return (
         <div className='master-cont'>
             <div className='inventory-button-container'>
-                <button className='master-edit-button' id={`${itemName}-edit-button`} onClick={handle_edit}>
+                <button className='master-edit-button' id={`${selectedItem.itemName}-edit-button`} onClick={handle_edit}>
                     Edit
                 </button>
-                <button className='master-save-button lock-button' id={`${itemName}-save-button`} onClick={handle_save}>
+                <button className='master-save-button lock-button' id={`${selectedItem.itemName}-save-button`} onClick={handle_save}>
                     Save
                 </button>
             </div>       
             
-            <div className='stock-info-container' id={`${itemName}-info-container`}>                      
-                <div className='stock-edit-input' id={`${itemName}-edit-input`}>
+            <div className='stock-info-container' id={`${selectedItem.itemName}-info-container`}>                      
+                <div className='stock-edit-input' id={`${selectedItem.itemName}-edit-input`}>
                     <EditComponent 
-                                key={itemName}
-                                item={item}                                                      
+                                key={selectedItem.itemName}                                                                           
                                 currentId={currentId}                            
                                 setCurrentId={setCurrentId}                            
                         />
@@ -171,57 +95,21 @@ const MasterInventoryComp = ({
                     {selectedItem.itemName}
                 </div>
                 <div className='stock-info-item'>
-                    {itemSupplier}
+                    {selectedItem.itemSupplier}
                 </div>
                 <div className='stock-info-item'>
-                    {itemLocationInStorage}
+                    {selectedItem.itemLocationInStorage}
                 </div>
                 <div className='stock-info-item'>
-                    {employeeId}
+                    {selectedItem.employeeId}
                 </div>
                 <div className='stock-info-item'>
-                    {itemQuantity}
+                    {selectedItem.itemQuantity}
                 </div>
                 <div className='stock-info-item'>
-                    {itemPrice}
+                    {selectedItem.itemPrice}
                 </div>
-                <div className='stock-info-item'>
-                    {itemReorderPackaging}
-                </div>
-                <div className='stock-info-item'>
-                    {itemCostPerUnit}
-                </div>
-                <div className='stock-info-item'>
-                    {itemCostPerSpareKit}
-                </div>
-                <div className='stock-info-item'>
-                    {itemCostPerKit}
-                </div>
-                <div className='stock-info-item'>
-                    {itemLocation}
-                </div>
-                <div className='stock-info-item'>
-                    {maintSpareKit}
-                </div>
-                <div className='stock-info-item'>
-                    {maintItemsReOrder}
-                </div>
-                <div className='stock-info-item'>
-                    {maintQuantityReOrder}
-                </div>
-                <div className='stock-info-item'>
-                    {maintBrokenReturn}
-                </div>
-                <div className='stock-info-item'>
-                    {maintReturnWindow}
-                </div>
-                <div className='stock-info-item'>
-                    {maintOnSitePOA}
-                </div>
-                <div className='stock-info-item'>
-                    {maintCategory}
-                </div>
-                
+  
                 
             </div>
              

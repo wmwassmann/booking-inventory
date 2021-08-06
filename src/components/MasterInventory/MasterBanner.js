@@ -25,33 +25,7 @@ const MasterBanner = () => {
             <div className='master-banner-item'>
                 Price
             </div>
-            <div className='master-banner-item'>
-                Quant/re-order
-            </div>
-            <div className='master-banner-item'>
-                Cost/Unit
-            </div>
-            <div className='master-banner-item'>
-                Cost/Kit
-            </div>
-            <div className='master-banner-item'>
-                Location
-            </div>
-            <div className='master-banner-item'>
-                Spare Kit
-            </div>
-            <div className='master-banner-item'>
-                Re-order
-            </div>
-            <div className='master-banner-item'>
-                Broken Return
-            </div>
-            <div className='master-banner-item'>
-                Return Window
-            </div>
-            <div className='master-banner-item'>
-                Plan of Action
-            </div>
+       
          
 
         </div>
