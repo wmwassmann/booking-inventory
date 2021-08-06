@@ -28,6 +28,7 @@ const initialItem = {
 }
 
 const MasterInventoryComp = ({ 
+    selectedItem,
     currentId,
     setCurrentId,
     itemName,
@@ -167,7 +168,7 @@ const MasterInventoryComp = ({
                         />
                 </div>
                 <div className='stock-title'>
-                    {itemName}
+                    {selectedItem.itemName}
                 </div>
                 <div className='stock-info-item'>
                     {itemSupplier}

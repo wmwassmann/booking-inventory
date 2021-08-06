@@ -1,22 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux';
+import { items, employee } from '../actions/auth';
 import './css/pages-style.css'
 import MasterInventoryIndex from '../components/MasterInventory/MasterInventoryIndex'
 
 
-const masterInventory = ({ currentId, setCurrentId }) => {
+const MasterInventory = () => {
 
+    const [currentId, setCurrentId] = useState(0);
 
+    const dispatch = useDispatch();
 
-    console.log(currentId)
-    console.log(setCurrentId)
+    useEffect(() => {
+        dispatch(items())
+        // dispatch(employee())
+    }, [currentId, dispatch])
+
 
     return (
         <div className='page-container'>
-           
-                <MasterInventoryIndex setCurrentId={setCurrentId} />
+
+                <MasterInventoryIndex 
+                    currentId={currentId} 
+                    setCurrentId={setCurrentId} 
+                />
             
         </div>
     )
 }
 
-export default masterInventory
+export default MasterInventory

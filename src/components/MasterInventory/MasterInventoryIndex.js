@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 
 
 
-import {  useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 
@@ -19,66 +19,74 @@ import OrdersComponent from '../OrderForm/OrdersComponent';
 
 
 
+// OLD VERSION
 
 
-
-const MasterInventoryIndex = () => {
-    const [currentId, setCurrentId] = useState(0);
-    const [itemData, setItemData] = useState({ itemName: '', itemLocation: '', employeeId: ''});
-    // const inventory = useSelector((state) => state.items);
-    const inventory = useSelector((state) => (currentId ? state.items.find((item) => item._id === currentId) : null));
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        if (inventory) setItemData(inventory)    
-    }, [inventory])
-
-    console.log(inventory)
-
-    const clear = () => {
-        setCurrentId(0);
-        setItemData({ itemName: '', itemLocation: '', employeeId: '' });
-      };
-    
-
-
-const handleSubmit = async (e) => {
-    e.preventDefault()
-    console.log('submitted')
-
-    if (currentId === 0) {
-        dispatch(addItem(itemData));
-        clear();
-      } else {
-        dispatch(editItem(currentId, itemData));
-        clear();
-      }
-}
-
+const MasterInventoryIndex = ({ currentId, setCurrentId }) => {
+    const inventory = useSelector((state) => state.items);
 
     return (
         <MasterInventoryCard>
-  
+
             <div className='master-container'>
                 <MasterBanner />
-                <form onSubmit={handleSubmit}>
-                <Button variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
-                <TextField name='Item Name' varient='outlined' label='Item Name' fullWidth value={itemData.itemName} onChange={(e)=> setItemData({...itemData, itemName: e.target.value })} />
-                </ form>
-          
+                {inventory.map((item) => (
+                    <MasterInventoryComp
+                        selectedItem={item}
+                        // key={item._id}
+                        // itemName={item.itemName}
+                        // itemSupplier={item.itemSupplier}
+                        // itemLocationInStorage={item.itemLocationInStorage}
+                        // itemQuantity={item.itemQuantity}
+                        // employeeId={item.employeeId}
+                        // itemPrice={item.itemPrice}
+                        // itemReorderPackaging={item.itemReorderPackaging}
+                        // itemCostPerUnit={item.itemCostPerUnit}
+                        // itemCostPerSpareKit={item.itemCostPerSpareKit}
+                        // itemCostPerKit={item.itemCostPerKit}
+                        // itemLocation={item.itemLocation}
+                        // maintSpareKit={item.maintSpareKit}
+                        // maintItemsReOrder={item.maintItemsReOrder}
+                        // maintQuantityReOrder={item.maintQuantityReOrder}
+                        // maintPlace={item.maintPlace}
+                        // maintBrokenReturn={item.maintBrokenReturn}
+                        // maintReturnWindow={item.maintReturnWindow}
+                        // maintOnSitePOA={item.maintOnSitePOA}
+                        // maintCategory={item.maintCategory}
+                        // currentId={currentId}
+                        // setCurrentId={setCurrentId}
+
+
+
+
+                    />
+
+                ))}
+
                 <OrdersComponent currentId={currentId} setCurrentId={setCurrentId} />
             </div>
 
-           
+
         </MasterInventoryCard >
     )
 }
 
 export default MasterInventoryIndex
 
+{/* 
+                    <form onSubmit={handleSubmit}>
+                    <Button variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
+                    <TextField name='Item Name' varient='outlined' label='Item Name' fullWidth value={itemData.itemName} onChange={(e) => setItemData({ ...itemData, itemName: e.target.value })} />
+                    <TextField name='Item Location' varient='outlined' label='Item Location' fullWidth value={itemData.itemLocation} onChange={(e) => setItemData({ ...itemData, itemLocation: e.target.value })} />
+                    <TextField name='Employee Id' varient='outlined' label='Employee Id' fullWidth value={itemData.employeeId} onChange={(e) => setItemData({ ...itemData, employeeId: e.target.value })} />
+                </ form> */}
+
+// OLD VERSION MAPPING
 
 
-      {/* {inventory.map((item) => (
+
+{/* 
+                {itemDisplay.map((item) => (
                     <MasterInventoryComp
                         key={item._id}
                         itemName={item.itemName}
@@ -101,11 +109,6 @@ export default MasterInventoryIndex
                         maintOnSitePOA={item.maintOnSitePOA}
                         maintCategory={item.maintCategory}
                         currentId={currentId}
-                        setCurrentId={setCurrentId}
-                        
-
-
-
+                        setCurrentId={setCurrentId}                   
                     />
-
                 ))} */}

@@ -35,10 +35,11 @@ const App = () => {
     // setCurrentId(localStorage.getItem('currentItem'))
 
 
-    dispatch(items())
+    // dispatch(items())
     // dispatch(addItem())
     // dispatch(editItem())
     dispatch(employee())
+
 
   }, [dispatch])
 
