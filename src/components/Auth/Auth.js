@@ -57,11 +57,11 @@ const Signup = () => {
         if (isSignup) {
             dispatch(signup(form, history))
             console.log(localStorage.getItem('currentEmployee'))
-            history.push('/kit')
+            history.push('/inventory')
         } else {
             dispatch(signin(form, history))
             console.log(localStorage.getItem('currentEmployee'))
-            history.push('/kit')
+            history.push('/inventory')
 
         }
 

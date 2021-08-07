@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import mongoose from 'mongoose';
 import Stock from "../models/stockModel.js";
 
 
@@ -28,22 +29,8 @@ export const add = async (req, res) => {
         itemLocationInStorage, 
         itemQuantity, 
         itemPrice,
-        itemReorderPackaging,
-        itemCostPerUnit,
-        itemCostPerSpareKit,
-        itemCostPerKit,
-        itemLocation,
-        maintSpareKit,
-        maintItemsReOrder,
-        maintQuantityReOrder,
-        maintPlace,
-        maintBrokenReturn,
-        maintReturnWindow,
-        maintOnSitePOA,
-        maintCategory,
         employeeId,
-        id
-        
+        id        
     } = req.body
 
     try {
@@ -51,28 +38,13 @@ export const add = async (req, res) => {
 
         if (existingItem) return res.status(404).json( { message: 'Item name already exists' })
 
-
-
         const result = await Stock.create({  
             itemName: itemName, 
             itemSupplier: itemSupplier, 
             itemLocationInStorage: itemLocationInStorage,
             employeeId: employeeId, 
             itemQuantity: itemQuantity,
-            itemPrice: itemPrice,
-            itemReorderPackaging: itemReorderPackaging,
-            itemCostPerUnit: itemCostPerUnit,
-            itemCostPerSpareKit: itemCostPerSpareKit,
-            itemCostPerKit: itemCostPerKit,
-            itemLocation: itemLocation,
-            maintSpareKit: maintSpareKit,
-            maintItemsReOrder: maintItemsReOrder,
-            maintQuantityReOrder: maintQuantityReOrder,
-            maintPlace: maintPlace,
-            maintBrokenReturn: maintBrokenReturn,
-            maintReturnWindow: maintReturnWindow,
-            maintOnSitePOA: maintOnSitePOA,
-            maintCategory: maintCategory,
+            itemPrice: itemPrice,  
             id: id
         })
 
@@ -83,20 +55,7 @@ export const add = async (req, res) => {
             itemLocationInStorage: result.itemLocationInStorage,
             employeeId: result.employeeId,
             itemQuantity: result.itemQuantity,
-            itemPrice: result.itemPrice,
-            itemReorderPackaging: result.itemReorderPackaging,
-            itemCostPerUnit: result.itemCostPerUnit,
-            itemCostPerSpareKit: result.itemCostPerSpareKit,
-            itemCostPerKit: result.itemCostPerKit,
-            itemLocation: result.itemLocation,
-            maintSpareKit: result.maintSpareKit,
-            maintItemsReOrder: result.maintItemsReOrder,
-            maintQuantityReOrder: result.maintQuantityReOrder,
-            maintPlace: result.maintPlace,
-            maintBrokenReturn: result.maintBrokenReturn,
-            maintReturnWindow: result.maintReturnWindow,
-            maintOnSitePOA: result.maintOnSitePOA,
-            maintCategory: result.maintCategory,
+            itemPrice: result.itemPrice,  
             id: result.id
         
         
@@ -114,14 +73,32 @@ export const add = async (req, res) => {
 
 
 export const edit = async (req, res) => {
-    const { id: _id } = req.params;
-    const item = req.body;
+    const { id } = req.params;
+    const { 
+        itemName, 
+        itemSupplier, 
+        itemLocationInStorage, 
+        itemQuantity, 
+        itemPrice,
+        employeeId       
+    } = req.body;
 
-    if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No item with that id')
 
-    const updatedStock = await Stock.findByIdAndUpdate(_id, item, { new: true })
+    if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No item with that ${id}`)
 
-    res.json(updatedStock)
+    const editedItem = {
+        itemName, 
+        itemSupplier, 
+        itemLocationInStorage, 
+        itemQuantity, 
+        itemPrice,
+        employeeId, 
+        _id: id     
+    } 
+
+    await Stock.findByIdAndUpdate(id, editedItem, { new: true, useFindAndModify: false})
+
+    res.json(editedItem)
 
 }
 

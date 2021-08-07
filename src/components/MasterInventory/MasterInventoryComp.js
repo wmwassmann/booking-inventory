@@ -5,6 +5,8 @@ import EditComponent from '../EditComponent/EditComponent';
 
 
 
+
+
 const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
     
     

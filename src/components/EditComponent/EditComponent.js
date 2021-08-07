@@ -37,29 +37,17 @@ const EditForm = ({ itemId, item, currentId, setCurrentId }) => {
 
     // Signup and signin toggle
     const handleSubmit = (e) => {
-        // Axios here
+        
         e.preventDefault()
-        // setCurrentId({itemId})
-        // const params = currentId.itemId
-        // const paramsValue = JSON.stringify(params)
-
-        // const id = JSON.parse(paramsValue)
-
-        // item._id.toString()
-        // console.log(id)
+  
         console.log(item)
 
 
 
 
-        // dispatch(editItem(id))
+        dispatch(editItem(currentId))
 
-        // console.log(id)
-
-        // dispatch(addItem(form, history))
-        // console.log(form)
-        // console.log(item)
-        // console.log("currentId: ", currentId)
+ 
      
 
 

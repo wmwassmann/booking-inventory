@@ -46,7 +46,7 @@ const OrdersForm = ({ currentId, setCurrentId }) => {
         dispatch(addItem(form, history))
         console.log(form)
         console.log("should be 1: ", currentId)
-        window.location.reload(true)
+        // window.location.reload(true)
 
     }
 
@@ -85,39 +85,8 @@ const OrdersForm = ({ currentId, setCurrentId }) => {
                         <div className='text-box'>
                             <Input name='itemPrice' label='Price' handleChange={handleChange} type='Price' />
                         </div>
-                        <div className='text-box'>
-                            <Input name='itemReorderPackaging' label='Re-Order Packaging' handleChange={handleChange} />
-                        </div>
-                        <div className='text-box'>
-                            <Input name='itemCostPerUnit' label='Cost Per Unit' handleChange={handleChange} />
-                        </div>
-                        <div className='text-box'>
-                            <Input name='itemCostPerSpareKit' label='Cost Per Spare Kit' handleChange={handleChange} />
-                        </div>
-                        <div className='text-box'>
-                            <Input name='itemCostPerKit' label='Cost Per Kit' handleChange={handleChange} />
-                        </div>
-                        <div className='text-box'>
-                            <Input name='itemLocation' label='Location in Unit' handleChange={handleChange} />
-                        </div>
-                        <div className='text-box'>
-                            <Input name='maintSpareKit' label='Spare Kit' handleChange={handleChange} />
-                        </div>
-                        <div className='text-box'>
-                            <Input name='maintItemsReOrder' label='Re-order' handleChange={handleChange} />
-                        </div>
-                        <div className='text-box'>
-                            <Input  name='maintQuantityReOrder' label='Quantity to Re-Order' handleChange={handleChange} />
-                        </div>
-                        <div className='text-box'>
-                            <Input  name='maintPlaced' label='Re-order Placed' handleChange={handleChange} />
-                        </div>      
-                        {/* <div className='text-box' name={currentId} handleChange={handleChange}/> */}
-                                         
-                        {/* <div className='text-box'>
-                            <Input  name='maintBrokenReturn' label='Durability Status' handleChange={handleChange} />
-                        </div> */}
-                    
+           
+         
                      
 
                     </form>

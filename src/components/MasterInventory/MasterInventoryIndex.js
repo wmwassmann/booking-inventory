@@ -22,6 +22,7 @@ import OrdersComponent from '../OrderForm/OrdersComponent';
 
 
 const MasterInventoryIndex = ({ currentId, setCurrentId }) => {
+    // Items pulls from the reducers
     const inventory = useSelector((state) => state.items);
 
     return (

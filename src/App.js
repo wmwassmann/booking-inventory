@@ -7,7 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer'
 
 // Redux actions
-import { items, employee } from './actions/auth';
+import { employee } from './actions/auth';
 
 // Routes
 import Auth from './components/Auth/Auth';
@@ -32,15 +32,7 @@ const App = () => {
 
   
   useEffect(() => {
-    // setCurrentId(localStorage.getItem('currentItem'))
-
-
-    // dispatch(items())
-    // dispatch(addItem())
-    // dispatch(editItem())
     dispatch(employee())
-
-
   }, [dispatch])
 
 
@@ -64,16 +56,6 @@ const App = () => {
         </div> 
 
       </Router>
-      {/* <Router>
-        
-        <Switch>
-        </Switch>
-          <Route exact path='/employeeInventory' component={EmployeeInventory} /> */}
-      {/* <div className='footer'>
-          <Footer className='footer' />
-        </div> */}
-
-      {/* </Router> */}
     </>
   );
 }
