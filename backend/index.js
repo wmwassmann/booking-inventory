@@ -34,7 +34,7 @@ app.use('/inventory', stockRouter)
 // app.use('', )
 
 const ATLAS_URI = process.env.ATLAS_URI
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT
 
 connectDB()
 
