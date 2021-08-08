@@ -1,22 +1,20 @@
 .paper-container {   
     display: grid;
-    grid-template-columns: repeat(16, 200px [row-start]);
+    grid-template-columns: repeat(7, 200px [row-start]);
     margin-bottom: 10px;
-    background-color: rgb(130 164 169 / 100%);  
+    background-color: rgb(130 164 169 / 100%);
+    width: 96vw;
 }
 
 .form-container {
-    /* background-color: rgb(130 164 169 / 100%);  
-    width: 180vw; */
+ 
     display: grid;
     grid-template-columns: repeat(7, 200px [row-start]);
     
 }
-.add-button {
-  
+.add-button {  
     width: 100px;
-    background-color: rgb(207, 207, 207);
-    
+    background-color: rgb(207, 207, 207);    
     border: rgb(102, 102, 102) solid 2px;
     border-radius: 5px;
     margin: 20px;

@@ -101,7 +101,6 @@
     color: black;
     padding: 10px;
     border-top: black solid 1px;
-
     z-index: 212;
 }
 
@@ -109,6 +108,8 @@
    z-index: 0;
    display: flex;
    margin: 0.1px;
+   width: 96vw;
+   background-color: rgb(130 164 169 / 100%); 
 }
 
 .inventory-button-container {
