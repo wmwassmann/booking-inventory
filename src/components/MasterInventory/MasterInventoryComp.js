@@ -14,6 +14,7 @@ const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
         setCurrentId(selectedItem._id)  
         const visibility = document.getElementById(`${selectedItem.itemName}-edit-input`)        
         const addInput = document.getElementById(`${selectedItem.itemName}-info-container`)
+        const lowerButton = document.getElementById(`${selectedItem.itemName}-button-container`)
 
         var lockButton = document.querySelectorAll('button.master-edit-button')
         var unlockButton = document.querySelectorAll('button.master-save-button')
@@ -34,6 +35,7 @@ const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
 
         addInput.classList.remove('slide-input-out')
         addInput.classList.add('slide-input-in')
+        lowerButton.classList.add('lower-button')
         
         visibility.classList.remove('stock-edit-input')
         visibility.classList.add('visible')
@@ -47,8 +49,9 @@ const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
         console.log('save')
         const visibility = document.getElementById(`${selectedItem.itemName}-edit-input`)
         const removeInput = document.getElementById(`${selectedItem.itemName}-info-container`)
-        
+        const raiseButton = document.getElementById(`${selectedItem.itemName}-button-container`)
  
+        raiseButton.classList.remove('lower-button')
         removeInput.classList.remove('slide-input-in')
         removeInput.classList.add('slide-input-out')
         var lockButton = document.querySelectorAll('button.master-save-button')
@@ -76,7 +79,7 @@ const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
 
     return (
         <div className='master-cont'>
-            <div className='inventory-button-container'>
+            <div id={`${selectedItem.itemName}-button-container`} className='inventory-button-container'>
                 <button className='master-edit-button' id={`${selectedItem.itemName}-edit-button`} onClick={handle_edit}>
                     Edit
                 </button>
@@ -88,7 +91,8 @@ const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
             <div className='stock-info-container' id={`${selectedItem.itemName}-info-container`}>                      
                 <div className='stock-edit-input' id={`${selectedItem.itemName}-edit-input`}>
                     <EditComponent 
-                                key={selectedItem.itemName}                                                                           
+                                key={selectedItem.itemName}  
+                                selectedItem={selectedItem}                                                                         
                                 currentId={currentId}                            
                                 setCurrentId={setCurrentId}                            
                         />

@@ -132,6 +132,14 @@
     font-weight: 500;
 }
 
+.lower-button {
+    z-index: 0;
+}
+
+.raise-button {
+    z-index: 100;
+}
+
 .lock-button {
     pointer-events: none;
 }

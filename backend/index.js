@@ -46,7 +46,10 @@ mongoose.connect(ATLAS_URI, { useNewUrlParser: true, useUnifiedTopology: true, u
   .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
   .catch((error) => console.log(`${error} did not connect`));
 
-  mongoose.set('useFindAndModify', false);
+//   mongoose.set('useNewUrlParser', true);
+//   mongoose.set('useFindAndModify', false);
+//   mongoose.set('useCreateIndex', true);
+//   mongoose.set('useUnifiedTopology', true);
 
   if (process.env.NODE_ENV === 'production') {
       app.use(express.static('../build'))

@@ -1,14 +1,28 @@
+.edit-container {
+    position: relative;
+    right: 200px;
+}
+
+
 
 .edit-form-container {
     padding-top: 12px;   
     height: 60px;
     width: 183.6vw;
     display: grid;
-    grid-template-columns: repeat(16, 200px [row-start]);
-    
+    grid-template-columns: repeat(16, 200px [row-start]);    
 }
 
+/* .edit-button {
+    position: relative;
+    left: 200px;
+} */
 
+.slide-edit {
+    position: relative;
+    left: 200px;
+    
+}
 
 
 .edit-text-box {

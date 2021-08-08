@@ -1,34 +1,24 @@
 import React, { useState } from 'react'
 
+import { useDispatch } from 'react-redux';
+import { editItem } from '../../actions/auth'
 
 import './css/input-style.css';
 import Input from './EditInput';
 
-import { useDispatch } from 'react-redux';
-
-import { editItem } from '../../actions/auth'
-// import { addItem } from '../../actions/auth'
-import { useHistory } from 'react-router-dom'
 
 
-const initialState = {
-    employeeUsername: '',
-    email: '',
-    password: '',
-    passwordConfirm: '',
-    employeeId: '',
-    employeePosition: ''
-
-}
 
 
-const EditForm = ({ itemId, item, currentId, setCurrentId }) => {
 
 
-    // const [position, setPosition] = useState();
-    const [myItem, setMyItem] = useState(initialState);
+const EditForm = ({ selectedItem, currentId }) => {
+
+
+    const [itemData, setItemData] = useState({ itemName: selectedItem.itemName, itemSupplier: selectedItem.itemSupplier, itemLocationInStorage: selectedItem.itemLocationInStorage, employeeId: selectedItem.employeeId, itemQuantity: selectedItem.itemQuantity, itemPrice: selectedItem.itemPrice  })
+   
     const dispatch = useDispatch()
-    const history = useHistory()
+
   
 
 
@@ -38,23 +28,20 @@ const EditForm = ({ itemId, item, currentId, setCurrentId }) => {
     // Signup and signin toggle
     const handleSubmit = (e) => {
         
-        e.preventDefault()
-  
-        console.log(item)
+        e.preventDefault()    
+        dispatch(editItem(currentId, itemData))
 
+        // const slideEdit = document.getElementById(`${selectedItem.itemName}-submit-button`)
+        // slideEdit.classList.add('slide-edit')
 
-
-
-        dispatch(editItem(currentId))
-
- 
-     
-
-
+        // setTimeout(()=> {
+        //     slideEdit.classList.remove('slide-edit')
+        // }, 1000)
+        window.location.reload(true)
     }
 
-    const handleChange = () => { 
-        setMyItem({ ...myItem, item })
+    const handleChange = (e) => { 
+        setItemData({ ...itemData, [e.target.name]: e.target.value  })
 
     }
 
@@ -64,11 +51,9 @@ const EditForm = ({ itemId, item, currentId, setCurrentId }) => {
 
     return (
         <div className='edit-container'>
-
-
             <form className='edit-form-container' onSubmit={handleSubmit}>
-                <button className='add-button' type='submit' >
-                    Add
+                <button id={`${selectedItem.itemName}-submit-button`} className='edit-button' type='submit' >
+                    Submit
                 </button>
                 <div className='edit-text-box'>
                     <Input name='itemName' label='Product Name' handleChange={handleChange} />

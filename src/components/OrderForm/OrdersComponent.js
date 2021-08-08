@@ -46,7 +46,7 @@ const OrdersForm = ({ currentId, setCurrentId }) => {
         dispatch(addItem(form, history))
         console.log(form)
         console.log("should be 1: ", currentId)
-        // window.location.reload(true)
+        window.location.reload(true)
 
     }
 
