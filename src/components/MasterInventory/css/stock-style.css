@@ -23,10 +23,10 @@
 
 .stock-info-container {
     display: grid;
-    grid-template-columns: repeat(15, 200px [row-start]);
+    grid-template-columns: repeat(7, 200px [row-start]);
     margin-right: 100px;    
     background-color: rgb(130 164 169 / 100%);  
-    width: 183.6vw;
+    width: 97vw;
     border-top: black solid 1px;
     border-bottom: black solid 1px;  
     z-index: 10;  
@@ -85,10 +85,10 @@
 
 .master-card-container {
     display: grid;
-    grid-template-columns: repeat(15, 200px [row-start]);       
+    grid-template-columns: repeat(7, 200px [row-start]);       
     padding-left: 205px;       
     background-color: rgb(130 164 169 / 100%);  
-    width: 183.6vw;
+    width: 96vw;
     border-top: black solid 1px;
     border-bottom: black solid 1px;
   
@@ -121,7 +121,7 @@
     z-index: 1000;
 }
 
-.master-edit-button, .master-save-button {  
+.master-edit-button, .master-save-button, .edit-button {  
     width: 100px;
     background-color: rgb(207, 207, 207);    
     border: rgb(102, 102, 102) solid 2px;

@@ -1,10 +1,6 @@
 import React from 'react'
-import './css/stock-style.css'
-
 import EditComponent from '../EditComponent/EditComponent';
-
-
-
+import './css/stock-style.css'
 
 
 const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
@@ -12,14 +8,12 @@ const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
     
     const handle_edit = () => {
         setCurrentId(selectedItem._id)  
-        const visibility = document.getElementById(`${selectedItem.itemName}-edit-input`)        
-        const addInput = document.getElementById(`${selectedItem.itemName}-info-container`)
-        const lowerButton = document.getElementById(`${selectedItem.itemName}-button-container`)
+        const visibility = document.getElementById(`${selectedItem._id}-edit-input`)        
+        const addInput = document.getElementById(`${selectedItem._id}-info-container`)
+        const lowerButton = document.getElementById(`${selectedItem._id}-button-container`)
 
         var lockButton = document.querySelectorAll('button.master-edit-button')
         var unlockButton = document.querySelectorAll('button.master-save-button')
-   
-
         
         
         for (var i = 0; i < lockButton.length; i++) {
@@ -29,16 +23,13 @@ const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
             unlockButton[i].classList.remove('lock-button')
         }
         
-      
-        
-
-
         addInput.classList.remove('slide-input-out')
         addInput.classList.add('slide-input-in')
         lowerButton.classList.add('lower-button')
         
         visibility.classList.remove('stock-edit-input')
         visibility.classList.add('visible')
+        console.log(selectedItem._id)
 
        
     }
@@ -47,9 +38,9 @@ const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
     const handle_save = (e) => {
         e.preventDefault()
         console.log('save')
-        const visibility = document.getElementById(`${selectedItem.itemName}-edit-input`)
-        const removeInput = document.getElementById(`${selectedItem.itemName}-info-container`)
-        const raiseButton = document.getElementById(`${selectedItem.itemName}-button-container`)
+        const visibility = document.getElementById(`${selectedItem._id}-edit-input`)
+        const removeInput = document.getElementById(`${selectedItem._id}-info-container`)
+        const raiseButton = document.getElementById(`${selectedItem._id}-button-container`)
  
         raiseButton.classList.remove('lower-button')
         removeInput.classList.remove('slide-input-in')
@@ -68,28 +59,23 @@ const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
         setTimeout(() => {            
             visibility.classList.remove('visible')
             removeInput.classList.remove('slide-input-out')
-        }, 600);
-        
-
-       
-
-
+        }, 600);     
     }
 
 
     return (
         <div className='master-cont'>
-            <div id={`${selectedItem.itemName}-button-container`} className='inventory-button-container'>
-                <button className='master-edit-button' id={`${selectedItem.itemName}-edit-button`} onClick={handle_edit}>
+            <div id={`${selectedItem._id}-button-container`} className='inventory-button-container'>
+                <button className='master-edit-button' id={`${selectedItem._id}-edit-button`} onClick={handle_edit}>
                     Edit
                 </button>
-                <button className='master-save-button lock-button' id={`${selectedItem.itemName}-save-button`} onClick={handle_save}>
+                <button className='master-save-button lock-button' id={`${selectedItem._id}-save-button`} onClick={handle_save}>
                     Save
                 </button>
             </div>       
             
-            <div className='stock-info-container' id={`${selectedItem.itemName}-info-container`}>                      
-                <div className='stock-edit-input' id={`${selectedItem.itemName}-edit-input`}>
+            <div className='stock-info-container' id={`${selectedItem._id}-info-container`}>                      
+                <div className='stock-edit-input' id={`${selectedItem._id}-edit-input`}>
                     <EditComponent 
                                 key={selectedItem.itemName}  
                                 selectedItem={selectedItem}                                                                         

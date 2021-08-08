@@ -24,9 +24,7 @@ const MasterBanner = () => {
             </div>
             <div className='master-banner-item'>
                 Price
-            </div>
-       
-         
+            </div>         
 
         </div>
 

@@ -5,7 +5,7 @@ import { TextField, InputAdornment, IconButton } from '@material-ui/core';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
-const OrdersInput = ({ name, handleChange, label, autoFocus, type, handleShowPassword }) => (
+const OrdersInput = ({ name, handleChange, label, type, handleShowPassword }) => (
 
   <TextField
     name={name}

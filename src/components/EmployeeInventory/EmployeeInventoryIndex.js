@@ -1,5 +1,4 @@
 import React from 'react'
-// import { items } from '../../actions/auth'
 import EmployeeInventoryComp from './EmployeeInventoryComp'
 import EmployeeInventoryCard from './EmployeeInventoryCards/EmployeeInventoryCard'
 import { useSelector } from 'react-redux'
@@ -9,8 +8,6 @@ const EmployeeInventoryIndex = () => {
     const inventory = useSelector(state => state.items)
     const currentEmployee = JSON.parse(localStorage.getItem('currentEmployee'))
     let currentId = JSON.stringify(currentEmployee.result.employeeId)
-
-    // let currentId = '1234567'
   
     let checkId = inventory.filter(function(item) {
         return currentId.indexOf(item.employeeId) > -1;

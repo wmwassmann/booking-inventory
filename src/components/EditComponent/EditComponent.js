@@ -14,7 +14,6 @@ import Input from './EditInput';
 
 const EditForm = ({ selectedItem, currentId }) => {
 
-
     const [itemData, setItemData] = useState({ itemName: selectedItem.itemName, itemSupplier: selectedItem.itemSupplier, itemLocationInStorage: selectedItem.itemLocationInStorage, employeeId: selectedItem.employeeId, itemQuantity: selectedItem.itemQuantity, itemPrice: selectedItem.itemPrice  })
    
     const dispatch = useDispatch()
@@ -31,12 +30,6 @@ const EditForm = ({ selectedItem, currentId }) => {
         e.preventDefault()    
         dispatch(editItem(currentId, itemData))
 
-        // const slideEdit = document.getElementById(`${selectedItem.itemName}-submit-button`)
-        // slideEdit.classList.add('slide-edit')
-
-        // setTimeout(()=> {
-        //     slideEdit.classList.remove('slide-edit')
-        // }, 1000)
         window.location.reload(true)
     }
 

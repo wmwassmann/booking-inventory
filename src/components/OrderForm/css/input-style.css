@@ -2,14 +2,14 @@
     display: grid;
     grid-template-columns: repeat(16, 200px [row-start]);
     margin-bottom: 10px;
-    
+    background-color: rgb(130 164 169 / 100%);  
 }
 
 .form-container {
-    background-color: rgb(130 164 169 / 100%);  
-    width: 183.6vw;
+    /* background-color: rgb(130 164 169 / 100%);  
+    width: 180vw; */
     display: grid;
-    grid-template-columns: repeat(16, 200px [row-start]);
+    grid-template-columns: repeat(7, 200px [row-start]);
     
 }
 .add-button {
@@ -29,7 +29,7 @@
     
 }
 
-.text-box {
-    padding-top: 10px;
-   
+.text-box {    
+    padding-top: 20px;  
+    padding-bottom: 20px;         
 }

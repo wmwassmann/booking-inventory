@@ -1,6 +1,10 @@
 .edit-container {
     position: relative;
+    top: 11.5px;
     right: 200px;
+    background-color: rgb(130 164 169 / 100%); 
+    height: 100px;
+    width: 96vw;
 }
 
 
@@ -8,25 +12,22 @@
 .edit-form-container {
     padding-top: 12px;   
     height: 60px;
-    width: 183.6vw;
+    width: 96vw;
     display: grid;
-    grid-template-columns: repeat(16, 200px [row-start]);    
+    grid-template-columns: repeat(8, 200px [row-start]);    
 }
 
-/* .edit-button {
+.edit-button {
     position: relative;
-    left: 200px;
-} */
-
-.slide-edit {
-    position: relative;
-    left: 200px;
-    
+    right: 5px;
+    /* top: 5px; */
 }
+
+
 
 
 .edit-text-box {
-    background-color: rgb(130 164 169 / 100%); 
-    padding-top: 20px; 
-    height: 100px;
+   
+    padding-top: 10px; 
+    /* height: 100px; */
 }
