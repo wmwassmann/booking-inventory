@@ -84,13 +84,11 @@ const OrdersForm = ({ currentId, setCurrentId }) => {
                         </div>
                         <div className='text-box'>
                             <Input name='itemPrice' label='Price' handleChange={handleChange} type='Price' />
-                        </div>
-           
+                        </div>        
          
-                     
-
+                
                     </form>
-               
+      
            
         </div >
     )

@@ -1,6 +1,6 @@
 import { FETCH_STOCK, EDIT_STOCK } from '../constants/actionTypes';
 
-export default (items = [], action) => {
+export default function variable(items = [], action) {
   switch (action.type) { 
     case FETCH_STOCK:      
       return action.payload;    

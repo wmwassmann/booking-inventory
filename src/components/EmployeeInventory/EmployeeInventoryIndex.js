@@ -6,6 +6,7 @@ import './css/stock-style.css'
 
 const EmployeeInventoryIndex = () => {
     const inventory = useSelector(state => state.items)
+    
     const currentEmployee = JSON.parse(localStorage.getItem('currentEmployee'))
     let currentId = JSON.stringify(currentEmployee.result.employeeId)
   
@@ -28,7 +29,6 @@ const EmployeeInventoryIndex = () => {
                         name={item.itemName}
                         quantity={item.itemQuantity}
                         price={item.itemPrice}
-
                         reorder={item.maintItemsReOrder}
                         reorderQuant={item.maintQuantityReOrder}
                     />

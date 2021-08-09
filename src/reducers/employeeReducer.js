@@ -1,6 +1,6 @@
 import { FETCH_EMPLOYEE } from '../constants/actionTypes';
 
-export default (employee = [], action) => {
+export default function variable(employee = [], action){
   switch (action.type) { 
     case FETCH_EMPLOYEE:      
       return action.payload;

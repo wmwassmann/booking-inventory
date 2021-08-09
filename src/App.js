@@ -11,7 +11,7 @@ import { employee, items } from './actions/auth';
 
 // Routes
 import Auth from './components/Auth/Auth';
-import MainMenu from './pages/main';
+
 import MasterInventory from './pages/masterInventory';
 import EmployeeInventory from './pages/employeeInventory';
 import Accounts from './pages/accounts';
@@ -42,9 +42,8 @@ const App = () => {
       <Router>
         {/* <Spinner animation="border" /> */}
         <Navbar className='navbar-page' />
-        <Switch>
-          <Route exact path='/' component={MainMenu} />
-          <Route exact path='/auth' component={Auth} />
+        <Switch>        
+          <Route exact path='/' component={Auth} />
           <Route exact path='/inventory' component={MasterInventory} />
           <Route exact path='/kit' component={EmployeeInventory}/>
          
