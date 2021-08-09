@@ -34,26 +34,20 @@ export default class Stance extends Component {
         const currentStance = localStorage.getItem('Stance')
 
         // Displays a sample output in the DOM of the current selected stance. 
-        if (currentStance === 'Inventory') {
-            console.log('Inventory')
+        if (currentStance === 'Inventory') {     
             window.location.href ='http://localhost:3000/inventory'
-
         } 
 
-        if (currentStance === 'Kit') {
-            console.log('Kit')        
+        if (currentStance === 'Kit') {                
             window.location.href ='http://localhost:3000/kit'
         }
 
-        if (currentStance === 'Accounts') {
-            console.log('Accounts')
+        if (currentStance === 'Accounts') {         
+           
             window.location.href ='http://localhost:3000/accounts'
         }
-
-        if (currentStance === 'Contacts') {
-            console.log('Contacts')
-            window.location.href ='http://localhost:3000/contacts'
-            
+        if (currentStance === 'Contacts') {    
+            window.location.href ='http://localhost:3000/contacts'            
         }
     
 
@@ -61,13 +55,10 @@ export default class Stance extends Component {
         this.props.selected_stance(this.props.stance)
     }
 
-
     render() {
-
         // import whatever props such as this.props.tag here to use below
         const stance = (this.props.stance)
-
-
+        
         return (
             <div className='stance-container'>            
                 <div className='stance-display hidden'>

@@ -38,8 +38,7 @@ const OrdersForm = ({ currentId, setCurrentId }) => {
         setCurrentId(currentId + 1)
 
         dispatch(addItem(form, history))
-        console.log(form)
-        console.log("should be 1: ", currentId)
+      
         window.location.reload(true)
 
     }
@@ -54,10 +53,8 @@ const OrdersForm = ({ currentId, setCurrentId }) => {
 
 
     return (
-        <div className='paper-container'>
-            
-         
-                    <form className='form-container' onSubmit={handleSubmit}>                     
+        <div className='paper-container'>  
+                     <form className='form-container' onSubmit={handleSubmit}>                     
                         <button className='add-button' type='submit'>
                             Add
                         </button>
@@ -79,11 +76,7 @@ const OrdersForm = ({ currentId, setCurrentId }) => {
                         <div className='text-box'>
                             <Input name='itemPrice' label='Price' handleChange={handleChange} type='Price' />
                         </div>        
-         
-                
-                    </form>
-      
-           
+                    </form>           
         </div >
     )
 }

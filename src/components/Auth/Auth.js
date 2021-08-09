@@ -55,12 +55,10 @@ const Signup = () => {
         // Axios here
         e.preventDefault()
         if (isSignup) {
-            dispatch(signup(form, history))
-            console.log(localStorage.getItem('currentEmployee'))
+            dispatch(signup(form, history))           
             history.push('/inventory')
         } else {
-            dispatch(signin(form, history))
-            console.log(localStorage.getItem('currentEmployee'))
+            dispatch(signin(form, history))          
             history.push('/inventory')
 
         }
@@ -74,16 +72,12 @@ const Signup = () => {
 
     const handleManager = () => {
         setForm({ ...form, employeePosition: 'Manager' })
-
-
     }
     const handleEmployee = () => {
         setForm({ ...form, employeePosition: 'Employee' })
-
     }
     const handlePurchaser = () => {
         setForm({ ...form, employeePosition: 'Purchaser' })
-
     }
 
     const switchMode = () => {
@@ -100,14 +94,13 @@ const Signup = () => {
             dispatch({ type: AUTH, data: { result, token } });
             history.push('/')
         } catch (error) {
-            console.log(error)
+            
         }
 
-        console.log(res)
+       
     }
     const googleFailure = (error) => {
-        console.log(error);
-        console.log('Google sign in was unsuccessful')
+        
     }
 
 
