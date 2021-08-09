@@ -20,7 +20,7 @@ export const display = async (req, res) => {
 
     } catch (error) {
         res.status(500).json({ message: 'Something went wrong' }) 
-        console.log(error);
+        // console.log(error);
     }
 }
 
@@ -69,7 +69,7 @@ export const add = async (req, res) => {
 
     } catch(error) {
         res.status(500).json({ message: 'Something went wrong' }) 
-        console.log(error);
+        // console.log(error);
     }
 }
 
@@ -106,7 +106,7 @@ export const remove = async (req, res) => {
 
     } catch (error) {
         res.status(500).json({ message: 'Something went wrong' }) 
-        console.log(error);
+        // console.log(error);
     }
 }
 

@@ -31,25 +31,20 @@ app.use(cors());
 // Routing to unique database endpoints
 app.use('/employee', employeeRouter)
 app.use('/inventory', stockRouter)
-// app.use('', )
+
 
 const ATLAS_URI = process.env.ATLAS_URI
 const PORT = process.env.PORT
 
 connectDB()
 
-connection.once('open', ()=> {
-    console.log('connected established successfully')
-})
+// connection.once('open', ()=> {
+//     console.log('connected established successfully')
+// })
 
 mongoose.connect(ATLAS_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true, useFindAndModify: false })
   .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
   .catch((error) => console.log(`${error} did not connect`));
-
-//   mongoose.set('useNewUrlParser', true);
-//   mongoose.set('useFindAndModify', false);
-//   mongoose.set('useCreateIndex', true);
-//   mongoose.set('useUnifiedTopology', true);
 
   if (process.env.NODE_ENV === 'production') {
       app.use(express.static('../build'))

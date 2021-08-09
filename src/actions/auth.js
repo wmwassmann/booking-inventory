@@ -13,7 +13,7 @@ export const signin = (formData, router) => async (dispatch) => {
         router.push('/inventory')
     } catch (error) {
       // If this fails it means that 
-        console.log(error, 'Authentication access failure - Debug by inspecting /api/Axios.js, or exported const signin /components/Auth/Auth.js')
+        // console.log(error, 'Authentication access failure - Debug by inspecting /api/Axios.js, or exported const signin /components/Auth/Auth.js')
     }
 }
 
@@ -26,7 +26,7 @@ export const signup = (formData, router) => async (dispatch) => {
 
         router.push('/inventory')
     } catch (error) {
-        console.log(error, 'Authentication signup access failure - Debug by inspecting /api/Axios.js, or exported const signup /components/Auth/Auth.j')
+        // console.log(error, 'Authentication signup access failure - Debug by inspecting /api/Axios.js, or exported const signup /components/Auth/Auth.j')
     }
 }
 
@@ -38,9 +38,9 @@ export const employee = () => async (dispatch) => {
   
       dispatch({ type: FETCH_EMPLOYEE, payload: data });
    
-      console.log('/actions/auth.js const employee success')
+      // console.log('/actions/auth.js const employee success')
     } catch (error) {
-      console.log(error, "/actions/auth.js const employee failure");
+      // console.log(error, "/actions/auth.js const employee failure");
     }
   };
 
@@ -52,9 +52,9 @@ export const items = () => async (dispatch) => {
   
       dispatch({ type: FETCH_STOCK, payload: data });
    
-      console.log('/actions/auth.js const stock success')
+      // console.log('/actions/auth.js const stock success')
     } catch (error) {
-      console.log(error, "/actions/auth.js const stock failure");
+      // console.log(error, "/actions/auth.js const stock failure");
     }
   };
 
@@ -65,9 +65,9 @@ export const items = () => async (dispatch) => {
 
       dispatch({ type: ADD_STOCK, payload: data });
 
-      console.log('/actions/auth.js const stock success')
+      // console.log('/actions/auth.js const stock success')
     } catch (error) {
-      console.log(error, "/actions/auth.js const stock failure");
+      // console.log(error, "/actions/auth.js const stock failure");
     }
   }
 
@@ -78,8 +78,8 @@ export const items = () => async (dispatch) => {
 
       dispatch({ type: EDIT_STOCK, payload: data });
 
-      console.log('/actions/auth.js const stock success')
+      // console.log('/actions/auth.js const stock success')
     } catch (error) {
-      console.log(error, "/actions/auth.js const stock failure");
+      // console.log(error, "/actions/auth.js const stock failure");
     }
   }

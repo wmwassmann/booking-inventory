@@ -3,11 +3,8 @@ import OrdersComponent from '../components/OrderForm/OrdersComponent'
 
 const orderForm = () => {
     return (
-        <div className='order-container-full'>
-   
-                <OrdersComponent />
-       
-           
+        <div className='order-container-full'>  
+                <OrdersComponent />             
         </div>
     )
 }

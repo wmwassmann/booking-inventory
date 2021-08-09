@@ -20,7 +20,7 @@ export const displayEmployee = async (req, res) => {
 
     } catch (error) {
         res.status(500).json({ message: 'Something went wrong' }) 
-        console.log(error);
+        // console.log(error);
     }
 }
 
@@ -42,7 +42,7 @@ export const signin = async (req, res) => {
 
     } catch (error) {
         res.status(500).json({ message: 'Something went wrong' }) 
-        console.log(error);
+        // console.log(error);
     }
 }
 
@@ -68,6 +68,6 @@ export const signup = async (req, res) => {
         
     } catch(error) {
         res.status(500).json({ message: 'Something went wrong' }) 
-        console.log(error);
+        // console.log(error);
     }
 }

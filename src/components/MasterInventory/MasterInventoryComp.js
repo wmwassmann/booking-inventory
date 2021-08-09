@@ -4,13 +4,14 @@ import './css/stock-style.css'
 
 
 const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
+    const id = selectedItem._id
     
     
     const handle_edit = () => {
-        setCurrentId(selectedItem._id)  
-        const visibility = document.getElementById(`${selectedItem._id}-edit-input`)        
-        const addInput = document.getElementById(`${selectedItem._id}-info-container`)
-        const lowerButton = document.getElementById(`${selectedItem._id}-button-container`)
+        setCurrentId(id)  
+        const visibility = document.getElementById(`${id}-edit-input`)        
+        const addInput = document.getElementById(`${id}-info-container`)
+        const lowerButton = document.getElementById(`${id}-button-container`)
 
         var lockButton = document.querySelectorAll('button.master-edit-button')
         var unlockButton = document.querySelectorAll('button.master-save-button')
@@ -29,53 +30,32 @@ const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
         
         visibility.classList.remove('stock-edit-input')
         visibility.classList.add('visible')
-        console.log(selectedItem._id)
+        console.log(id)
 
        
     }
     
    
-    const handle_save = (e) => {
+    const handle_delete = (e) => {
         e.preventDefault()
-        console.log('save')
-        const visibility = document.getElementById(`${selectedItem._id}-edit-input`)
-        const removeInput = document.getElementById(`${selectedItem._id}-info-container`)
-        const raiseButton = document.getElementById(`${selectedItem._id}-button-container`)
- 
-        raiseButton.classList.remove('lower-button')
-        removeInput.classList.remove('slide-input-in')
-        removeInput.classList.add('slide-input-out')
-        var lockButton = document.querySelectorAll('button.master-save-button')
-        var unlockButton = document.querySelectorAll('button.master-edit-button')
+        console.log('delete')
         
-        
-        for (var i = 0; i < unlockButton.length; i++) {
-            unlockButton[i].classList.remove('lock-button')
-        }
-        for (i = 0; i < unlockButton.length; i++) {
-            lockButton[i].classList.add('lock-button')
-        }
-        visibility.classList.add('stock-edit-input')
-        setTimeout(() => {            
-            visibility.classList.remove('visible')
-            removeInput.classList.remove('slide-input-out')
-        }, 600);     
     }
 
 
     return (
         <div className='master-cont'>
-            <div id={`${selectedItem._id}-button-container`} className='inventory-button-container'>
-                <button className='master-edit-button' id={`${selectedItem._id}-edit-button`} onClick={handle_edit}>
+            <div id={`${id}-button-container`} className='inventory-button-container'>
+                <button className='master-edit-button' id={`${id}-edit-button`} onClick={handle_edit}>
                     Edit
                 </button>
-                <button className='master-save-button lock-button' id={`${selectedItem._id}-save-button`} onClick={handle_save}>
-                    Save
+                <button className='master-edit-button' id={`${id}-save-button`} onClick={handle_delete}>
+                    Delete
                 </button>
             </div>       
             
-            <div className='stock-info-container' id={`${selectedItem._id}-info-container`}>                      
-                <div className='stock-edit-input' id={`${selectedItem._id}-edit-input`}>
+            <div className='stock-info-container' id={`${id}-info-container`}>                      
+                <div className='stock-edit-input' id={`${id}-edit-input`}>
                     <EditComponent 
                                 key={selectedItem.itemName}  
                                 selectedItem={selectedItem}                                                                         

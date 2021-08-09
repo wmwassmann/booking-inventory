@@ -23,17 +23,11 @@ const initialState = {
 const OrdersForm = ({ currentId, setCurrentId }) => {
 
 
-    // const [position, setPosition] = useState();
     const [form, setForm] = useState(initialState);
 
     const dispatch = useDispatch()
     const history = useHistory()
-    // const currentPosition = JSON.parse(localStorage.getItem('currentEmployee'))
 
-    // let selectPosition = JSON.parse(localStorage.getItem('currentEmployee'))
-
-
-    // selectPosition = currentPosition?.employee.result[1].email
 
 
 
