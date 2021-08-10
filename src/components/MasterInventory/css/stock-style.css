@@ -23,12 +23,10 @@
 
 .stock-info-container {
     display: grid;
-    grid-template-columns: repeat(7, 200px [row-start]);
+    grid-template-columns: repeat(8, 200px [row-start]);
     margin-right: 100px;    
     background-color: rgb(130 164 169 / 100%);  
-    width: 97vw;
-    border-top: black solid 1px;
-    border-bottom: black solid 1px;  
+    width: 97vw;    
     z-index: 10;  
     transition: transform 700ms ease-in-out;
     visibility: visible;
@@ -74,11 +72,9 @@
 
 .master-container {   
     height: 75vh; 
-    width: 97vw;     
+    width: 96vw;     
     overflow-x: auto;
-    margin-bottom: 10px;
-    
-   
+    margin-bottom: 10px; 
     z-index: 212;
 }
 
@@ -89,9 +85,8 @@
     padding-left: 205px;       
     background-color: rgb(130 164 169 / 100%);  
     width: 96vw;
-    border-top: black solid 1px;
-    border-bottom: black solid 1px;
-  
+   
+   
     
     
 }
@@ -99,9 +94,9 @@
 .master-banner-item {
     background-color: rgb(130 164 169 / 100%); 
     color: black;
-    padding: 10px;
-    border-top: black solid 1px;
+    padding: 10px; 
     z-index: 212;
+  
 }
 
 .master-cont {
@@ -109,14 +104,15 @@
    display: flex;
    margin: 0.1px;
    width: 96vw;
+   margin-top: 1px;
+   margin-bottom: 1px;
    background-color: rgb(130 164 169 / 100%); 
 }
 
 .inventory-button-container {
     display: flex;
     flex-direction: column;
-    border-top: black solid 1px;
-    border-bottom: black solid 1px;
+
     
     background-color: rgb(130 164 169 / 100%); 
     z-index: 1000;

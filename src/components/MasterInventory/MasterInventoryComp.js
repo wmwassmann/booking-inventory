@@ -1,10 +1,13 @@
 import React from 'react'
 import EditComponent from '../EditComponent/EditComponent';
+import { useDispatch } from 'react-redux';
+import { removeItem } from '../../actions/auth'
 import './css/stock-style.css'
 
 
 const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
     const id = selectedItem._id
+    const dispatch = useDispatch()
     
     
     const handle_edit = () => {
@@ -30,16 +33,16 @@ const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
         
         visibility.classList.remove('stock-edit-input')
         visibility.classList.add('visible')
-        console.log(id)
 
        
     }
     
    
     const handle_delete = (e) => {
-        e.preventDefault()
-        console.log('delete')
-        
+        e.preventDefault() 
+        dispatch(removeItem(id))
+    
+        window.location.reload(true)       
     }
 
 

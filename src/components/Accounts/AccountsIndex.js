@@ -7,12 +7,6 @@ const AccountsIndex = () => {
 
     const employees = useSelector(state => state.employee)
 
-
-
-
-    console.log(employees)
-
-
     return (
         <EmployeeAccountsCard>
 

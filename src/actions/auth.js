@@ -1,4 +1,4 @@
-import { AUTH, FETCH_STOCK, FETCH_EMPLOYEE, ADD_STOCK, EDIT_STOCK }  from '../constants/actionTypes'
+import { AUTH, FETCH_STOCK, FETCH_EMPLOYEE, ADD_STOCK, EDIT_STOCK, REMOVE }  from '../constants/actionTypes'
 import * as api from '../api/Axios.js'
 
 export const signin = (formData, router) => async (dispatch) => {
@@ -77,6 +77,19 @@ export const items = () => async (dispatch) => {
       const { data } = await api.editItem(id, item);
 
       dispatch({ type: EDIT_STOCK, payload: data });
+
+      // console.log('/actions/auth.js const stock success')
+    } catch (error) {
+      // console.log(error, "/actions/auth.js const stock failure");
+    }
+  }
+
+  export const removeItem = (id, item) => async (dispatch) => {
+    try {
+
+      const { data } = await api.removeItem(id, item);
+
+      dispatch({ type: REMOVE, payload: data });
 
       // console.log('/actions/auth.js const stock success')
     } catch (error) {

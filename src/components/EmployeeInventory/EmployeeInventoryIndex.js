@@ -15,8 +15,7 @@ const EmployeeInventoryIndex = () => {
     })
 
     checkId = { inventory : checkId }
-  
-    console.log(checkId.inventory)
+
  
   
     return (

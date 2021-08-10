@@ -92,22 +92,18 @@ export const edit = async (req, res) => {
 
 
 export const remove = async (req, res) => {
-    const { itemName } = req.body;
-
-    try {
-        const existingStock = await Stock.findOne({ itemName });
-
-        if (!existingStock) return res.status(404).json( { message: 'Stock doesn\'t exist' })
+    const { id } = req.params;
+    const { itemName, itemSupplier, itemLocationInStorage, itemQuantity, itemPrice, employeeId } = req.body;
 
 
-        const token = jwt.sign({ itemName: existingStock.itemName }, 'test', { expiresIn: '1h'});
+    if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No item with that ${id}`)
 
-        res.status(200).json( { result: existingStock, token }) 
+    const removedItem = { itemName, itemSupplier, itemLocationInStorage, itemQuantity, itemPrice, employeeId, _id: id } 
 
-    } catch (error) {
-        res.status(500).json({ message: 'Something went wrong' }) 
-        // console.log(error);
-    }
+    await Stock.findByIdAndDelete(id, removedItem)
+
+    res.json(removedItem)
+    // console.log(editedItem)
 }
 
 export default router;

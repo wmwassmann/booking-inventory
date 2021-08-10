@@ -40,7 +40,7 @@ const MasterInventoryIndex = ({ currentId, setCurrentId }) => {
                             />
                     </Grid>
                 ))}
-
+            
                 <OrdersComponent currentId={currentId} setCurrentId={setCurrentId} />
             </div>
 
