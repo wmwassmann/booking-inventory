@@ -20,7 +20,7 @@ const initialState = {
     password: '',
     passwordConfirm: '',
     employeeId: '',
-    employeePosition: ''
+    employeePosition: 'Select Position *'
 
 }
 
@@ -33,17 +33,7 @@ const Signup = () => {
     const classes = useStyles();
     const dispatch = useDispatch()
     const history = useHistory()
-    // const location = useLocation();
-    // const currentPosition = JSON.parse(localStorage.getItem('currentEmployee'))
-    // const [position, setPosition] = useState(JSON.parse(localStorage.getItem('currentEmployee')));
-
-
-
-
-    // useEffect(() => {
-    //     setPosition(JSON.parse(localStorage.getItem('currentEmployee')))
-    // })
-
+    let employeePosition = initialState.employeePosition
 
     const handleShowPassword = () => {
         setShowPassword((prevShowPassword) => !prevShowPassword)
@@ -55,10 +45,10 @@ const Signup = () => {
         // Axios here
         e.preventDefault()
         if (isSignup) {
-            dispatch(signup(form, history))           
+            dispatch(signup(form, history))
             history.push('/inventory')
         } else {
-            dispatch(signin(form, history))          
+            dispatch(signin(form, history))
             history.push('/inventory')
 
         }
@@ -71,13 +61,13 @@ const Signup = () => {
     }
 
     const handleManager = () => {
-        setForm({ ...form, employeePosition: 'Manager' })
+        setForm({ ...form, employeePosition: 'Manager' })        
     }
     const handleEmployee = () => {
-        setForm({ ...form, employeePosition: 'Employee' })
+        setForm({ ...form, employeePosition: 'Employee' })        
     }
     const handlePurchaser = () => {
-        setForm({ ...form, employeePosition: 'Purchaser' })
+        setForm({ ...form, employeePosition: 'Purchaser' })      
     }
 
     const switchMode = () => {
@@ -94,13 +84,10 @@ const Signup = () => {
             dispatch({ type: AUTH, data: { result, token } });
             history.push('/')
         } catch (error) {
-            
+
         }
 
-       
-    }
-    const googleFailure = (error) => {
-        
+
     }
 
 
@@ -114,13 +101,18 @@ const Signup = () => {
                         <Grid container spacing={2} >
                             {isSignup && (
                                 <>
-                                    <Input name='employeeUsername' label='User Name' handleChange={handleChange} autoFocus half />
+                                    <Input name='employeeUsername' label='User Name' handleChange={handleChange} autoFocus />
                                     <Input className={classes.text} name='email' label='Email Address' handleChange={handleChange} type='email' />
-                                    <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+                                    <div className='select-position'>
+                                        <div className='pos-title'> 
+                                            {initialState.employeePosition}
+                                        </div>
+                                    <DropdownButton id="dropdown-button" title="">
                                         <Dropdown.Item name='employeePosition' onSelect={handleManager}>Manager</Dropdown.Item>
                                         <Dropdown.Item name='employeePosition' onSelect={handleEmployee}>Employee</Dropdown.Item>
                                         <Dropdown.Item name='employeePosition' onSelect={handlePurchaser}>Purchaser</Dropdown.Item>
                                     </DropdownButton>
+                                    </div>
                                 </>
                             )}
                             <Input name='employeeId' label='Employee Id' handleChange={handleChange} type='id' />
@@ -148,7 +140,6 @@ const Signup = () => {
                                 </Button>
                             )}
                             onSuccess={googleSuccess}
-                            onFailure={googleFailure}
                             cookiePolicy='single_host_origin'
                         />
 
