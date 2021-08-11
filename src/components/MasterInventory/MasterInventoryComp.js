@@ -5,14 +5,14 @@ import { removeItem } from '../../actions/auth'
 import './css/stock-style.css'
 
 
-const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
+const MasterInventoryComp = ({ selectedItem, setCurrentId }) => {
     const id = selectedItem._id
     const dispatch = useDispatch()
     
     
     const handle_edit = () => {
         setCurrentId(id)  
-        const visibility = document.getElementById(`${id}-edit-input`)        
+        
         const addInput = document.getElementById(`${id}-info-container`)
         const lowerButton = document.getElementById(`${id}-button-container`)
 
@@ -31,8 +31,8 @@ const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
         addInput.classList.add('slide-input-in')
         lowerButton.classList.add('lower-button')
         
-        visibility.classList.remove('stock-edit-input')
-        visibility.classList.add('visible')
+
+
 
        
     }
@@ -58,15 +58,15 @@ const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
             </div>       
             
             <div className='stock-info-container' id={`${id}-info-container`}>                      
-                <div className='stock-edit-input' id={`${id}-edit-input`}>
+                {/* <div className='stock-edit-input' id={`${id}-edit-input`}>
                     <EditComponent 
                                 key={selectedItem.itemName}  
                                 selectedItem={selectedItem}                                                                         
                                 currentId={currentId}                            
                                 setCurrentId={setCurrentId}                            
                         />
-                </div>
-                <div className='stock-title'>
+                </div> */}
+                <div className='stock-info-item'>
                     {selectedItem.itemName}
                 </div>
                 <div className='stock-info-item'>
@@ -84,7 +84,6 @@ const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
                 <div className='stock-info-item'>
                     {selectedItem.itemPrice}
                 </div>
-  
                 
             </div>
              
