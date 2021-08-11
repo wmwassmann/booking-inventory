@@ -5,7 +5,7 @@ import { removeItem } from '../../actions/auth'
 import './css/stock-style.css'
 
 
-const MasterInventoryComp = ({ selectedItem, setCurrentId }) => {
+const MasterInventoryComp = ({ selectedItem, currentId, setCurrentId }) => {
     const id = selectedItem._id
     const dispatch = useDispatch()
     
@@ -13,7 +13,7 @@ const MasterInventoryComp = ({ selectedItem, setCurrentId }) => {
     const handle_edit = () => {
         setCurrentId(id)  
         
-        const addInput = document.getElementById(`${id}-info-container`)
+        const addInput = document.getElementById(`${id}-edit-input`)
         const lowerButton = document.getElementById(`${id}-button-container`)
 
         var lockButton = document.querySelectorAll('button.master-edit-button')
@@ -57,15 +57,15 @@ const MasterInventoryComp = ({ selectedItem, setCurrentId }) => {
                 </button>
             </div>       
             
-            <div className='stock-info-container' id={`${id}-info-container`}>                      
-                {/* <div className='stock-edit-input' id={`${id}-edit-input`}>
+            <div className='stock-edit-input' id={`${id}-edit-input`}>
                     <EditComponent 
                                 key={selectedItem.itemName}  
                                 selectedItem={selectedItem}                                                                         
                                 currentId={currentId}                            
                                 setCurrentId={setCurrentId}                            
                         />
-                </div> */}
+                </div>
+            <div className='stock-info-container' id={`${id}-info-container`}>                      
                 <div className='stock-info-item'>
                     {selectedItem.itemName}
                 </div>
@@ -84,8 +84,8 @@ const MasterInventoryComp = ({ selectedItem, setCurrentId }) => {
                 <div className='stock-info-item'>
                     {selectedItem.itemPrice}
                 </div>
-                
             </div>
+            
              
         </div>
 
