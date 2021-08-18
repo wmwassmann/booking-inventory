@@ -15,21 +15,13 @@ import Input from './EditInput';
 const EditForm = ({ selectedItem, currentId }) => {
 
     const [itemData, setItemData] = useState({ itemName: selectedItem.itemName, itemSupplier: selectedItem.itemSupplier, itemLocationInStorage: selectedItem.itemLocationInStorage, employeeId: selectedItem.employeeId, itemQuantity: selectedItem.itemQuantity, itemPrice: selectedItem.itemPrice  })
-   
     const dispatch = useDispatch()
-
-  
-
-
-
 
 
     // Signup and signin toggle
     const handleSubmit = (e) => {
-        
         e.preventDefault()    
         dispatch(editItem(currentId, itemData))
-
         window.location.reload(true)
     }
 
@@ -37,10 +29,6 @@ const EditForm = ({ selectedItem, currentId }) => {
         setItemData({ ...itemData, [e.target.name]: e.target.value  })
 
     }
-
-
-
-
 
     return (
         <div className='edit-container'>

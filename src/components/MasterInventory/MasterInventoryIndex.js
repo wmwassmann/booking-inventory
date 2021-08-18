@@ -27,7 +27,6 @@ const MasterInventoryIndex = ({ currentId, setCurrentId }) => {
 
     return (
         <MasterInventoryCard>
-
             <div className='master-container'>
                 <MasterBanner />
                 {inventory.map((item) => (
@@ -35,16 +34,13 @@ const MasterInventoryIndex = ({ currentId, setCurrentId }) => {
                         <MasterInventoryComp
                             selectedItem={item} 
                             currentId={currentId}
-                            setCurrentId={setCurrentId}                      
-                            
+                            setCurrentId={setCurrentId}                                        
                             />
                     </Grid>
                 ))}
             
                 <OrdersComponent currentId={currentId} setCurrentId={setCurrentId} />
             </div>
-
-
         </MasterInventoryCard >
     )
 }
