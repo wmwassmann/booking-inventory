@@ -15,7 +15,7 @@ const MasterInventory = () => {
     }, [currentId, dispatch])
 
     return (
-        <div className='page-container'>
+        <div className='page-container master'>
 
                 <MasterInventoryIndex 
                     currentId={currentId} 

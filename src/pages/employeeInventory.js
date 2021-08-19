@@ -10,7 +10,7 @@ const employeeInventory = () => {
   
 
     return (
-        <div className='page-container'>
+        <div className='page-container kit'>
             <EmployeeInventoryIndex />
         </div>
     )
