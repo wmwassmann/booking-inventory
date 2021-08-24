@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;  
     position: fixed;
-    bottom: -19px;    
+    bottom: -13px;    
     
 }
 
@@ -27,6 +27,7 @@
           box-shadow: 13px 0px 20px 2px rgba(0, 0, 0, 0.575);
     width: 100vw;   
     height: 10vh;
+
 }
 
 
@@ -41,10 +42,11 @@
     width: 4vw;
     margin: 12px;    
     font-size: 0.7em;
-    background-color: antiquewhite;   
-    
-     
+    background-color: antiquewhite;       
+    color: black;
  }
+
+ 
  .footer-btn:hover {  
  
     border-style: solid;
@@ -52,3 +54,11 @@
     background-color: rgb(101, 255, 255);  
     
  }
+
+
+ @media only screen and (max-width: 414px) {
+    .footer-btn {
+        height: 8vh;
+        width: 15vw;
+    }
+}

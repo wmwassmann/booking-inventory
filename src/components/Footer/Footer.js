@@ -30,9 +30,9 @@ export class Footer extends Component {
           <li className="footer-btn">
             <NavLink className="nav-link" to='/accounts' exact>Employees</NavLink>
           </li>
-          <li className="footer-btn">
+          {/* <li className="footer-btn">
             <NavLink className="nav-link" to='/contacts' exact>Contacts</NavLink>
-          </li>
+          </li> */}
         </ul>
       </nav>
 
