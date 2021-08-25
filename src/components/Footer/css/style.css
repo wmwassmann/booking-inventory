@@ -27,7 +27,6 @@
           box-shadow: 13px 0px 20px 2px rgba(0, 0, 0, 0.575);
     width: 100vw;   
     height: 10vh;
-
 }
 
 
@@ -43,6 +42,9 @@
     margin: 12px;    
     font-size: 0.7em;
     background-color: antiquewhite;       
+ }
+
+ .nav-link {
     color: black;
  }
 
@@ -54,11 +56,27 @@
     background-color: rgb(101, 255, 255);  
     
  }
+ @media only screen and (max-width: 1153px) and (orientation: landscape) {
+     .footer-btn {
+         height: 7vh;
+         width: 6vw;
+     }
+ }
 
 
  @media only screen and (max-width: 414px) {
     .footer-btn {
         height: 8vh;
         width: 15vw;
+    }
+}
+
+@media only screen and (max-width: 736px) and (orientation: landscape) {
+    .footer-container {
+        height: 19vh;
+    }
+    .footer-btn {
+        height: 13vh;
+        width: 10vw;
     }
 }

@@ -76,10 +76,7 @@
     grid-template-columns: repeat(6, 200px [row-start]);       
     padding-left: 205px;       
     background-color: rgb(130 164 169 / 100%);  
-    width: 96vw;
-   
-   
-    
+    width: 96vw;  
     
 }
 
@@ -146,6 +143,35 @@
  
 }    
 
+
+@media only screen and (max-width: 1366px) and (orientation: landscape) {
+    .stock-info-container {
+        position: relative;
+        right: 1300px;    
+    }
+}
+
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
+    .stock-info-container {
+        position: relative;
+        right: 970px;    
+    }
+}
+
+@media only screen and (max-width: 736px) and (orientation: landscape) {
+    .master-card-wrapper {
+        margin-top: 13px;
+    }
+
+    .master-container {
+        height: 60vh;
+    }
+
+    .stock-info-container{
+        position: relative;
+        right: 700px;
+    }
+}
 
 @keyframes slide-input-in {
     0% {
